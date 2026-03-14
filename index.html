@@ -6,22 +6,19 @@
   <title>Audi — Learning Experience Designer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Bitter:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <!-- Custom cursor -->
-  <div class="cursor" id="cursor"></div>
-  <div class="cursor-trail" id="cursor-trail"></div>
 
   <!-- Nav -->
   <nav class="nav" id="nav">
     <div class="nav-logo">A<span class="dot">.</span></div>
     <ul class="nav-links">
-      <li><a href="#work">Work</a></li>
+      <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#blog">Blog</a></li>
       <li><a href="#contact" class="nav-cta">Let's Talk</a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -32,15 +29,16 @@
   <!-- Mobile menu -->
   <div class="mobile-menu" id="mobile-menu">
     <ul>
-      <li><a href="#work" class="mobile-link">Work</a></li>
+      <li><a href="#home" class="mobile-link">Home</a></li>
       <li><a href="#about" class="mobile-link">About</a></li>
-      <li><a href="#services" class="mobile-link">Services</a></li>
+      <li><a href="#portfolio" class="mobile-link">Portfolio</a></li>
+      <li><a href="#blog" class="mobile-link">Blog</a></li>
       <li><a href="#contact" class="mobile-link">Let's Talk</a></li>
     </ul>
   </div>
 
   <!-- Hero -->
-  <section class="hero" id="hero">
+  <section class="hero" id="home">
     <div class="hero-bg">
       <div class="hero-grain"></div>
       <div class="orb orb-1"></div>
@@ -54,11 +52,11 @@
         <span class="reveal-line">works.</span>
       </h1>
       <p class="hero-sub reveal">
-        I build corporate eLearning, instructional systems, and learning experiences 
+        I build corporate eLearning, instructional systems, and learning experiences
         that shift behavior — not just check boxes.
       </p>
       <div class="hero-actions reveal">
-        <a href="#work" class="btn-primary">View My Work</a>
+        <a href="#portfolio" class="btn-primary">View My Work</a>
         <a href="#contact" class="btn-ghost">Hire Me</a>
       </div>
     </div>
@@ -91,137 +89,25 @@
       <span>Instructional Design</span><span class="sep">✦</span>
       <span>eLearning Development</span><span class="sep">✦</span>
       <span>Learning Experience Design</span><span class="sep">✦</span>
-      <span>ADDIE & SAM</span><span class="sep">✦</span>
+      <span>ADDIE &amp; SAM</span><span class="sep">✦</span>
       <span>Bloom's Taxonomy</span><span class="sep">✦</span>
       <span>Corporate Training</span><span class="sep">✦</span>
       <span>Articulate Storyline 360</span><span class="sep">✦</span>
       <span>Instructional Design</span><span class="sep">✦</span>
       <span>eLearning Development</span><span class="sep">✦</span>
       <span>Learning Experience Design</span><span class="sep">✦</span>
-      <span>ADDIE & SAM</span><span class="sep">✦</span>
+      <span>ADDIE &amp; SAM</span><span class="sep">✦</span>
       <span>Bloom's Taxonomy</span><span class="sep">✦</span>
       <span>Corporate Training</span><span class="sep">✦</span>
     </div>
   </div>
 
-  <!-- Work Section -->
-  <section class="work" id="work">
-    <div class="section-header">
-      <div class="section-tag reveal">Selected Work</div>
-      <h2 class="section-title reveal">Portfolio</h2>
-    </div>
-
-    <div class="projects-grid">
-
-      <!-- Project 1 - Featured -->
-      <article class="project project--featured reveal-up">
-        <div class="project-visual">
-          <div class="project-thumb thumb-1">
-            <div class="project-thumb-inner">
-              <div class="thumb-icon">⚖️</div>
-              <div class="thumb-label">Algorithmic Bias</div>
-            </div>
-          </div>
-          <div class="project-overlay">
-            <a href="#" class="project-view-btn">View Case Study →</a>
-          </div>
-        </div>
-        <div class="project-info">
-          <div class="project-meta">
-            <span class="project-tag">Storyline 360</span>
-            <span class="project-tag">7 Modules</span>
-            <span class="project-tag">62 min</span>
-          </div>
-          <h3 class="project-title">When the Algorithm Is Wrong</h3>
-          <p class="project-desc">A scenario-driven course on algorithmic bias as a business operations risk — covering pricing, forecasting, supply chain, and EU AI Act governance. Designed for corporate leaders, not tech teams.</p>
-          <div class="project-details">
-            <div class="detail"><span class="detail-label">Audience</span><span>C-Suite & Senior Managers</span></div>
-            <div class="detail"><span class="detail-label">Framework</span><span>Bloom's Taxonomy + Scenario Learning</span></div>
-            <div class="detail"><span class="detail-label">Outcome</span><span>Risk identification & governance readiness</span></div>
-          </div>
-        </div>
-      </article>
-
-      <!-- Project 2 -->
-      <article class="project reveal-up" style="--delay: 0.1s">
-        <div class="project-visual">
-          <div class="project-thumb thumb-2">
-            <div class="project-thumb-inner">
-              <div class="thumb-icon">🧭</div>
-              <div class="thumb-label">Onboarding</div>
-            </div>
-          </div>
-          <div class="project-overlay">
-            <a href="#" class="project-view-btn">View Case Study →</a>
-          </div>
-        </div>
-        <div class="project-info">
-          <div class="project-meta">
-            <span class="project-tag">eLearning</span>
-            <span class="project-tag">3 Modules</span>
-          </div>
-          <h3 class="project-title">New Employee Onboarding Experience</h3>
-          <p class="project-desc">A branching scenario onboarding journey replacing a 40-page PDF manual. Reduced time-to-competency by 30%.</p>
-        </div>
-      </article>
-
-      <!-- Project 3 -->
-      <article class="project reveal-up" style="--delay: 0.2s">
-        <div class="project-visual">
-          <div class="project-thumb thumb-3">
-            <div class="project-thumb-inner">
-              <div class="thumb-icon">💬</div>
-              <div class="thumb-label">Soft Skills</div>
-            </div>
-          </div>
-          <div class="project-overlay">
-            <a href="#" class="project-view-btn">View Case Study →</a>
-          </div>
-        </div>
-        <div class="project-info">
-          <div class="project-meta">
-            <span class="project-tag">Storyboard</span>
-            <span class="project-tag">Facilitation Guide</span>
-          </div>
-          <h3 class="project-title">Difficult Conversations in the Workplace</h3>
-          <p class="project-desc">A blended learning module combining a self-paced eLearning pre-work and a facilitator-led workshop for middle managers.</p>
-        </div>
-      </article>
-
-      <!-- Project 4 -->
-      <article class="project reveal-up" style="--delay: 0.3s">
-        <div class="project-visual">
-          <div class="project-thumb thumb-4">
-            <div class="project-thumb-inner">
-              <div class="thumb-icon">📊</div>
-              <div class="thumb-label">Data Literacy</div>
-            </div>
-          </div>
-          <div class="project-overlay">
-            <a href="#" class="project-view-btn">View Case Study →</a>
-          </div>
-        </div>
-        <div class="project-info">
-          <div class="project-meta">
-            <span class="project-tag">Microlearning</span>
-            <span class="project-tag">5-part Series</span>
-          </div>
-          <h3 class="project-title">Data Literacy for Non-Technical Teams</h3>
-          <p class="project-desc">A bite-sized microlearning series helping operations teams read and act on dashboards without needing a data science background.</p>
-        </div>
-      </article>
-
-    </div>
-  </section>
-
-  <!-- About Section -->
+  <!-- About -->
   <section class="about" id="about">
     <div class="about-grid">
       <div class="about-left">
         <div class="about-portrait">
-          <div class="portrait-placeholder">
-            <span>Your Photo</span>
-          </div>
+          <div class="portrait-placeholder"><span>Your Photo</span></div>
           <div class="portrait-frame"></div>
         </div>
         <div class="about-tools reveal-up">
@@ -249,21 +135,15 @@
         <div class="about-values reveal">
           <div class="value">
             <div class="value-num">01</div>
-            <div class="value-text">
-              <strong>Outcomes first.</strong> Every design decision ties back to a measurable behavior change.
-            </div>
+            <div class="value-text"><strong>Outcomes first.</strong> Every design decision ties back to a measurable behavior change.</div>
           </div>
           <div class="value">
             <div class="value-num">02</div>
-            <div class="value-text">
-              <strong>Learner-centered.</strong> I design for real humans, not ideal ones.
-            </div>
+            <div class="value-text"><strong>Learner-centered.</strong> I design for real humans, not ideal ones.</div>
           </div>
           <div class="value">
             <div class="value-num">03</div>
-            <div class="value-text">
-              <strong>Business-aware.</strong> Good learning solves problems your L&D budget actually has.
-            </div>
+            <div class="value-text"><strong>Business-aware.</strong> Good learning solves problems your L&amp;D budget actually has.</div>
           </div>
         </div>
         <a href="#contact" class="btn-primary reveal">Work with me →</a>
@@ -271,7 +151,71 @@
     </div>
   </section>
 
-  <!-- Services Section -->
+  <!-- Portfolio -->
+  <section class="portfolio" id="portfolio">
+    <div class="section-header">
+      <div class="section-tag reveal">Selected Work</div>
+      <h2 class="section-title reveal">Portfolio</h2>
+      <p class="section-sub reveal">A selection of courses, storyboards, and learning experiences I've designed and built.</p>
+    </div>
+    <div class="projects-grid">
+
+      <article class="project-card reveal-up">
+        <div class="project-img thumb-1">
+          <div class="project-img-inner"><span class="project-emoji">⚖️</span></div>
+          <div class="project-overlay">
+            <a href="#" class="btn-primary">View Case Study →</a>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="tag">Storyline 360</span>
+            <span class="tag">7 Modules</span>
+            <span class="tag">62 min</span>
+          </div>
+          <h3 class="project-title">When the Algorithm Is Wrong</h3>
+          <p class="project-desc">A scenario-driven course on algorithmic bias as a business operations risk — covering pricing, forecasting, supply chain, and EU AI Act governance. Designed for corporate leaders.</p>
+        </div>
+      </article>
+
+      <article class="project-card reveal-up" style="--delay:0.1s">
+        <div class="project-img thumb-2">
+          <div class="project-img-inner"><span class="project-emoji">🧭</span></div>
+          <div class="project-overlay">
+            <a href="#" class="btn-primary">View Case Study →</a>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="tag">eLearning</span>
+            <span class="tag">3 Modules</span>
+          </div>
+          <h3 class="project-title">New Employee Onboarding Experience</h3>
+          <p class="project-desc">A branching scenario onboarding journey that replaced a 40-page PDF manual and reduced time-to-competency by 30%.</p>
+        </div>
+      </article>
+
+      <article class="project-card reveal-up" style="--delay:0.2s">
+        <div class="project-img thumb-3">
+          <div class="project-img-inner"><span class="project-emoji">💬</span></div>
+          <div class="project-overlay">
+            <a href="#" class="btn-primary">View Case Study →</a>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="tag">Blended Learning</span>
+            <span class="tag">Facilitation Guide</span>
+          </div>
+          <h3 class="project-title">Difficult Conversations in the Workplace</h3>
+          <p class="project-desc">A blended module combining self-paced eLearning pre-work and a facilitator-led workshop for middle managers handling team conflict.</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Services -->
   <section class="services" id="services">
     <div class="section-header">
       <div class="section-tag reveal">What I Offer</div>
@@ -282,41 +226,25 @@
         <div class="service-icon">✦</div>
         <h3>eLearning Development</h3>
         <p>Full-cycle eLearning production in Articulate Storyline 360 or Rise — from needs analysis to SCORM-packaged delivery.</p>
-        <ul>
-          <li>Branching scenarios</li>
-          <li>Assessments & quizzes</li>
-          <li>SCORM / xAPI packaging</li>
-        </ul>
+        <ul><li>Branching scenarios</li><li>Assessments &amp; quizzes</li><li>SCORM / xAPI packaging</li></ul>
       </div>
-      <div class="service-card reveal-up" style="--delay: 0.1s">
+      <div class="service-card reveal-up" style="--delay:0.1s">
         <div class="service-icon">✦</div>
         <h3>Instructional Design</h3>
         <p>Storyboards, learning objectives, content outlines, and facilitator guides your developers or vendors can execute against.</p>
-        <ul>
-          <li>ADDIE & SAM methodology</li>
-          <li>Bloom's-mapped objectives</li>
-          <li>Production-ready storyboards</li>
-        </ul>
+        <ul><li>ADDIE &amp; SAM methodology</li><li>Bloom's-mapped objectives</li><li>Production-ready storyboards</li></ul>
       </div>
-      <div class="service-card reveal-up" style="--delay: 0.2s">
+      <div class="service-card reveal-up" style="--delay:0.2s">
         <div class="service-icon">✦</div>
         <h3>Learning Strategy</h3>
-        <p>End-to-end L&D consulting — from training needs analysis to blended learning roadmaps tied to business KPIs.</p>
-        <ul>
-          <li>Training needs analysis</li>
-          <li>Blended learning design</li>
-          <li>Kirkpatrick evaluation</li>
-        </ul>
+        <p>End-to-end L&amp;D consulting — from training needs analysis to blended learning roadmaps tied to business KPIs.</p>
+        <ul><li>Training needs analysis</li><li>Blended learning design</li><li>Kirkpatrick evaluation</li></ul>
       </div>
-      <div class="service-card reveal-up" style="--delay: 0.3s">
+      <div class="service-card reveal-up" style="--delay:0.3s">
         <div class="service-icon">✦</div>
         <h3>Curriculum Review</h3>
         <p>Audit and uplift of existing courses — identifying gaps, improving engagement, and aligning to current best practices.</p>
-        <ul>
-          <li>Content gap analysis</li>
-          <li>Engagement redesign</li>
-          <li>Accessibility review</li>
-        </ul>
+        <ul><li>Content gap analysis</li><li>Engagement redesign</li><li>Accessibility review</li></ul>
       </div>
     </div>
   </section>
@@ -330,41 +258,83 @@
         <div class="testimonial-quote">"The storyboard alone was more thorough than anything our previous vendor delivered after two rounds of revision."</div>
         <div class="testimonial-author">
           <div class="author-avatar">L</div>
-          <div>
-            <strong>L&D Manager</strong>
-            <span>Financial Services, Nairobi</span>
-          </div>
+          <div><strong>L&amp;D Manager</strong><span>Financial Services, Nairobi</span></div>
         </div>
       </div>
-      <div class="testimonial reveal-up" style="--delay: 0.15s">
+      <div class="testimonial reveal-up" style="--delay:0.15s">
         <div class="testimonial-quote">"Audi asks the right questions before touching a slide. The final course actually changed how our team operates."</div>
         <div class="testimonial-author">
           <div class="author-avatar">H</div>
-          <div>
-            <strong>HR Director</strong>
-            <span>NGO, East Africa</span>
-          </div>
+          <div><strong>HR Director</strong><span>NGO, East Africa</span></div>
         </div>
       </div>
-      <div class="testimonial reveal-up" style="--delay: 0.3s">
+      <div class="testimonial reveal-up" style="--delay:0.3s">
         <div class="testimonial-quote">"Delivered on time, on brief, and with a level of polish I didn't expect at this price point."</div>
         <div class="testimonial-author">
           <div class="author-avatar">C</div>
-          <div>
-            <strong>Chief People Officer</strong>
-            <span>Tech Startup, Nairobi</span>
-          </div>
+          <div><strong>Chief People Officer</strong><span>Tech Startup, Nairobi</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
+  <!-- Blog -->
+  <section class="blog" id="blog">
+    <div class="section-header">
+      <div class="section-tag reveal">Thoughts &amp; Ideas</div>
+      <h2 class="section-title reveal">Blog</h2>
+      <p class="section-sub reveal">Reflections on instructional design, eLearning trends, and the craft of building learning that works.</p>
+    </div>
+    <div class="blog-grid">
+
+      <article class="blog-card reveal-up">
+        <div class="blog-img blog-img-1"></div>
+        <div class="blog-body">
+          <div class="blog-meta">
+            <span class="blog-date">March 2025</span>
+            <span class="blog-cat">Instructional Design</span>
+          </div>
+          <h3 class="blog-title">Why Most Corporate eLearning Fails Learners</h3>
+          <p class="blog-excerpt">The uncomfortable truth about click-next courses and what it actually takes to design learning that changes behaviour.</p>
+          <a href="#" class="blog-read">Read more →</a>
+        </div>
+      </article>
+
+      <article class="blog-card reveal-up" style="--delay:0.1s">
+        <div class="blog-img blog-img-2"></div>
+        <div class="blog-body">
+          <div class="blog-meta">
+            <span class="blog-date">February 2025</span>
+            <span class="blog-cat">Tools</span>
+          </div>
+          <h3 class="blog-title">Articulate Storyline vs Rise: When to Use Which</h3>
+          <p class="blog-excerpt">A practical breakdown of both tools — not just features, but which one actually fits your project, timeline, and budget.</p>
+          <a href="#" class="blog-read">Read more →</a>
+        </div>
+      </article>
+
+      <article class="blog-card reveal-up" style="--delay:0.2s">
+        <div class="blog-img blog-img-3"></div>
+        <div class="blog-body">
+          <div class="blog-meta">
+            <span class="blog-date">January 2025</span>
+            <span class="blog-cat">Strategy</span>
+          </div>
+          <h3 class="blog-title">Writing Learning Objectives That Actually Mean Something</h3>
+          <p class="blog-excerpt">Bloom's taxonomy is well known. Using it well is another story. Here's how to write objectives that drive real course design decisions.</p>
+          <a href="#" class="blog-read">Read more →</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Contact -->
   <section class="contact" id="contact">
     <div class="contact-inner">
       <div class="section-tag reveal" style="text-align:center">Get In Touch</div>
       <h2 class="contact-title reveal">Ready to build<br/><em>something great?</em></h2>
-      <p class="contact-sub reveal">I'm available for freelance projects, retainer engagements, and full-time L&D roles in Kenya and remotely.</p>
+      <p class="contact-sub reveal">I'm available for freelance projects, retainer engagements, and full-time L&amp;D roles in Kenya and remotely.</p>
       <div class="contact-actions reveal">
         <a href="mailto:hello@yourname.com" class="btn-primary btn-large">hello@yourname.com</a>
       </div>
@@ -383,9 +353,7 @@
     <div class="footer-inner">
       <div class="footer-logo">A<span class="dot">.</span></div>
       <div class="footer-copy">© 2025 · Learning Experience Designer · Nairobi, Kenya</div>
-      <div class="footer-top" id="footer-top">
-        <a href="#hero">↑ Top</a>
-      </div>
+      <div class="footer-top"><a href="#home">↑ Top</a></div>
     </div>
   </footer>
 
