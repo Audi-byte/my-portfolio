@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Start a Project — Audi | Learning Experience Designer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Bitter:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="project.css" />
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="nav" id="nav">
+    <div class="nav-logo">A<span class="dot">.</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="index.html#portfolio">Portfolio</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="index.html#blog">Blog</a></li>
+      <li><a href="start-a-project.html" class="nav-cta nav-active-cta">Start a Project</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="index.html" class="mobile-link">Home</a></li>
+      <li><a href="about.html" class="mobile-link">About</a></li>
+      <li><a href="index.html#portfolio" class="mobile-link">Portfolio</a></li>
+      <li><a href="index.html#contact" class="mobile-link">Contact</a></li>
+      <li><a href="index.html#blog" class="mobile-link">Blog</a></li>
+    </ul>
+  </div>
+
+  <!-- Page Header -->
+  <div class="sap-header">
+    <div class="sap-header-inner">
+      <h1 class="sap-title reveal">START A PROJECT</h1>
+      <p class="sap-intro reveal">
+        Ready to build something that actually moves performance — not just "looks nice"? Start with a quick blueprint below. It helps me understand your goals and design the smartest, leanest solution for your team. Let's build something that's clear, impactful, and a little fun along the way.
+      </p>
+    </div>
+  </div>
+
+  <!-- Main content: form + sidebar -->
+  <div class="sap-body">
+
+    <!-- Multi-step form -->
+    <div class="sap-form-wrap reveal-up">
+      
+      <!-- Step indicator -->
+      <div class="steps-track">
+        <div class="step-item active" data-step="1">
+          <div class="step-circle">1</div>
+          <div class="step-label">STEP 1 —<br/>Problem<br/>Definition</div>
+        </div>
+        <div class="step-line"></div>
+        <div class="step-item" data-step="2">
+          <div class="step-circle">2</div>
+          <div class="step-label">STEP 2<br/>—<br/>Solution<br/>Vision</div>
+        </div>
+        <div class="step-line"></div>
+        <div class="step-item" data-step="3">
+          <div class="step-circle">3</div>
+          <div class="step-label">STEP 3<br/>—<br/>Timeline<br/>&amp; Budget</div>
+        </div>
+        <div class="step-line"></div>
+        <div class="step-item" data-step="4">
+          <div class="step-circle">4</div>
+          <div class="step-label">STEP 4<br/>— Share<br/>Anything<br/>That Will<br/>Help</div>
+        </div>
+        <div class="step-line"></div>
+        <div class="step-item" data-step="5">
+          <div class="step-circle">5</div>
+          <div class="step-label">STEP 5<br/>— What<br/>Happens<br/>Next</div>
+        </div>
+      </div>
+
+      <!-- Step panels -->
+      <div class="steps-content">
+
+        <!-- STEP 1 -->
+        <div class="step-panel active" id="panel-1">
+          <div class="field-group">
+            <label class="field-label">What's the core problem or challenge?</label>
+            <input type="text" class="field-input" id="problem" placeholder="What should learners do differently?" />
+          </div>
+          <div class="field-group">
+            <label class="field-label">Who is this course for?</label>
+            <input type="text" class="field-input" id="audience" placeholder="Who's the audience?" />
+          </div>
+          <div class="step-nav">
+            <button class="btn-next" onclick="goTo(2)">Next</button>
+          </div>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="step-panel" id="panel-2">
+          <div class="field-group">
+            <label class="field-label">2. What Kind of Solution Fits Your Vision? <span class="field-hint">(Choose all that apply)</span></label>
+            <div class="checkbox-list">
+              <label class="check-item"><input type="checkbox" name="solution" value="scenario" /><span>Scenario-Based Learning</span></label>
+              <label class="check-item"><input type="checkbox" name="solution" value="storyline" /><span>Interactive Storyline Modules</span></label>
+              <label class="check-item"><input type="checkbox" name="solution" value="microlearning" /><span>Microlearning Series</span></label>
+              <label class="check-item"><input type="checkbox" name="solution" value="3d" /><span>3D-Enhanced Video or Character Animation</span></label>
+              <label class="check-item"><input type="checkbox" name="solution" value="blended" /><span>Blended Learning</span></label>
+              <label class="check-item"><input type="checkbox" name="solution" value="unsure" /><span>Not Sure Yet — Help Me Decide</span></label>
+            </div>
+          </div>
+          <div class="step-nav">
+            <button class="btn-prev" onclick="goTo(1)">Previous</button>
+            <button class="btn-next" onclick="goTo(3)">Next</button>
+          </div>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="step-panel" id="panel-3">
+          <div class="field-group">
+            <label class="field-label">Timeline &amp; Budget Range <span class="field-hint">(Just choose a range — no commitment yet. It helps me propose the right-sized solution.)</span></label>
+            <div class="checkbox-list">
+              <label class="check-item"><input type="radio" name="budget" value="100-400" /><span>$100 – $400</span></label>
+              <label class="check-item"><input type="radio" name="budget" value="500-1000" /><span>$500 – $1,000</span></label>
+              <label class="check-item"><input type="radio" name="budget" value="1000-1500" /><span>$1,000 – $1,500</span></label>
+              <label class="check-item"><input type="radio" name="budget" value="1500-5000" /><span>$1,500 – $5,000+</span></label>
+            </div>
+            <p class="field-flexible">I am flexible — propose what fits the problem.</p>
+            <label class="field-label" style="margin-top:1rem;">Preferred timeline</label>
+            <input type="text" class="field-input" id="timeline" placeholder="e.g. 4 weeks, ASAP, flexible..." />
+          </div>
+          <div class="step-nav">
+            <button class="btn-prev" onclick="goTo(2)">Previous</button>
+            <button class="btn-next" onclick="goTo(4)">Next</button>
+          </div>
+        </div>
+
+        <!-- STEP 4 -->
+        <div class="step-panel" id="panel-4">
+          <div class="field-group">
+            <label class="field-label">Upload any files, SOPs, scripts, brand guidelines, or rough sketches. If you don't have anything yet, no stress — just skip.</label>
+            <input type="file" class="field-file" id="file-upload" multiple accept=".pdf,.doc,.docx,.ppt,.pptx,.png,.jpg,.jpeg,.zip" />
+            <p class="field-hint" style="margin-top:0.6rem;">Accepted: PDF, Word, PowerPoint, images, ZIP</p>
+          </div>
+          <div class="field-group">
+            <label class="field-label">Anything else you'd like me to know?</label>
+            <textarea class="field-textarea" id="extras" placeholder="Any context, constraints, or requests..."></textarea>
+          </div>
+          <div class="step-nav">
+            <button class="btn-prev" onclick="goTo(3)">Previous</button>
+            <button class="btn-next" onclick="goTo(5)">Next</button>
+          </div>
+        </div>
+
+        <!-- STEP 5 -->
+        <div class="step-panel" id="panel-5">
+          <div class="step5-content">
+            <p class="step5-after"><strong>After you submit:</strong></p>
+            <ol class="step5-list">
+              <li>I review your project brief (within 24–48 hours).</li>
+              <li>I map out the performance gap + the best solution.</li>
+              <li>You receive a mini-proposal with scope, concept, and timeline.</li>
+              <li>If we're aligned, I start building.</li>
+            </ol>
+            <p class="step5-note">No pressure. No generic pitches. Just clarity.</p>
+          </div>
+          <div class="step-nav">
+            <button class="btn-prev" onclick="goTo(4)">Previous</button>
+            <button class="btn-submit" onclick="submitForm()">→ Let's Build This</button>
+          </div>
+        </div>
+
+        <!-- SUCCESS -->
+        <div class="step-panel" id="panel-success">
+          <div class="success-wrap">
+            <div class="success-icon">✓</div>
+            <h3 class="success-title">All set!</h3>
+            <p class="success-msg">Thanks for sharing those details — it gives me a great head start. Keep an eye on your inbox; I'll be in touch shortly to discuss next steps.</p>
+            <a href="index.html" class="btn-next" style="display:inline-block; margin-top:1.5rem; text-align:center;">← Back to Home</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Sidebar: Why work with me -->
+    <div class="sap-sidebar reveal-up" style="--delay:0.15s">
+      <h3 class="sidebar-title">Why teams work with me:</h3>
+      <ul class="sidebar-list">
+        <li>I combine consulting strategy with hands-on development</li>
+        <li>I build scenario-rich, performance-driven learning</li>
+        <li>I use Storyline, Adobe Creative Suite, Canva and interactive media to make training feel modern</li>
+        <li>I adapt to your workflow — internal teams, agencies, or solo founders</li>
+      </ul>
+      <div class="sidebar-divider"></div>
+      <h3 class="sidebar-title">What to expect:</h3>
+      <ul class="sidebar-list">
+        <li>Response within 24–48 hours</li>
+        <li>A focused mini-proposal — not a generic quote</li>
+        <li>Honest conversation about scope and fit</li>
+        <li>No pressure, no spam</li>
+      </ul>
+      <div class="sidebar-divider"></div>
+      <div class="sidebar-contact">
+        <p>Prefer email?</p>
+        <a href="mailto:hello@yourname.com" class="sidebar-email">hello@yourname.com</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">A<span class="dot">.</span></div>
+      <div class="footer-copy">&copy; 2025 &middot; Learning Experience Designer &middot; Nairobi, Kenya</div>
+      <div class="footer-top"><a href="#top">&uarr; Top</a></div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    let currentStep = 1;
+
+    function goTo(step) {
+      // Hide current panel
+      document.getElementById('panel-' + currentStep).classList.remove('active');
+      // Deactivate current step indicator
+      document.querySelector('.step-item[data-step="' + currentStep + '"]').classList.remove('active');
+
+      currentStep = step;
+
+      // Show new panel
+      document.getElementById('panel-' + currentStep).classList.add('active');
+
+      // Update step indicators
+      document.querySelectorAll('.step-item').forEach(item => {
+        const n = parseInt(item.dataset.step);
+        item.classList.remove('active', 'done');
+        if (n === currentStep) item.classList.add('active');
+        if (n < currentStep) item.classList.add('done');
+      });
+
+      // Update step lines
+      document.querySelectorAll('.step-line').forEach((line, i) => {
+        line.classList.toggle('done', i < currentStep - 1);
+      });
+
+      // Scroll form into view smoothly
+      document.querySelector('.sap-form-wrap').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function submitForm() {
+      // Hide step 5 panel and indicator
+      document.getElementById('panel-5').classList.remove('active');
+      document.querySelector('.step-item[data-step="5"]').classList.add('done');
+      document.querySelectorAll('.step-line').forEach(l => l.classList.add('done'));
+
+      // Show success
+      document.getElementById('panel-success').classList.add('active');
+      document.querySelector('.steps-track').style.opacity = '0.4';
+      document.querySelector('.sap-form-wrap').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  </script>
+</body>
+</html>

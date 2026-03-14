@@ -15,11 +15,12 @@
   <nav class="nav" id="nav">
     <div class="nav-logo">A<span class="dot">.</span></div>
     <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
+      <li><a href="#home" class="nav-active">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#contact">Contact</a></li>
       <li><a href="#blog">Blog</a></li>
-      <li><a href="#contact" class="nav-cta">Let's Talk</a></li>
+      <li><a href="start-a-project.html" class="nav-cta">Start a Project</a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Menu">
       <span></span><span></span>
@@ -30,10 +31,11 @@
   <div class="mobile-menu" id="mobile-menu">
     <ul>
       <li><a href="#home" class="mobile-link">Home</a></li>
-      <li><a href="#about" class="mobile-link">About</a></li>
+      <li><a href="about.html" class="mobile-link">About</a></li>
       <li><a href="#portfolio" class="mobile-link">Portfolio</a></li>
+      <li><a href="#contact" class="mobile-link">Contact</a></li>
       <li><a href="#blog" class="mobile-link">Blog</a></li>
-      <li><a href="#contact" class="mobile-link">Let's Talk</a></li>
+      <li><a href="start-a-project.html" class="mobile-link">Start a Project</a></li>
     </ul>
   </div>
 
@@ -41,64 +43,80 @@
   <section class="hero" id="home">
     <div class="hero-bg">
       <div class="hero-grain"></div>
-      <div class="orb orb-1"></div>
-      <div class="orb orb-2"></div>
     </div>
-    <div class="hero-content">
-      <div class="hero-tag reveal">Learning Experience Designer</div>
-      <h1 class="hero-title">
-        <span class="reveal-line">Designing learning</span>
-        <span class="reveal-line italic">that actually</span>
-        <span class="reveal-line">works.</span>
-      </h1>
-      <p class="hero-sub reveal">
-        I build corporate eLearning, instructional systems, and learning experiences
-        that shift behavior — not just check boxes.
-      </p>
-      <div class="hero-actions reveal">
-        <a href="#portfolio" class="btn-primary">View My Work</a>
-        <a href="#contact" class="btn-ghost">Hire Me</a>
+    <div class="hero-layout">
+
+      <!-- Left: Text -->
+      <div class="hero-left">
+        <div class="hero-tag reveal">Learning Experience Designer &middot; Nairobi, Kenya</div>
+        <h1 class="hero-title">
+          <span class="reveal-line">Stop Building Courses.</span>
+          <span class="reveal-line">Start Solving</span>
+          <span class="reveal-line hero-title-accent">Business Problems.</span>
+        </h1>
+        <p class="hero-sub reveal">
+          I partner with forward-thinking enterprises and subject matter experts to move beyond click-next eLearning. I design evidence-based strategies that turn information into impact.
+        </p>
+        <div class="hero-actions reveal">
+          <a href="#contact" class="btn-primary">Transform Your Training</a>
+          <a href="#portfolio" class="btn-ghost">View Portfolio</a>
+        </div>
       </div>
-    </div>
-    <div class="hero-scroll reveal">
-      <span>Scroll</span>
-      <div class="scroll-line"></div>
-    </div>
-    <div class="hero-stats reveal">
-      <div class="stat">
-        <span class="stat-num" data-count="12">0</span>
-        <span class="stat-label">Courses Built</span>
+
+      <!-- Center: Photo + blob -->
+      <div class="hero-center reveal-up">
+        <div class="hero-blob">
+          <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" class="blob-svg">
+            <path d="M420,280Q390,360,310,400Q230,440,160,390Q90,340,70,250Q50,160,120,100Q190,40,280,50Q370,60,420,140Q470,220,420,280Z" fill="#0D5C55" opacity="0.9"/>
+            <path d="M400,260Q375,345,295,385Q215,425,150,375Q85,325,75,240Q65,155,130,100Q195,45,280,55Q365,65,405,145Q445,225,400,260Z" fill="#0A4A44" opacity="0.55"/>
+          </svg>
+          <div class="hero-icon hero-icon-1">&#127979;</div>
+          <div class="hero-icon hero-icon-2">&#128241;</div>
+        </div>
+        <div class="hero-photo">
+          <div class="hero-photo-placeholder">
+            <span>Your Photo</span>
+            <small>PNG with transparent background works best</small>
+          </div>
+        </div>
       </div>
-      <div class="stat-divider"></div>
-      <div class="stat">
-        <span class="stat-num" data-count="5">0</span>
-        <span class="stat-label">Years Experience</span>
+
+      <!-- Right: Stats -->
+      <div class="hero-right reveal-up" style="--delay:0.2s">
+        <div class="hero-stat-card">
+          <div class="hero-stat-num"><span data-count="6">0</span><span class="hero-stat-plus">+</span></div>
+          <div class="hero-stat-label">Years of<br/>Experience</div>
+        </div>
+        <div class="hero-stat-card">
+          <div class="hero-stat-num"><span data-count="100">0</span><span class="hero-stat-plus">+</span></div>
+          <div class="hero-stat-label">Projects<br/>Completed</div>
+        </div>
+        <div class="hero-stat-card">
+          <div class="hero-stat-num"><span data-count="40">0</span><span class="hero-stat-plus">%</span></div>
+          <div class="hero-stat-label">Avg. Learner<br/>Engagement Uplift</div>
+        </div>
       </div>
-      <div class="stat-divider"></div>
-      <div class="stat">
-        <span class="stat-num" data-count="98">0</span><span class="stat-suffix">%</span>
-        <span class="stat-label">Learner Satisfaction</span>
-      </div>
+
     </div>
   </section>
 
   <!-- Marquee -->
   <div class="marquee-wrap">
     <div class="marquee-track">
-      <span>Articulate Storyline 360</span><span class="sep">✦</span>
-      <span>Instructional Design</span><span class="sep">✦</span>
-      <span>eLearning Development</span><span class="sep">✦</span>
-      <span>Learning Experience Design</span><span class="sep">✦</span>
-      <span>ADDIE &amp; SAM</span><span class="sep">✦</span>
-      <span>Bloom's Taxonomy</span><span class="sep">✦</span>
-      <span>Corporate Training</span><span class="sep">✦</span>
-      <span>Articulate Storyline 360</span><span class="sep">✦</span>
-      <span>Instructional Design</span><span class="sep">✦</span>
-      <span>eLearning Development</span><span class="sep">✦</span>
-      <span>Learning Experience Design</span><span class="sep">✦</span>
-      <span>ADDIE &amp; SAM</span><span class="sep">✦</span>
-      <span>Bloom's Taxonomy</span><span class="sep">✦</span>
-      <span>Corporate Training</span><span class="sep">✦</span>
+      <span>Articulate Storyline 360</span><span class="sep">&#10022;</span>
+      <span>Instructional Design</span><span class="sep">&#10022;</span>
+      <span>eLearning Development</span><span class="sep">&#10022;</span>
+      <span>Learning Experience Design</span><span class="sep">&#10022;</span>
+      <span>ADDIE &amp; SAM</span><span class="sep">&#10022;</span>
+      <span>Bloom's Taxonomy</span><span class="sep">&#10022;</span>
+      <span>Corporate Training</span><span class="sep">&#10022;</span>
+      <span>Articulate Storyline 360</span><span class="sep">&#10022;</span>
+      <span>Instructional Design</span><span class="sep">&#10022;</span>
+      <span>eLearning Development</span><span class="sep">&#10022;</span>
+      <span>Learning Experience Design</span><span class="sep">&#10022;</span>
+      <span>ADDIE &amp; SAM</span><span class="sep">&#10022;</span>
+      <span>Bloom's Taxonomy</span><span class="sep">&#10022;</span>
+      <span>Corporate Training</span><span class="sep">&#10022;</span>
     </div>
   </div>
 
@@ -146,7 +164,7 @@
             <div class="value-text"><strong>Business-aware.</strong> Good learning solves problems your L&amp;D budget actually has.</div>
           </div>
         </div>
-        <a href="#contact" class="btn-primary reveal">Work with me →</a>
+        <a href="#contact" class="btn-primary reveal">Work with me &rarr;</a>
       </div>
     </div>
   </section>
@@ -162,9 +180,9 @@
 
       <article class="project-card reveal-up">
         <div class="project-img thumb-1">
-          <div class="project-img-inner"><span class="project-emoji">⚖️</span></div>
+          <div class="project-img-inner"><span class="project-emoji">&#9878;&#65039;</span></div>
           <div class="project-overlay">
-            <a href="#" class="btn-primary">View Case Study →</a>
+            <a href="#" class="btn-primary">View Case Study &rarr;</a>
           </div>
         </div>
         <div class="project-body">
@@ -180,9 +198,9 @@
 
       <article class="project-card reveal-up" style="--delay:0.1s">
         <div class="project-img thumb-2">
-          <div class="project-img-inner"><span class="project-emoji">🧭</span></div>
+          <div class="project-img-inner"><span class="project-emoji">&#129517;</span></div>
           <div class="project-overlay">
-            <a href="#" class="btn-primary">View Case Study →</a>
+            <a href="#" class="btn-primary">View Case Study &rarr;</a>
           </div>
         </div>
         <div class="project-body">
@@ -197,9 +215,9 @@
 
       <article class="project-card reveal-up" style="--delay:0.2s">
         <div class="project-img thumb-3">
-          <div class="project-img-inner"><span class="project-emoji">💬</span></div>
+          <div class="project-img-inner"><span class="project-emoji">&#128172;</span></div>
           <div class="project-overlay">
-            <a href="#" class="btn-primary">View Case Study →</a>
+            <a href="#" class="btn-primary">View Case Study &rarr;</a>
           </div>
         </div>
         <div class="project-body">
@@ -223,25 +241,25 @@
     </div>
     <div class="services-grid">
       <div class="service-card reveal-up">
-        <div class="service-icon">✦</div>
+        <div class="service-icon">&#10022;</div>
         <h3>eLearning Development</h3>
         <p>Full-cycle eLearning production in Articulate Storyline 360 or Rise — from needs analysis to SCORM-packaged delivery.</p>
         <ul><li>Branching scenarios</li><li>Assessments &amp; quizzes</li><li>SCORM / xAPI packaging</li></ul>
       </div>
       <div class="service-card reveal-up" style="--delay:0.1s">
-        <div class="service-icon">✦</div>
+        <div class="service-icon">&#10022;</div>
         <h3>Instructional Design</h3>
         <p>Storyboards, learning objectives, content outlines, and facilitator guides your developers or vendors can execute against.</p>
         <ul><li>ADDIE &amp; SAM methodology</li><li>Bloom's-mapped objectives</li><li>Production-ready storyboards</li></ul>
       </div>
       <div class="service-card reveal-up" style="--delay:0.2s">
-        <div class="service-icon">✦</div>
+        <div class="service-icon">&#10022;</div>
         <h3>Learning Strategy</h3>
         <p>End-to-end L&amp;D consulting — from training needs analysis to blended learning roadmaps tied to business KPIs.</p>
         <ul><li>Training needs analysis</li><li>Blended learning design</li><li>Kirkpatrick evaluation</li></ul>
       </div>
       <div class="service-card reveal-up" style="--delay:0.3s">
-        <div class="service-icon">✦</div>
+        <div class="service-icon">&#10022;</div>
         <h3>Curriculum Review</h3>
         <p>Audit and uplift of existing courses — identifying gaps, improving engagement, and aligning to current best practices.</p>
         <ul><li>Content gap analysis</li><li>Engagement redesign</li><li>Accessibility review</li></ul>
@@ -286,7 +304,6 @@
       <p class="section-sub reveal">Reflections on instructional design, eLearning trends, and the craft of building learning that works.</p>
     </div>
     <div class="blog-grid">
-
       <article class="blog-card reveal-up">
         <div class="blog-img blog-img-1"></div>
         <div class="blog-body">
@@ -296,10 +313,9 @@
           </div>
           <h3 class="blog-title">Why Most Corporate eLearning Fails Learners</h3>
           <p class="blog-excerpt">The uncomfortable truth about click-next courses and what it actually takes to design learning that changes behaviour.</p>
-          <a href="#" class="blog-read">Read more →</a>
+          <a href="#" class="blog-read">Read more &rarr;</a>
         </div>
       </article>
-
       <article class="blog-card reveal-up" style="--delay:0.1s">
         <div class="blog-img blog-img-2"></div>
         <div class="blog-body">
@@ -309,10 +325,9 @@
           </div>
           <h3 class="blog-title">Articulate Storyline vs Rise: When to Use Which</h3>
           <p class="blog-excerpt">A practical breakdown of both tools — not just features, but which one actually fits your project, timeline, and budget.</p>
-          <a href="#" class="blog-read">Read more →</a>
+          <a href="#" class="blog-read">Read more &rarr;</a>
         </div>
       </article>
-
       <article class="blog-card reveal-up" style="--delay:0.2s">
         <div class="blog-img blog-img-3"></div>
         <div class="blog-body">
@@ -322,10 +337,9 @@
           </div>
           <h3 class="blog-title">Writing Learning Objectives That Actually Mean Something</h3>
           <p class="blog-excerpt">Bloom's taxonomy is well known. Using it well is another story. Here's how to write objectives that drive real course design decisions.</p>
-          <a href="#" class="blog-read">Read more →</a>
+          <a href="#" class="blog-read">Read more &rarr;</a>
         </div>
       </article>
-
     </div>
   </section>
 
@@ -340,9 +354,9 @@
       </div>
       <div class="contact-links reveal">
         <a href="#" target="_blank">LinkedIn</a>
-        <span class="sep">·</span>
+        <span class="sep">&middot;</span>
         <a href="#" target="_blank">Resume / CV</a>
-        <span class="sep">·</span>
+        <span class="sep">&middot;</span>
         <a href="#" target="_blank">GitHub</a>
       </div>
     </div>
@@ -352,8 +366,8 @@
   <footer class="footer">
     <div class="footer-inner">
       <div class="footer-logo">A<span class="dot">.</span></div>
-      <div class="footer-copy">© 2025 · Learning Experience Designer · Nairobi, Kenya</div>
-      <div class="footer-top"><a href="#home">↑ Top</a></div>
+      <div class="footer-copy">&copy; 2025 &middot; Learning Experience Designer &middot; Nairobi, Kenya</div>
+      <div class="footer-top"><a href="#home">&uarr; Top</a></div>
     </div>
   </footer>
 
