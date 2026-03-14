@@ -784,12 +784,17 @@ ul { list-style: none; }
   .hero-title        { font-size: clamp(1.9rem, 6vw, 3rem); margin-bottom: 1rem; }
   .hero-actions      { justify-content: center; }
 
-  /* Photo blob: smaller, centered, placed first */
-  .hero-center { height: 260px; order: -1; }
+  /* Order: 1=text, 2=photo, 3=stats */
+  .hero-left   { order: 1; }
+  .hero-center { order: 2; height: 260px; }
+  .hero-right  { order: 3; }
   .hero-photo  { width: 170px; height: 230px; }
   .hero-icon   { width: 44px; height: 44px; font-size: 1.4rem; }
 
-  /* Stats: horizontal row */
+  /* Hide buttons inside hero-left on mobile — shown below image instead */
+  .hero-actions { display: none; }
+
+  /* Stats: horizontal row below photo */
   .hero-right {
     flex-direction: row;
     justify-content: center;
@@ -799,6 +804,16 @@ ul { list-style: none; }
   .hero-stat-card  { flex: 1; min-width: 110px; text-align: center; padding: 0.9rem 0.8rem; }
   .hero-stat-num   { font-size: 1.8rem; }
   .hero-stat-label { font-size: 0.58rem; }
+
+  /* Mobile-only CTA buttons shown below the photo */
+  .hero-mobile-cta {
+    display: flex;
+    gap: 0.8rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    order: 2; /* sits right after hero-center */
+    margin-top: -0.5rem;
+  }
 
   /* About */
   .about-grid { grid-template-columns: 1fr; gap: 2rem; }
