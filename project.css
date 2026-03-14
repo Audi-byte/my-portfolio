@@ -458,20 +458,32 @@
 
 /* ── Responsive ── */
 @media (max-width: 900px) {
-  .sap-body {
-    grid-template-columns: 1fr;
-    padding: 2rem 1.5rem 5rem;
-  }
-  .sap-header { padding: 8rem 1.5rem 2.5rem; }
+  .sap-header { padding: 7rem 1.5rem 2rem; }
+  .sap-title  { font-size: clamp(1.6rem, 5vw, 2.5rem); }
+  .sap-intro  { font-size: 0.9rem; }
+  .sap-body   { grid-template-columns: 1fr; padding: 1.5rem 1.2rem 3.5rem; gap: 2rem; }
   .sap-sidebar { position: static; }
+  .sidebar-title { font-size: 0.92rem; }
+  .sidebar-list li { font-size: 0.82rem; }
 }
 @media (max-width: 600px) {
-  .steps-track { padding: 1.2rem 1rem 0; gap: 0; }
-  .step-circle { width: 28px; height: 28px; font-size: 0.72rem; }
-  .step-label { font-size: 0.52rem; max-width: 55px; }
-  .step-line { margin-top: 13px; }
-  .steps-content { padding: 1.4rem 1.2rem 1.6rem; }
-  .step-nav { flex-direction: column; }
-  .btn-prev, .btn-next, .btn-submit { flex: unset; width: 100%; }
-  .btn-prev { order: 2; }
+  .sap-header { padding: 6rem 1rem 1.5rem; }
+  .steps-track { padding: 1rem 0.8rem 0; }
+  .step-circle { width: 26px; height: 26px; font-size: 0.7rem; }
+  .step-label  { font-size: 0.48rem; max-width: 50px; }
+  .step-line   { margin-top: 12px; }
+  .steps-content { padding: 1.2rem 1rem 1.4rem; min-height: 200px; }
+  .field-label { font-size: 0.88rem; }
+  .field-input, .field-textarea { font-size: 0.85rem; padding: 0.6rem 0.8rem; }
+  .check-item span { font-size: 0.85rem; }
+  .step-nav    { flex-direction: column; gap: 0.6rem; margin-top: 1.2rem; }
+  .btn-prev, .btn-next, .btn-submit { flex: unset; width: 100%; padding: 0.75rem 1rem; font-size: 0.82rem; }
+  .btn-prev    { order: 2; }
+  .step5-list li { font-size: 0.88rem; }
+  .success-title { font-size: 1.4rem; }
+  .success-msg   { font-size: 0.88rem; }
+}
+@media (max-width: 400px) {
+  .step-label { display: none; }
+  .steps-track { padding: 0.8rem 0.5rem 0.5rem; }
 }

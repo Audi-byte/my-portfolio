@@ -357,16 +357,39 @@
 
 /* ── Responsive ── */
 @media (max-width: 1024px) {
-  .arsenal-grid { grid-template-columns: repeat(2, 1fr); }
+  .arsenal-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
 }
 @media (max-width: 900px) {
-  .about-hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .about-hero-inner { grid-template-columns: 1fr; gap: 2rem; }
   .about-hero-right { order: -1; }
-  .about-photo-wrap { width: 200px; }
-  .exp-edu-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .about-photo-wrap { width: 180px; margin: 0 auto; }
+  .about-hero-title { font-size: clamp(1.8rem, 6vw, 3rem); }
+  .exp-edu-inner { grid-template-columns: 1fr; gap: 2rem; }
 }
 @media (max-width: 768px) {
-  .about-hero, .arsenal, .exp-edu, .about-cta { padding: 5rem 1.5rem; }
-  .arsenal-grid { grid-template-columns: 1fr; }
-  .about-quick-facts { flex-direction: row; flex-wrap: wrap; gap: 1rem; }
+  .about-hero, .arsenal, .exp-edu, .about-cta { padding: 3.5rem 1.2rem; }
+  .arsenal-grid { grid-template-columns: 1fr; gap: 0.8rem; }
+  .arsenal-card { padding: 1.2rem; }
+  .arsenal-card h3 { font-size: 0.88rem; }
+  .arsenal-card li { font-size: 0.82rem; }
+  .about-hero-body p { font-size: 0.9rem; }
+  .accent-line { font-size: 1rem !important; }
+  .about-hero-actions { flex-direction: column; align-items: flex-start; }
+  .about-quick-facts { flex-direction: row; flex-wrap: wrap; gap: 0.6rem; padding: 1rem; }
+  .qf-num { font-size: 1.4rem; }
+  .tl-content { padding: 1rem; }
+  .tl-role { font-size: 0.88rem; }
+  .tl-highlight, .tl-desc { font-size: 0.82rem; }
+  .tl-list li { font-size: 0.82rem; }
+  .about-cta h2 { font-size: clamp(1.5rem, 5vw, 2.2rem); }
+  .about-cta p { font-size: 0.9rem; margin-bottom: 1.5rem; }
+  .timeline-card { padding: 0 0 1.5rem 1.5rem; }
+}
+@media (max-width: 480px) {
+  .about-hero { padding: 5rem 1rem 2.5rem; }
+  .about-hero-title { font-size: 1.7rem; }
+  .about-photo-wrap { width: 140px; }
+  .arsenal, .exp-edu, .about-cta { padding: 3rem 1rem; }
+  .tl-top { flex-direction: column; gap: 0.5rem; }
+  .tl-badge { align-self: flex-start; }
 }
