@@ -793,63 +793,63 @@ ul { list-style: none; }
     min-height: auto;
   }
 
-  /* 2-column: left=text+buttons, right=photo+stats */
+  /* Single column stack: text → photo → buttons → stats */
   .hero-layout {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    gap: 1rem 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
     text-align: left;
-    align-items: start;
   }
 
-  /* Left column: text block — spans full height */
+  /* 1. Text block */
   .hero-left {
-    grid-column: 1;
-    grid-row: 1 / 3;
+    order: 1;
     align-items: flex-start;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
   }
-  .hero-tag          { justify-content: flex-start; font-size: 0.62rem; margin-bottom: 0.7rem; }
+  .hero-tag          { font-size: 0.65rem; margin-bottom: 0.6rem; }
   .hero-tag::before  { display: none; }
-  .hero-title        { font-size: clamp(1.5rem, 5vw, 2.4rem); margin-bottom: 0.8rem; line-height: 1.15; }
-  .hero-sub          { font-size: 0.82rem; margin-bottom: 1.2rem; line-height: 1.6; }
-  .hero-actions      { display: flex; flex-direction: column; gap: 0.5rem; width: 100%; }
-  .hero-actions .btn-primary,
-  .hero-actions .btn-ghost {
-    padding: 0.6rem 0.9rem;
-    font-size: 0.72rem;
-    text-align: center;
-    width: 100%;
-  }
+  .hero-title        { font-size: clamp(1.8rem, 6vw, 2.8rem); margin-bottom: 0.8rem; line-height: 1.12; }
+  .hero-sub          { font-size: 0.88rem; margin-bottom: 0; line-height: 1.65; max-width: 100%; }
 
-  /* Right column top: photo */
+  /* Hide the desktop buttons inside hero-left */
+  .hero-actions { display: none; }
+
+  /* 2. Photo blob */
   .hero-center {
-    grid-column: 2;
-    grid-row: 1;
-    height: 220px;
-    order: unset;
+    order: 2;
+    height: 280px;
   }
-  .hero-photo  { width: 140px; height: 190px; }
-  .hero-icon   { width: 36px; height: 36px; font-size: 1.1rem; }
+  .hero-photo { width: 180px; height: 240px; }
+  .hero-icon  { width: 40px; height: 40px; font-size: 1.3rem; }
 
-  /* Right column bottom: stats stacked */
+  /* 3. Buttons — side by side below photo */
+  .hero-mobile-cta {
+    order: 3;
+    display: flex !important;
+    gap: 0.7rem;
+    flex-wrap: nowrap;
+  }
+  .hero-mobile-cta .btn-primary,
+  .hero-mobile-cta .btn-ghost {
+    flex: 1;
+    padding: 0.65rem 0.8rem;
+    font-size: 0.75rem;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  /* 4. Stats — horizontal row */
   .hero-right {
-    grid-column: 2;
-    grid-row: 2;
+    order: 4;
     display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    order: unset;
+    flex-direction: row;
+    gap: 0.6rem;
+    flex-wrap: nowrap;
   }
-  .hero-stat-card  { text-align: left; padding: 0.6rem 0.8rem; }
-  .hero-stat-num   { font-size: 1.4rem; }
-  .hero-stat-plus  { font-size: 1rem; }
+  .hero-stat-card  { flex: 1; text-align: left; padding: 0.8rem 0.7rem; }
+  .hero-stat-num   { font-size: 1.6rem; }
+  .hero-stat-plus  { font-size: 1.1rem; }
   .hero-stat-label { font-size: 0.55rem; }
-
-  /* Hide the duplicate mobile CTA — not needed with this layout */
-  .hero-mobile-cta { display: none !important; }
 
   /* About */
   .about-grid { grid-template-columns: 1fr; gap: 2rem; }
@@ -927,19 +927,19 @@ ul { list-style: none; }
 /* ── Small mobile ── */
 @media (max-width: 480px) {
   /* Hero */
-  .hero          { padding: 5rem 0.8rem 2rem; }
-  .hero-layout   { gap: 0.7rem 0.8rem; }
-  .hero-title    { font-size: clamp(1.3rem, 5.5vw, 1.8rem); line-height: 1.15; }
-  .hero-tag      { font-size: 0.58rem; margin-bottom: 0.5rem; }
-  .hero-sub      { font-size: 0.76rem; margin-bottom: 0.9rem; }
-  .hero-center   { height: 180px; }
-  .hero-photo    { width: 110px; height: 155px; }
-  .hero-stat-card{ padding: 0.5rem 0.6rem; }
-  .hero-stat-num { font-size: 1.2rem; }
-  .hero-stat-plus{ font-size: 0.9rem; }
+  .hero          { padding: 5rem 1rem 2rem; }
+  .hero-layout   { gap: 1rem; }
+  .hero-title    { font-size: clamp(1.6rem, 6vw, 2.2rem); }
+  .hero-tag      { font-size: 0.6rem; }
+  .hero-sub      { font-size: 0.82rem; }
+  .hero-center   { height: 240px; }
+  .hero-photo    { width: 150px; height: 200px; }
+  .hero-stat-card{ padding: 0.6rem 0.5rem; }
+  .hero-stat-num { font-size: 1.3rem; }
+  .hero-stat-plus{ font-size: 0.95rem; }
   .hero-stat-label{ font-size: 0.5rem; }
-  .hero-actions .btn-primary,
-  .hero-actions .btn-ghost { padding: 0.5rem 0.7rem; font-size: 0.68rem; }
+  .hero-mobile-cta .btn-primary,
+  .hero-mobile-cta .btn-ghost { padding: 0.55rem 0.6rem; font-size: 0.7rem; }
 
   /* Marquee */
   .marquee-track span { font-size: 0.62rem; }
