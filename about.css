@@ -1,0 +1,372 @@
+/* ============================================================
+   AUDI — LXD Portfolio  |  about.css
+   About page specific styles — extends style.css
+   ============================================================ */
+
+/* ── Active nav link ── */
+.nav-active {
+  color: var(--white) !important;
+  border-bottom: 1.5px solid var(--accent);
+  padding-bottom: 2px;
+}
+
+/* ── About Hero ── */
+.about-hero {
+  position: relative;
+  padding: 9rem 4rem 6rem;
+  background: var(--bg);
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+.about-hero-bg { position: absolute; inset: 0; z-index: 0; }
+.about-hero-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 5rem;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.about-hero-title {
+  font-family: var(--font-title);
+  font-size: clamp(2.8rem, 5vw, 5.5rem);
+  font-weight: 700;
+  line-height: 1.08;
+  margin-bottom: 2rem;
+  color: var(--white);
+}
+.about-hero-body p {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: var(--white-dim);
+  line-height: 1.8;
+  margin-bottom: 1.2rem;
+}
+.accent-line {
+  font-family: var(--font-title) !important;
+  font-size: 1.2rem !important;
+  font-weight: 700 !important;
+  color: var(--accent) !important;
+  margin: 1.5rem 0 !important;
+}
+.about-hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2.5rem;
+}
+
+/* Photo */
+.about-photo-wrap {
+  position: relative;
+  width: 280px;
+  aspect-ratio: 3/4;
+  margin: 0 auto 2rem;
+}
+.about-photo-placeholder {
+  width: 100%; height: 100%;
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-btn); font-size: 0.72rem;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--white-muted); border-radius: 4px;
+}
+.about-photo-frame {
+  position: absolute;
+  top: 10px; right: -10px;
+  width: 100%; height: 100%;
+  border: 1.5px solid var(--accent);
+  opacity: 0.35;
+  border-radius: 4px;
+  z-index: -1;
+}
+
+/* Quick facts */
+.about-quick-facts {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.4rem;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  gap: 0.5rem;
+}
+.quick-fact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  flex: 1;
+}
+.qf-num {
+  font-family: var(--font-title);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--accent-soft);
+  line-height: 1;
+}
+.qf-plus {
+  font-family: var(--font-title);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--accent-soft);
+  line-height: 1;
+  margin-left: 1px;
+}
+.qf-label {
+  font-family: var(--font-btn);
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--white-muted);
+  text-align: center;
+}
+
+/* ── Technical Arsenal ── */
+.arsenal {
+  padding: 7rem 4rem;
+  background: var(--bg-2);
+  border-top: 1px solid var(--border);
+}
+.arsenal-inner { max-width: 1200px; margin: 0 auto; }
+.arsenal-inner .section-title { margin-bottom: 3rem; }
+.arsenal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+}
+.arsenal-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1.8rem;
+  transition: border-color 0.3s, transform 0.3s var(--ease);
+}
+.arsenal-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-3px);
+}
+.arsenal-icon {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  display: block;
+  filter: drop-shadow(0 0 12px rgba(254,4,103,0.2));
+}
+.arsenal-card h3 {
+  font-family: var(--font-title);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 1rem;
+  line-height: 1.35;
+}
+.arsenal-card ul { display: flex; flex-direction: column; gap: 0.5rem; }
+.arsenal-card li {
+  font-family: var(--font-body);
+  font-size: 0.86rem;
+  color: var(--white-dim);
+  line-height: 1.55;
+  padding-left: 1rem;
+  position: relative;
+}
+.arsenal-card li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-family: var(--font-btn);
+  font-size: 0.75rem;
+}
+
+/* ── Experience & Education ── */
+.exp-edu {
+  padding: 7rem 4rem;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}
+.exp-edu-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: start;
+}
+.exp-col, .edu-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.exp-col .section-title,
+.edu-col .section-title { margin-bottom: 2.5rem; }
+
+/* Timeline card */
+.timeline-card {
+  position: relative;
+  padding: 0 0 2rem 2rem;
+  border-left: 1px solid var(--border);
+  transition-delay: var(--delay, 0s);
+}
+.timeline-card:last-child { border-left: 1px solid transparent; }
+
+.tl-dot {
+  position: absolute;
+  left: -5px;
+  top: 6px;
+  width: 9px;
+  height: 9px;
+  background: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--accent-glow);
+  flex-shrink: 0;
+}
+.tl-dot--muted {
+  background: var(--bg-3);
+  border: 1.5px solid var(--border);
+  box-shadow: none;
+}
+
+.tl-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1.4rem;
+  transition: border-color 0.3s;
+}
+.tl-content:hover { border-color: var(--border-hover); }
+
+.tl-placeholder .tl-content {
+  border-style: dashed;
+  opacity: 0.5;
+}
+
+.tl-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.8rem;
+  margin-bottom: 0.9rem;
+  flex-wrap: wrap;
+}
+.tl-meta { flex: 1; }
+.tl-org {
+  display: block;
+  font-family: var(--font-btn);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.3rem;
+}
+.tl-role {
+  font-family: var(--font-title);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.3;
+}
+.tl-role--muted { color: var(--white-muted); }
+
+.tl-badge {
+  font-family: var(--font-btn);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.25rem 0.65rem;
+  border-radius: 3px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  align-self: flex-start;
+}
+.tl-badge--active {
+  background: transparent;
+  border: 1.5px solid var(--accent);
+  color: var(--accent);
+}
+.tl-badge--muted {
+  background: var(--bg-3);
+  color: var(--white-muted);
+  border: 1px solid var(--border);
+}
+
+.tl-highlight {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--white-dim);
+  line-height: 1.7;
+}
+.tl-highlight strong { color: var(--white); }
+.tl-desc {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: var(--white-dim);
+  line-height: 1.7;
+}
+.tl-desc--muted { color: var(--white-muted); font-style: italic; }
+.tl-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.tl-list li {
+  font-family: var(--font-body);
+  font-size: 0.87rem;
+  color: var(--white-dim);
+  line-height: 1.65;
+  padding-left: 1.1rem;
+  position: relative;
+}
+.tl-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+/* ── About CTA ── */
+.about-cta {
+  padding: 8rem 4rem;
+  background: var(--bg-2);
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+.about-cta-inner { max-width: 600px; margin: 0 auto; }
+.about-cta h2 {
+  font-family: var(--font-title);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+  color: var(--white);
+}
+.about-cta p {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: var(--white-dim);
+  margin-bottom: 2.5rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .arsenal-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 900px) {
+  .about-hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .about-hero-right { order: -1; }
+  .about-photo-wrap { width: 200px; }
+  .exp-edu-inner { grid-template-columns: 1fr; gap: 3rem; }
+}
+@media (max-width: 768px) {
+  .about-hero, .arsenal, .exp-edu, .about-cta { padding: 5rem 1.5rem; }
+  .arsenal-grid { grid-template-columns: 1fr; }
+  .about-quick-facts { flex-direction: row; flex-wrap: wrap; gap: 1rem; }
+}
