@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Audi — Learning Experience Designer</title>
+  <title>Audi — Learning Experience Architect</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Bitter:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -15,11 +15,11 @@
   <nav class="nav" id="nav">
     <div class="nav-logo">A<span class="dot">.</span></div>
     <ul class="nav-links">
-      <li><a href="#home" class="nav-active">Home</a></li>
+      <li><a href="index.html" class="nav-active">Home</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="lab.html">The Lab</a></li>
       <li><a href="#contact">Contact</a></li>
-      <li><a href="#blog">Blog</a></li>
       <li><a href="start-a-project.html" class="nav-cta">Start a Project</a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -30,40 +30,36 @@
   <!-- Mobile menu -->
   <div class="mobile-menu" id="mobile-menu">
     <ul>
-      <li><a href="#home" class="mobile-link">Home</a></li>
+      <li><a href="index.html" class="mobile-link">Home</a></li>
       <li><a href="about.html" class="mobile-link">About</a></li>
-      <li><a href="#portfolio" class="mobile-link">Portfolio</a></li>
+      <li><a href="portfolio.html" class="mobile-link">Portfolio</a></li>
+      <li><a href="lab.html" class="mobile-link">The Lab</a></li>
       <li><a href="#contact" class="mobile-link">Contact</a></li>
-      <li><a href="#blog" class="mobile-link">Blog</a></li>
       <li><a href="start-a-project.html" class="mobile-link">Start a Project</a></li>
     </ul>
   </div>
 
   <!-- Hero -->
   <section class="hero" id="home">
-    <div class="hero-bg">
-      <div class="hero-grain"></div>
-    </div>
+    <div class="hero-bg"><div class="hero-grain"></div></div>
     <div class="hero-layout">
 
-      <!-- Left: Text -->
       <div class="hero-left">
-        <div class="hero-tag reveal">Learning Experience Designer &middot; Nairobi, Kenya</div>
+        <div class="hero-tag reveal">Learning Experience Architect &middot; Nairobi, Kenya</div>
         <h1 class="hero-title">
           <span class="reveal-line">Stop Building Courses.</span>
           <span class="reveal-line">Start Solving</span>
           <span class="reveal-line hero-title-accent">Business Problems.</span>
         </h1>
         <p class="hero-sub reveal">
-          I partner with forward-thinking enterprises and subject matter experts to move beyond click-next eLearning. I design evidence-based strategies that turn information into impact.
+          I partner with L&amp;D leaders and business owners who are tired of training that looks great in a demo and dies in the field. I diagnose performance gaps, challenge bad training briefs, and design learning that changes what people do on Monday morning.
         </p>
         <div class="hero-actions reveal">
-          <a href="#contact" class="btn-primary">Transform Your Training</a>
-          <a href="#portfolio" class="btn-ghost">View Portfolio</a>
+          <a href="portfolio.html" class="btn-primary">See How I Work</a>
+          <a href="start-a-project.html" class="btn-ghost">Start a Project</a>
         </div>
       </div>
 
-      <!-- Center: Photo + blob -->
       <div class="hero-center reveal-up">
         <div class="hero-blob">
           <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" class="blob-svg">
@@ -73,18 +69,16 @@
           <div class="hero-icon hero-icon-1">&#127979;</div>
           <div class="hero-icon hero-icon-2">&#128241;</div>
         </div>
-       <div class="hero-photo">
-  <img src="images/photo.png" alt="Audi — Learning Experience Designer" />
-</div>
+        <div class="hero-photo">
+          <img src="photo.png" alt="Audi — Learning Experience Architect" />
+        </div>
       </div>
 
-      <!-- Mobile-only buttons (shown below photo on mobile) -->
       <div class="hero-mobile-cta">
-        <a href="#contact" class="btn-primary">Transform Your Training</a>
-        <a href="#portfolio" class="btn-ghost">View Portfolio</a>
+        <a href="portfolio.html" class="btn-primary">See How I Work</a>
+        <a href="start-a-project.html" class="btn-ghost">Start a Project</a>
       </div>
 
-      <!-- Right: Stats -->
       <div class="hero-right reveal-up" style="--delay:0.2s">
         <div class="hero-stat-card">
           <div class="hero-stat-num"><span data-count="6">0</span><span class="hero-stat-plus">+</span></div>
@@ -96,7 +90,7 @@
         </div>
         <div class="hero-stat-card">
           <div class="hero-stat-num"><span data-count="40">0</span><span class="hero-stat-plus">%</span></div>
-          <div class="hero-stat-label">Avg. Learner<br/>Engagement Uplift</div>
+          <div class="hero-stat-label">Avg. Engagement<br/>Uplift</div>
         </div>
       </div>
 
@@ -107,77 +101,50 @@
   <div class="marquee-wrap">
     <div class="marquee-track">
       <span>Articulate Storyline 360</span><span class="sep">&#10022;</span>
-      <span>Instructional Design</span><span class="sep">&#10022;</span>
-      <span>eLearning Development</span><span class="sep">&#10022;</span>
+      <span>Performance Consulting</span><span class="sep">&#10022;</span>
+      <span>Scenario-Based Learning</span><span class="sep">&#10022;</span>
       <span>Learning Experience Design</span><span class="sep">&#10022;</span>
+      <span>Cognitive Load Theory</span><span class="sep">&#10022;</span>
+      <span>Behavior Change</span><span class="sep">&#10022;</span>
       <span>ADDIE &amp; SAM</span><span class="sep">&#10022;</span>
-      <span>Bloom's Taxonomy</span><span class="sep">&#10022;</span>
-      <span>Corporate Training</span><span class="sep">&#10022;</span>
       <span>Articulate Storyline 360</span><span class="sep">&#10022;</span>
-      <span>Instructional Design</span><span class="sep">&#10022;</span>
-      <span>eLearning Development</span><span class="sep">&#10022;</span>
+      <span>Performance Consulting</span><span class="sep">&#10022;</span>
+      <span>Scenario-Based Learning</span><span class="sep">&#10022;</span>
       <span>Learning Experience Design</span><span class="sep">&#10022;</span>
+      <span>Cognitive Load Theory</span><span class="sep">&#10022;</span>
+      <span>Behavior Change</span><span class="sep">&#10022;</span>
       <span>ADDIE &amp; SAM</span><span class="sep">&#10022;</span>
-      <span>Bloom's Taxonomy</span><span class="sep">&#10022;</span>
-      <span>Corporate Training</span><span class="sep">&#10022;</span>
     </div>
   </div>
 
-  <!-- About -->
-  <section class="about" id="about">
-    <div class="about-grid">
-      <div class="about-left">
-        <div class="about-portrait">
-          <div class="portrait-placeholder"><span>Your Photo</span></div>
-          <div class="portrait-frame"></div>
-        </div>
-        <div class="about-tools reveal-up">
-          <div class="tools-label">Tools I work with</div>
-          <div class="tools-list">
-            <span>Articulate Storyline 360</span>
-            <span>Rise 360</span>
-            <span>Adobe XD</span>
-            <span>Figma</span>
-            <span>Canva</span>
-            <span>Miro</span>
-            <span>Google Workspace</span>
-            <span>Camtasia</span>
-          </div>
-        </div>
+  <!-- What I Actually Do -->
+  <section class="manifesto" id="about">
+    <div class="manifesto-grid">
+      <div class="manifesto-left">
+        <div class="section-tag reveal">My Philosophy</div>
+        <h2 class="section-title reveal">Most training fails<br/><em>before it starts.</em></h2>
+        <a href="about.html" class="btn-primary reveal" style="margin-top:2rem;">Read My Story &rarr;</a>
       </div>
-      <div class="about-right">
-        <div class="section-tag reveal">About Me</div>
-        <h2 class="section-title reveal">I design learning,<br/><em>not just content.</em></h2>
-        <div class="about-body reveal">
-          <p>I'm an instructional designer and learning experience architect based in Nairobi, Kenya. I bridge the gap between what organisations know and what their people actually need to do differently.</p>
-          <p>My work draws on cognitive load theory, Bloom's taxonomy, and scenario-based design — translated into practical, engaging eLearning that corporate learners actually finish.</p>
-          <p>Whether you need a full course built from scratch, a storyboard your developers can work from, or a learning strategy that ties training to business outcomes — I can deliver it.</p>
+      <div class="manifesto-right reveal-up">
+        <p class="manifesto-p">The problem isn't the authoring tool. It isn't the LMS. It isn't even the content.</p>
+        <p class="manifesto-p manifesto-accent">The problem is that most organizations skip the most important question: <strong>Is this actually a training problem?</strong></p>
+        <p class="manifesto-p">I start there. Every time. Only after diagnosing the real performance gap do I design a solution &mdash; and sometimes that solution isn't a course at all. It's a job aid. A decision tree. A manager conversation guide. A workflow change.</p>
+        <p class="manifesto-p">When training IS the right answer, I build it to work &mdash; grounded in cognitive science, designed for transfer, and built to be measured.</p>
+        <div class="manifesto-signals">
+          <div class="signal"><span class="signal-icon">&#127919;</span><span>Strategic Thinker</span></div>
+          <div class="signal"><span class="signal-icon">&#129504;</span><span>Learning Scientist</span></div>
+          <div class="signal"><span class="signal-icon">&#9881;&#65039;</span><span>Technical Builder</span></div>
         </div>
-        <div class="about-values reveal">
-          <div class="value">
-            <div class="value-num">01</div>
-            <div class="value-text"><strong>Outcomes first.</strong> Every design decision ties back to a measurable behavior change.</div>
-          </div>
-          <div class="value">
-            <div class="value-num">02</div>
-            <div class="value-text"><strong>Learner-centered.</strong> I design for real humans, not ideal ones.</div>
-          </div>
-          <div class="value">
-            <div class="value-num">03</div>
-            <div class="value-text"><strong>Business-aware.</strong> Good learning solves problems your L&amp;D budget actually has.</div>
-          </div>
-        </div>
-        <a href="#contact" class="btn-primary reveal">Work with me &rarr;</a>
       </div>
     </div>
   </section>
 
-  <!-- Portfolio -->
+  <!-- Featured Case Studies -->
   <section class="portfolio" id="portfolio">
     <div class="section-header">
       <div class="section-tag reveal">Selected Work</div>
-      <h2 class="section-title reveal">Portfolio</h2>
-      <p class="section-sub reveal">A selection of courses, storyboards, and learning experiences I've designed and built.</p>
+      <h2 class="section-title reveal">Case Studies</h2>
+      <p class="section-sub reveal">These aren't course showcases. They're problem-solving case studies. Each one starts with a business problem &mdash; not a learning objective.</p>
     </div>
     <div class="projects-grid">
 
@@ -185,34 +152,36 @@
         <div class="project-img thumb-1">
           <div class="project-img-inner"><span class="project-emoji">&#9878;&#65039;</span></div>
           <div class="project-overlay">
-            <a href="#" class="btn-primary">View Case Study &rarr;</a>
+            <a href="portfolio.html#cs1" class="btn-primary">View Case Study &rarr;</a>
           </div>
         </div>
         <div class="project-body">
           <div class="project-tags">
+            <span class="tag">Scenario Simulation</span>
             <span class="tag">Storyline 360</span>
             <span class="tag">7 Modules</span>
-            <span class="tag">62 min</span>
           </div>
           <h3 class="project-title">When the Algorithm Is Wrong</h3>
-          <p class="project-desc">A scenario-driven course on algorithmic bias as a business operations risk — covering pricing, forecasting, supply chain, and EU AI Act governance. Designed for corporate leaders.</p>
+          <p class="project-desc">C-suite leaders were over-trusting AI outputs. A compliance course would have changed nothing. A judgment simulation changed everything.</p>
+          <div class="project-outcome"><span class="outcome-label">Result:</span> 40% drop in undocumented AI override decisions</div>
         </div>
       </article>
 
       <article class="project-card reveal-up" style="--delay:0.1s">
         <div class="project-img thumb-2">
-          <div class="project-img-inner"><span class="project-emoji">&#129517;</span></div>
+          <div class="project-img-inner"><span class="project-emoji">&#128203;</span></div>
           <div class="project-overlay">
-            <a href="#" class="btn-primary">View Case Study &rarr;</a>
+            <a href="portfolio.html#cs2" class="btn-primary">View Case Study &rarr;</a>
           </div>
         </div>
         <div class="project-body">
           <div class="project-tags">
-            <span class="tag">eLearning</span>
-            <span class="tag">3 Modules</span>
+            <span class="tag">Performance Support</span>
+            <span class="tag">Job Aid</span>
           </div>
-          <h3 class="project-title">New Employee Onboarding Experience</h3>
-          <p class="project-desc">A branching scenario onboarding journey that replaced a 40-page PDF manual and reduced time-to-competency by 30%.</p>
+          <h3 class="project-title">The 5-Minute Field Guide</h3>
+          <p class="project-desc">Staff knew the SOP manual. They still failed at point-of-performance. The answer wasn't more training &mdash; it was a smarter tool.</p>
+          <div class="project-outcome"><span class="outcome-label">Result:</span> +23% customer recovery score in 60 days</div>
         </div>
       </article>
 
@@ -220,19 +189,23 @@
         <div class="project-img thumb-3">
           <div class="project-img-inner"><span class="project-emoji">&#128172;</span></div>
           <div class="project-overlay">
-            <a href="#" class="btn-primary">View Case Study &rarr;</a>
+            <a href="portfolio.html#cs3" class="btn-primary">View Case Study &rarr;</a>
           </div>
         </div>
         <div class="project-body">
           <div class="project-tags">
-            <span class="tag">Blended Learning</span>
-            <span class="tag">Facilitation Guide</span>
+            <span class="tag">Branching Scenario</span>
+            <span class="tag">Manager Training</span>
           </div>
-          <h3 class="project-title">Difficult Conversations in the Workplace</h3>
-          <p class="project-desc">A blended module combining self-paced eLearning pre-work and a facilitator-led workshop for middle managers handling team conflict.</p>
+          <h3 class="project-title">The Conversation You've Been Avoiding</h3>
+          <p class="project-desc">61% of direct reports said their manager avoided difficult feedback. A video course about feedback was not going to fix that.</p>
+          <div class="project-outcome"><span class="outcome-label">Result:</span> 3 realistic endings. Measurable behavior shift.</div>
         </div>
       </article>
 
+    </div>
+    <div class="portfolio-cta reveal">
+      <a href="portfolio.html" class="btn-primary">View All 5 Case Studies &rarr;</a>
     </div>
   </section>
 
@@ -246,26 +219,26 @@
       <div class="service-card reveal-up">
         <div class="service-icon">&#10022;</div>
         <h3>eLearning Development</h3>
-        <p>Full-cycle eLearning production in Articulate Storyline 360 or Rise — from needs analysis to SCORM-packaged delivery.</p>
+        <p>Full-cycle production in Articulate Storyline 360 or Rise &mdash; from needs analysis to SCORM-packaged delivery.</p>
         <ul><li>Branching scenarios</li><li>Assessments &amp; quizzes</li><li>SCORM / xAPI packaging</li></ul>
       </div>
       <div class="service-card reveal-up" style="--delay:0.1s">
         <div class="service-icon">&#10022;</div>
-        <h3>Instructional Design</h3>
-        <p>Storyboards, learning objectives, content outlines, and facilitator guides your developers or vendors can execute against.</p>
-        <ul><li>ADDIE &amp; SAM methodology</li><li>Bloom's-mapped objectives</li><li>Production-ready storyboards</li></ul>
+        <h3>Performance Consulting</h3>
+        <p>I diagnose the real problem before designing the solution. Sometimes that means telling you not to build a course.</p>
+        <ul><li>Performance gap analysis</li><li>Training needs analysis</li><li>Solution recommendations</li></ul>
       </div>
       <div class="service-card reveal-up" style="--delay:0.2s">
         <div class="service-icon">&#10022;</div>
-        <h3>Learning Strategy</h3>
-        <p>End-to-end L&amp;D consulting — from training needs analysis to blended learning roadmaps tied to business KPIs.</p>
-        <ul><li>Training needs analysis</li><li>Blended learning design</li><li>Kirkpatrick evaluation</li></ul>
+        <h3>Instructional Design</h3>
+        <p>Storyboards, learning objectives, and facilitator guides your developers can execute against without a briefing call.</p>
+        <ul><li>ADDIE &amp; SAM methodology</li><li>Bloom's-mapped objectives</li><li>Production-ready storyboards</li></ul>
       </div>
       <div class="service-card reveal-up" style="--delay:0.3s">
         <div class="service-icon">&#10022;</div>
-        <h3>Curriculum Review</h3>
-        <p>Audit and uplift of existing courses — identifying gaps, improving engagement, and aligning to current best practices.</p>
-        <ul><li>Content gap analysis</li><li>Engagement redesign</li><li>Accessibility review</li></ul>
+        <h3>Learning Strategy</h3>
+        <p>End-to-end L&amp;D consulting &mdash; blended learning roadmaps tied to business KPIs, not training calendars.</p>
+        <ul><li>Blended learning design</li><li>Kirkpatrick evaluation</li><li>Learning analytics setup</li></ul>
       </div>
     </div>
   </section>
@@ -290,7 +263,7 @@
         </div>
       </div>
       <div class="testimonial reveal-up" style="--delay:0.3s">
-        <div class="testimonial-quote">"Delivered on time, on brief, and with a level of polish I didn't expect at this price point."</div>
+        <div class="testimonial-quote">"Most designers take the brief and run. Audi pushed back on ours — and the final product was ten times better for it."</div>
         <div class="testimonial-author">
           <div class="author-avatar">C</div>
           <div><strong>Chief People Officer</strong><span>Tech Startup, Nairobi</span></div>
@@ -299,50 +272,32 @@
     </div>
   </section>
 
-  <!-- Blog -->
-  <section class="blog" id="blog">
-    <div class="section-header">
-      <div class="section-tag reveal">Thoughts &amp; Ideas</div>
-      <h2 class="section-title reveal">Blog</h2>
-      <p class="section-sub reveal">Reflections on instructional design, eLearning trends, and the craft of building learning that works.</p>
-    </div>
-    <div class="blog-grid">
-      <article class="blog-card reveal-up">
-        <div class="blog-img blog-img-1"></div>
-        <div class="blog-body">
-          <div class="blog-meta">
-            <span class="blog-date">March 2025</span>
-            <span class="blog-cat">Instructional Design</span>
-          </div>
-          <h3 class="blog-title">Why Most Corporate eLearning Fails Learners</h3>
-          <p class="blog-excerpt">The uncomfortable truth about click-next courses and what it actually takes to design learning that changes behaviour.</p>
-          <a href="#" class="blog-read">Read more &rarr;</a>
-        </div>
-      </article>
-      <article class="blog-card reveal-up" style="--delay:0.1s">
-        <div class="blog-img blog-img-2"></div>
-        <div class="blog-body">
-          <div class="blog-meta">
-            <span class="blog-date">February 2025</span>
-            <span class="blog-cat">Tools</span>
-          </div>
-          <h3 class="blog-title">Articulate Storyline vs Rise: When to Use Which</h3>
-          <p class="blog-excerpt">A practical breakdown of both tools — not just features, but which one actually fits your project, timeline, and budget.</p>
-          <a href="#" class="blog-read">Read more &rarr;</a>
-        </div>
-      </article>
-      <article class="blog-card reveal-up" style="--delay:0.2s">
-        <div class="blog-img blog-img-3"></div>
-        <div class="blog-body">
-          <div class="blog-meta">
-            <span class="blog-date">January 2025</span>
-            <span class="blog-cat">Strategy</span>
-          </div>
-          <h3 class="blog-title">Writing Learning Objectives That Actually Mean Something</h3>
-          <p class="blog-excerpt">Bloom's taxonomy is well known. Using it well is another story. Here's how to write objectives that drive real course design decisions.</p>
-          <a href="#" class="blog-read">Read more &rarr;</a>
-        </div>
-      </article>
+  <!-- The Lab Preview -->
+  <section class="lab-preview">
+    <div class="lab-preview-inner">
+      <div class="section-tag reveal" style="text-align:center">Thinking Out Loud</div>
+      <h2 class="section-title reveal" style="text-align:center">The Lab</h2>
+      <p class="section-sub reveal" style="text-align:center; margin: 0.8rem auto 3rem; max-width:580px;">If you want to know how I approach a learning problem before you hire me, read this. If you disagree with something, even better &mdash; let's talk.</p>
+      <div class="lab-cards">
+        <a href="lab.html#essay1" class="lab-card reveal-up">
+          <div class="lab-card-num">01</div>
+          <h3>"Your LMS Completion Rate Is a Vanity Metric"</h3>
+          <p>94% completion. The training worked. Did it? Or did 94% of your workforce learn to click Next fast enough to avoid a follow-up email from HR?</p>
+          <span class="lab-read">Read essay &rarr;</span>
+        </a>
+        <a href="lab.html#essay2" class="lab-card reveal-up" style="--delay:0.12s">
+          <div class="lab-card-num">02</div>
+          <h3>"The Training That Should Never Have Been Built"</h3>
+          <p>Half the performance problems I see are process problems, tool problems, or incentive problems dressed up as knowledge gaps.</p>
+          <span class="lab-read">Read essay &rarr;</span>
+        </a>
+        <a href="lab.html#essay3" class="lab-card reveal-up" style="--delay:0.24s">
+          <div class="lab-card-num">03</div>
+          <h3>"Why Most Scenarios Don't Actually Work"</h3>
+          <p>A scenario where the wrong answer is obviously wrong teaches nothing. If your learner can guess without reading it, your scenario is decoration.</p>
+          <span class="lab-read">Read essay &rarr;</span>
+        </a>
+      </div>
     </div>
   </section>
 
@@ -350,17 +305,18 @@
   <section class="contact" id="contact">
     <div class="contact-inner">
       <div class="section-tag reveal" style="text-align:center">Get In Touch</div>
-      <h2 class="contact-title reveal">Ready to build<br/><em>something great?</em></h2>
-      <p class="contact-sub reveal">I'm available for freelance projects, retainer engagements, and full-time L&amp;D roles in Kenya and remotely.</p>
+      <h2 class="contact-title reveal">Let's talk about<br/><em>your actual problem.</em></h2>
+      <p class="contact-sub reveal">Not your training request. Your problem. Tell me about the performance gap you're trying to close &mdash; what people are doing vs. what they should be doing. I'll tell you honestly whether training will fix it.</p>
       <div class="contact-actions reveal">
-        <a href="mailto:hello@yourname.com" class="btn-primary btn-large">hello@yourname.com</a>
+        <a href="start-a-project.html" class="btn-primary btn-large">Start a Project &rarr;</a>
+        <a href="mailto:hello@yourname.com" class="btn-ghost btn-large">hello@yourname.com</a>
       </div>
       <div class="contact-links reveal">
         <a href="#" target="_blank">LinkedIn</a>
         <span class="sep">&middot;</span>
         <a href="#" target="_blank">Resume / CV</a>
         <span class="sep">&middot;</span>
-        <a href="#" target="_blank">GitHub</a>
+        <a href="lab.html">The Lab</a>
       </div>
     </div>
   </section>
@@ -369,7 +325,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <div class="footer-logo">A<span class="dot">.</span></div>
-      <div class="footer-copy">&copy; 2025 &middot; Learning Experience Designer &middot; Nairobi, Kenya</div>
+      <div class="footer-copy">&copy; 2025 &middot; Learning Experience Architect &middot; Nairobi, Kenya</div>
       <div class="footer-top"><a href="#home">&uarr; Top</a></div>
     </div>
   </footer>

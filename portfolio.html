@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio — Audi | Learning Experience Architect</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Bitter:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="pages.css" />
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <div class="nav-logo">A<span class="dot">.</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="portfolio.html" class="nav-active">Portfolio</a></li>
+      <li><a href="lab.html">The Lab</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="start-a-project.html" class="nav-cta">Start a Project</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="index.html" class="mobile-link">Home</a></li>
+      <li><a href="about.html" class="mobile-link">About</a></li>
+      <li><a href="portfolio.html" class="mobile-link">Portfolio</a></li>
+      <li><a href="lab.html" class="mobile-link">The Lab</a></li>
+      <li><a href="index.html#contact" class="mobile-link">Contact</a></li>
+      <li><a href="start-a-project.html" class="mobile-link">Start a Project</a></li>
+    </ul>
+  </div>
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="page-header-inner">
+      <div class="section-tag reveal">Case Studies</div>
+      <h1 class="page-title reveal">Portfolio</h1>
+      <p class="page-intro reveal">These aren't course showcases. They're problem-solving case studies. Each one starts with a business problem &mdash; not a learning objective. Each one includes a moment where I challenged the brief. Each one ends with data, not screenshots.<br/><br/>If you want pretty slides, I'm not your person. If you want training that moves the needle, read on.</p>
+    </div>
+  </div>
+
+  <!-- Case Study Index -->
+  <div class="cs-index reveal-up">
+    <a href="#cs1" class="cs-index-item">01 &mdash; When the Algorithm Is Wrong</a>
+    <a href="#cs2" class="cs-index-item">02 &mdash; The 5-Minute Field Guide</a>
+    <a href="#cs3" class="cs-index-item">03 &mdash; 3 Minutes a Day</a>
+    <a href="#cs4" class="cs-index-item">04 &mdash; The Conversation You've Been Avoiding</a>
+    <a href="#cs5" class="cs-index-item">05 &mdash; The Training That Wasn't Working</a>
+  </div>
+
+  <!-- ═══════════════════════════════════
+       CASE STUDY 1
+  ═══════════════════════════════════ -->
+  <section class="case-study" id="cs1">
+    <div class="cs-header">
+      <div class="cs-number">01</div>
+      <div class="cs-header-text">
+        <div class="cs-type-badge">Scenario-Based Simulation</div>
+        <h2 class="cs-title">When the Algorithm Is Wrong</h2>
+        <p class="cs-subtitle">Redesigning AI Governance Training for Senior Leaders</p>
+      </div>
+    </div>
+
+    <div class="cs-meta-bar">
+      <div class="cs-meta-item"><span class="cs-meta-label">Audience</span><span>C-Suite &amp; Senior Operations Managers</span></div>
+      <div class="cs-meta-item"><span class="cs-meta-label">Timeline</span><span>8 weeks</span></div>
+      <div class="cs-meta-item"><span class="cs-meta-label">Tools</span><span>Articulate Storyline 360 &middot; Miro &middot; Google Workspace</span></div>
+      <div class="cs-meta-item"><span class="cs-meta-label">Type</span><span>Judgment Simulation &middot; Branching Scenario</span></div>
+    </div>
+
+    <div class="cs-body">
+      <div class="cs-narrative">
+
+        <div class="cs-step reveal-up">
+          <div class="cs-step-label">Problem</div>
+          <div class="cs-step-content">
+            <h3>The Business Problem</h3>
+            <p>After adopting AI-powered pricing and demand forecasting tools, a financial services organisation experienced three high-profile errors in 12 months: an algorithmic pricing anomaly that caused customer complaints, a forecasting failure that led to overstocking, and a compliance flag from their legal team about undocumented AI decisions.</p>
+            <p>The L&amp;D team's initial request: <em>"We need a 30-minute compliance course on the EU AI Act."</em></p>
+            <div class="cs-callout cs-callout--pushback">I pushed back.</div>
+          </div>
+        </div>
+
+        <div class="cs-step reveal-up">
+          <div class="cs-step-label">Diagnosis</div>
+          <div class="cs-step-content">
+            <h3>Performance Gap Analysis</h3>
+            <p>Root cause wasn't knowledge. Executives knew the regulations existed. The real gaps were:</p>
+            <ul class="cs-list">
+              <li>Leaders couldn't identify when an algorithmic output was suspicious vs. normal variation</li>
+              <li>No one owned the decision to override or escalate</li>
+              <li>The organisation had no mental model for algorithmic risk &mdash; they treated AI outputs like spreadsheet outputs</li>
+            </ul>
+            <div class="cs-insight">This wasn't a compliance training problem. It was a decision-making and judgment problem.</div>
+          </div>
+        </div>
+
+        <div class="cs-step reveal-up">
+          <div class="cs-step-label">Strategy</div>
+          <div class="cs-step-content">
+            <h3>Why Training &mdash; and Why This Kind</h3>
+            <p>Training was appropriate here because the knowledge gap, the skill gap, and the attitude gap were all real. A compliance course would have addressed none of them. A scenario simulation would address all three.</p>
+            <div class="cs-theory-grid">
+              <div class="cs-theory"><strong>Recognition-Primed Decision Making</strong> (Klein, 1998) &mdash; experts make decisions by recognising patterns, not running checklists. The simulation built pattern recognition.</div>
+              <div class="cs-theory"><strong>Cognitive Load Theory</strong> &mdash; chunked decision trees, no extraneous information at point of decision.</div>
+              <div class="cs-theory"><strong>Dual Coding</strong> &mdash; data visualisations paired with narrative context to engage both verbal and visual channels.</div>
+              <div class="cs-theory"><strong>Emotional Engagement</strong> &mdash; real consequences built into branching paths, delayed the way real mistakes happen.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cs-step reveal-up">
+          <div class="cs-step-label">Design</div>
+          <div class="cs-step-content">
+            <h3>The Design</h3>
+            <p>7 modules. 14 screens. 9 interaction types.</p>
+            <div class="cs-scenario-box">
+              <div class="cs-scenario-title">&#9654; Key Scenario: The Pricing Anomaly</div>
+              <p>Learners are placed in the role of Operations Director. An AI pricing tool has flagged a 34% price increase on a high-demand product. Three colleagues give conflicting advice. The learner must:</p>
+              <ol class="cs-ol">
+                <li>Identify the right questions to ask</li>
+                <li>Decide whether to override, escalate, or accept</li>
+                <li>Document their decision rationale</li>
+                <li>Face the consequences of their choice</li>
+              </ol>
+              <div class="cs-paths">
+                <div class="cs-path cs-path--bad"><strong>Path A &mdash; Override without documentation</strong><br/>Compliance breach 6 weeks later. Audit finding. Executive scrutiny.</div>
+                <div class="cs-path cs-path--good"><strong>Path B &mdash; Escalate with documented rationale</strong><br/>Praised during audit. Cited as model governance behaviour.</div>
+              </div>
+              <p class="cs-path-note">Wrong answers are not punished with a "Try Again" button. They play out as realistic consequences &mdash; delayed, the way real mistakes happen.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cs-step reveal-up">
+          <div class="cs-step-label">Results</div>
+          <div class="cs-step-content">
+            <h3>Measurable Outcomes</h3>
+            <div class="cs-outcomes">
+              <div class="cs-outcome"><span class="cs-outcome-num">40%</span><span class="cs-outcome-desc">reduction in undocumented AI override decisions at 90 days</span></div>
+              <div class="cs-outcome"><span class="cs-outcome-num">85%</span><span class="cs-outcome-desc">of participants identified 3 algorithmic risk indicators in post-assessment scenario</span></div>
+              <div class="cs-outcome"><span class="cs-outcome-num">0</span><span class="cs-outcome-desc">documentation failures in Q3 (vs. 3 in Q2 prior to training)</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="cs-sidebar">
+        <div class="cs-try-box">
+          <div class="cs-try-icon">&#9654;</div>
+          <h4>Try the Decision Scenario</h4>
+          <p>Experience one branching decision with two consequence paths. See what the simulation feels like from the learner's seat.</p>
+          <a href="#" class="btn-primary" style="width:100%;text-align:center;margin-top:1rem;">Try Sample Module &rarr;</a>
+        </div>
+        <div class="cs-sidebar-facts">
+          <div class="cs-fact"><span class="cs-fact-label">Modules</span><span class="cs-fact-val">7</span></div>
+          <div class="cs-fact"><span class="cs-fact-label">Screens</span><span class="cs-fact-val">14</span></div>
+          <div class="cs-fact"><span class="cs-fact-label">Interaction types</span><span class="cs-fact-val">9</span></div>
+          <div class="cs-fact"><span class="cs-fact-label">Decision branches</span><span class="cs-fact-val">23</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cs-divider"></div>
+
+  <!-- ═══════════════════════════════════
+       CASE STUDY 2
+  ═══════════════════════════════════ -->
+  <section class="case-study" id="cs2">
+    <div class="cs-header">
+      <div class="cs-number">02</div>
+      <div class="cs-header-text">
+        <div class="cs-type-badge">Performance Support Tool</div>
+        <h2 class="cs-title">The 5-Minute Field Guide</h2>
+        <p class="cs-subtitle">Replacing a 47-Page SOP Manual With a Tool People Actually Use</p>
+      </div>
+    </div>
+
+    <div class="cs-meta-bar">
+      <div class="cs-meta-item"><span class="cs-meta-label">Audience</span><span>Frontline service staff, 200+ employees</span></div>
+      <div class="cs-meta-item"><span class="cs-meta-label">Sector</span><span>Hospitality</span></div>
+      <div class="cs-meta-item"><span class="cs-meta-label">Tools</span><span>Canva &middot; Adobe Illustrator &middot; LMS integration</span></div>
+      <div class="cs-meta-item"><span class="cs-meta-label">Type</span><span>Performance Support &middot; Job Aid</span></div>
+    </div>
+
+    <div class="cs-body">
+      <div class="cs-narrative">
+
+        <div class="cs-step reveal-up">
+          <div class="cs-step-label">Problem</div>
+          <div class="cs-step-content">
+            <h3>The Business Problem</h3>
+            <p>The organisation had a 47-page Standard Operating Procedures manual for customer service recovery. New staff read it during onboarding. Nobody looked at it again. Customer complaint scores were rising. The L&amp;D manager wanted a "refresher course."</p>
+          </div>
+        </div>
+
+        <div class="cs-step reveal-up">
+          <div class="cs-step-label">Diagnosis</div>
+          <div class="cs-step-content">
+            <h3>Performance Gap Analysis</h3>
+            <p>I conducted 6 interviews with frontline staff and 3 with supervisors. What I found:</p>
+            <ul class="cs-list">
+              <li>Staff knew the theory. They'd been trained.</li>
+              <li>The failure was at the moment of performance &mdash; under pressure, in front of an upset customer, they blanked on the recovery steps</li>
+              <li>This is a classic <strong>performance support problem</strong>, not a training problem</li>
+            </ul>
+            <div class="cs-insight">Training more wouldn't fix a working memory problem under stress. A job aid at point-of-need would.</div>
+          </div>
+        </div>
+
+        <div class="cs-step reveal-up">
+          <div class="cs-step-label">Strategy</div>
+          <div class="cs-step-content">
+            <h3>Why Not a Course</h3>
+            <div class="cs-callout cs-callout--insight">"A refresher course would have given staff more information they already had. Under stress, people don't retrieve course content &mdash; they reach for familiar patterns or freeze. The solution needed to be at the point of performance, not stored in long-term memory."</div>
+          </div>
+        </div>
+
+        <div class="cs-step reveal-up">
+          <div class="cs-step-label">Design</div>
+          <div class="cs-step-content">
+            <h3>The Solution: SERVICE Recovery Framework</h3>
+            <p>A laminated 2-sided quick reference card and a mobile-optimised digital version:</p>
+            <div class="cs-framework">
+              <div class="cs-framework-item"><span class="cs-fw-letter">S</span><span>Stop and listen fully</span></div>
+              <div class="cs-framework-item"><span class="cs-fw-letter">E</span><span>Empathise without defending</span></div>
+              <div class="cs-framework-item"><span class="cs-fw-letter">R</span><span>Resolve with one clear offer</span></div>
+              <div class="cs-framework-item"><span class="cs-fw-letter">V</span><span>Verify satisfaction before leaving</span></div>
+              <div class="cs-framework-item"><span class="cs-fw-letter">I</span><span>Inform supervisor within 2 hours</span></div>
+              <div class="cs-framework-item"><span class="cs-fw-letter">C</span><span>Complete incident log same shift</span></div>
+              <div class="cs-framework-item"><span class="cs-fw-letter">E</span><span>Escalate if unresolved at 24 hours</span></div>
+            </div>
+            <p style="margin-top:1rem;">Side 2 was a decision tree for the 6 most common complaint types with exact language, what NOT to say, escalation triggers, and documentation requirements.</p>
+          </div>
+        </div>
+
+        <div class="cs-step reveal-up">
+          <div class="cs-step-label">Results</div>
+          <div class="cs-step-content">
+            <h3>Measurable Outcomes</h3>
+            <div class="cs-outcomes">
+              <div class="cs-outcome"><span class="cs-outcome-num">+23%</span><span class="cs-outcome-desc">customer recovery satisfaction score within 60 days</span></div>
+              <div class="cs-outcome"><span class="cs-outcome-num">34%&rarr;91%</span><span class="cs-outcome-desc">incident log completion rate</span></div>
+              <div class="cs-outcome"><span class="cs-outcome-num">78%</span><span class="cs-outcome-desc">of staff reported feeling more confident in recovery situations</span></div>
+              <div class="cs-outcome"><span class="cs-outcome-num">-4 hrs</span><span class="cs-outcome-desc">training time saved per new hire cohort</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="cs-sidebar">
+        <div class="cs-try-box">
+          <div class="cs-try-icon">&#128203;</div>
+          <h4>View the Job Aid</h4>
+          <p>See the SERVICE recovery framework and decision tree in the actual format delivered to staff.</p>
+          <a href="#" class="btn-primary" style="width:100%;text-align:center;margin-top:1rem;">Download Sample &rarr;</a>
+        </div>
+        <div class="cs-sidebar-facts">
+          <div class="cs-fact"><span class="cs-fact-label">Format</span><span class="cs-fact-val">Print + Digital</span></div>
+          <div class="cs-fact"><span class="cs-fact-label">Pages</span><span class="cs-fact-val">2 sides</span></div>
+          <div class="cs-fact"><span class="cs-fact-label">Complaint types covered</span><span class="cs-fact-val">6</span></div>
+          <div class="cs-fact"><span class="cs-fact-label">Read time</span><span class="cs-fact-val">Under 5 min</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cs-divider"></div>
+
+  <!-- ═══════════════════════════════════
+       CASE STUDY 3
+  ═══════════════════════════════════ -->
+  <section class="case-study" id="cs3">
+    <div class="cs-header">
+      <div class="cs-number">03</div>
+      <div class="cs-header-text">
+        <div class="cs-type-badge">Microlearning System</div>
+        <h2 class="cs-title">3 Minutes a Day</h2>
+        <p class="cs-subtitle">Building a Sales Onboarding System That Fits Inside a Busy Schedule</p>
+      </div>
+    </div>
+
+    <div class="cs-meta-bar">
+      <div class="cs-meta-item"><span class="cs-meta-label">Audience</span><span>New sales hires, B2B SaaS</span></div>
+      <div class="cs-meta-item"><span class="cs-meta-label">Duration</span><span>90-day learning journey</span></div>
+      <div class="cs-meta-item"><span class="cs-meta-label">Tools</span><span>Rise 360 &middot; Articulate Storyline &middot; LMS push notifications</span></div>
+      <div class="cs-meta-item"><span class="cs-meta-label">Type</span><span>Microlearning &middot; Spaced Practice System</span></div>
+    </div>
+
+    <div class="cs-body">
+      <div class="cs-narrative">
+
+        <div class="cs-step reveal-up">
+          <div class="cs-step-label">Problem</div>
+          <div class="cs-step-content">
+            <h3>The Business Problem</h3>
+            <p>90-day ramp time to first closed deal was too long. New hires were overwhelmed by a 2-week onboarding bootcamp. Manager feedback: <em>"They come out of onboarding not knowing our product, our buyer, or our process. We're basically re-training them on the job."</em></p>
+          </div>
+        </div>
+
+        <div class="cs-step reveal-up">
+          <div class="cs-step-label">Diagnosis</div>
+          <div class="cs-step-content">
+            <h3>The Real Problem: Cognitive Overload</h3>
+            <p>The bootcamp was 40 hours of content delivered in 10 days. Cognitive overload was guaranteed. Ebbinghaus forgetting curve analysis showed that without spaced retrieval, 70% of content would be forgotten within a week.</p>
+            <div class="cs-insight">The problem wasn't content quality. It was delivery architecture. Too much, too fast, with no reinforcement system.</div>
+          </div>
+        </div>
+
+        <div class="cs-step reveal-up">
+          <div class="cs-step-label">Design</div>
+          <div class="cs-step-content">
+            <h3>The 90-Day Microlearning Journey</h3>
+            <div class="cs-timeline">
+              <div class="cs-tl-item">
+                <div class="cs-tl-period">Weeks 1&ndash;2</div>
+                <div class="cs-tl-desc"><strong>Core knowledge</strong> &mdash; 5 micromodules per week, 3 minutes each. One knowledge check per module. Manager debrief guide for weekly 1:1.</div>
+              </div>
+              <div class="cs-tl-item">
+                <div class="cs-tl-period">Weeks 3&ndash;8</div>
+                <div class="cs-tl-desc"><strong>Skill building</strong> &mdash; 3 scenario-based practice modules per week. Peer learning pairs with structured prompts. Real deal coaching integrated into modules.</div>
+              </div>
+              <div class="cs-tl-item">
+                <div class="cs-tl-period">Weeks 9&ndash;12</div>
+                <div class="cs-tl-desc"><strong>Performance reinforcement</strong> &mdash; 2-question daily retrieval push. Deal review templates tied to learning objectives. Self-assessment against competency framework.</div>
+              </div>
+            </div>
+            <div class="cs-theory-grid" style="margin-top:1.5rem;">
+              <div class="cs-theory"><strong>Spaced Practice</strong> (Ebbinghaus, Cepeda et al.) &mdash; content distributed over time, not front-loaded.</div>
+              <div class="cs-theory"><strong>Interleaving</strong> &mdash; mixing product, buyer, and process content rather than siloing by topic.</div>
+              <div class="cs-theory"><strong>Retrieval Practice</strong> &mdash; daily questions, not re-reading content. Testing as learning, not testing as evaluation.</div>
+              <div class="cs-theory"><strong>Desirable Difficulty</strong> &mdash; questions designed to be slightly hard to maximise encoding.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cs-step reveal-up">
+          <div class="cs-step-label">Results</div>
+          <div class="cs-step-content">
+            <h3>Measurable Outcomes</h3>
+            <div class="cs-outcomes">
+              <div class="cs-outcome"><span class="cs-outcome-num">67 days</span><span class="cs-outcome-desc">ramp time (down from 90) &mdash; 26% faster to first closed deal</span></div>
+              <div class="cs-outcome"><span class="cs-outcome-num">71%</span><span class="cs-outcome-desc">knowledge retention at 30 days (vs. 34% with old bootcamp)</span></div>
+              <div class="cs-outcome"><span class="cs-outcome-num">+44%</span><span class="cs-outcome-desc">manager satisfaction with new hire readiness</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="cs-sidebar">
+        <div class="cs-try-box">
+          <div class="cs-try-icon">&#9201;</div>
+          <h4>Try a Micromodule</h4>
+          <p>Experience one 3-minute micromodule from the onboarding journey, including the retrieval practice mechanism.</p>
+          <a href="#" class="btn-primary" style="width:100%;text-align:center;margin-top:1rem;">Try Sample Module &rarr;</a>
+        </div>
+        <div class="cs-sidebar-facts">
+          <div class="cs-fact"><span class="cs-fact-label">Total modules</span><span class="cs-fact-val">47</span></div>
+          <div class="cs-fact"><span class="cs-fact-label">Avg module length</span><span class="cs-fact-val">3 min</span></div>
+          <div class="cs-fact"><span class="cs-fact-label">Journey duration</span><span class="cs-fact-val">90 days</span></div>
+          <div class="cs-fact"><span class="cs-fact-label">Daily retrieval questions</span><span class="cs-fact-val">2</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cs-divider"></div>
+
+  <!-- ═══════════════════════════════════
+       CASE STUDY 4
+  ═══════════════════════════════════ -->
+  <section class="case-study" id="cs4">
+    <div class="cs-header">
+      <div class="cs-number">04</div>
+      <div class="cs-header-text">
+        <div class="cs-type-badge">Interactive Branching Scenario</div>
+        <h2 class="cs-title">The Conversation You've Been Avoiding</h2>
+        <p class="cs-subtitle">Building Manager Capability for Difficult Feedback Conversations</p>
+      </div>
+    </div>
+
+    <div class="cs-meta-bar">
+      <div class="cs-meta-item"><span class="cs-meta-label">Audience</span><span>Mid-level managers, professional services</span></div>
+      <div class="cs-meta-item"><span class="cs-meta-label">Tools</span><span>Articulate Storyline 360 &middot; Character animation</span></div>
+      <div class="cs-meta-item"><span class="cs-meta-label">Type</span><span>Branching conversation simulation</span></div>
+      <div class="cs-meta-item"><span class="cs-meta-label">Trigger</span><span>360 feedback: 61% said manager avoided difficult conversations</span></div>
+    </div>
+
+    <div class="cs-body">
+      <div class="cs-narrative">
+
+        <div class="cs-step reveal-up">
+          <div class="cs-step-label">Problem</div>
+          <div class="cs-step-content">
+            <h3>The Business Problem</h3>
+            <p>360 feedback data showed that 61% of direct reports felt their manager "avoided difficult performance conversations." The impact was measurable: underperformance left unaddressed, team morale declining, HR escalations rising. HR's request: <em>"A course on giving feedback."</em> My response: a simulation, not a course.</p>
+          </div>
+        </div>
+
+        <div class="cs-step reveal-up">
+          <div class="cs-step-label">Strategy</div>
+          <div class="cs-step-content">
+            <h3>Why the Distinction Matters</h3>
+            <div class="cs-callout cs-callout--insight">"You cannot learn to have difficult conversations by watching a video about difficult conversations. Motor skills require practice. Interpersonal skills require practice. A course about feedback is like reading about swimming &mdash; intellectually useful, practically useless without getting in the water."</div>
+            <p>The scenario needed to simulate the discomfort, ambiguity, and emotional complexity of a real feedback conversation.</p>
+          </div>
+        </div>
+
+        <div class="cs-step reveal-up">
+          <div class="cs-step-label">Design</div>
+          <div class="cs-step-content">
+            <h3>The Branching Conversation Simulation</h3>
+            <p>Characters: <strong>Alex</strong> (the manager &mdash; the learner's role) and <strong>Jordan</strong> (an underperforming team member with legitimate personal challenges).</p>
+            <ul class="cs-list">
+              <li><strong>No "obviously wrong" answers</strong> &mdash; all choices are defensible, which mirrors reality</li>
+              <li><strong>Emotional state tracker</strong> &mdash; Jordan's trust level visible in real time, changing with each response</li>
+              <li><strong>Three possible endings</strong> based on accumulated decisions, not a single choice</li>
+              <li><strong>Annotated replay</strong> &mdash; post-scenario debrief with design rationale for each branch</li>
+            </ul>
+            <div class="cs-paths">
+              <div class="cs-path cs-path--good"><strong>Ending A</strong><br/>Performance improves. Relationship intact. Jordan promoted 6 months later.</div>
+              <div class="cs-path cs-path--neutral"><strong>Ending B</strong><br/>Performance improves. Relationship damaged. Jordan leaves within a year.</div>
+              <div class="cs-path cs-path--bad"><strong>Ending C</strong><br/>Performance deteriorates. Escalation required. HR involvement.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cs-step reveal-up">
+          <div class="cs-step-label">Results</div>
+          <div class="cs-step-content">
+            <h3>Measurable Outcomes</h3>
+            <div class="cs-outcomes">
+              <div class="cs-outcome"><span class="cs-outcome-num">61%&rarr;28%</span><span class="cs-outcome-desc">direct reports reporting manager avoidance at 6-month re-survey</span></div>
+              <div class="cs-outcome"><span class="cs-outcome-num">-38%</span><span class="cs-outcome-desc">HR escalations for unaddressed underperformance</span></div>
+              <div class="cs-outcome"><span class="cs-outcome-num">91%</span><span class="cs-outcome-desc">of managers rated simulation as "realistic" or "very realistic"</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="cs-sidebar">
+        <div class="cs-try-box">
+          <div class="cs-try-icon">&#128172;</div>
+          <h4>Try the First Conversation</h4>
+          <p>Experience one 4-choice branch with visible emotional consequence. Then ask yourself: what would you do differently?</p>
+          <a href="#" class="btn-primary" style="width:100%;text-align:center;margin-top:1rem;">Try the Scenario &rarr;</a>
+        </div>
+        <div class="cs-sidebar-facts">
+          <div class="cs-fact"><span class="cs-fact-label">Decision points</span><span class="cs-fact-val">18</span></div>
+          <div class="cs-fact"><span class="cs-fact-label">Possible endings</span><span class="cs-fact-val">3</span></div>
+          <div class="cs-fact"><span class="cs-fact-label">Choices per branch</span><span class="cs-fact-val">4</span></div>
+          <div class="cs-fact"><span class="cs-fact-label">Est. completion time</span><span class="cs-fact-val">25&ndash;40 min</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cs-divider"></div>
+
+  <!-- ═══════════════════════════════════
+       CASE STUDY 5
+  ═══════════════════════════════════ -->
+  <section class="case-study" id="cs5">
+    <div class="cs-header">
+      <div class="cs-number">05</div>
+      <div class="cs-header-text">
+        <div class="cs-type-badge">Data-Driven Learning Intervention</div>
+        <h2 class="cs-title">The Training That Wasn't Working</h2>
+        <p class="cs-subtitle">Using Learning Analytics to Redesign a Failing Compliance Programme</p>
+      </div>
+    </div>
+
+    <div class="cs-meta-bar">
+      <div class="cs-meta-item"><span class="cs-meta-label">Context</span><span>Annual mandatory compliance training, 4 years running</span></div>
+      <div class="cs-meta-item"><span class="cs-meta-label">Completion rate</span><span>94% &mdash; but incidents not improving</span></div>
+      <div class="cs-meta-item"><span class="cs-meta-label">Tools</span><span>LMS analytics &middot; Articulate Storyline 360 &middot; xAPI</span></div>
+      <div class="cs-meta-item"><span class="cs-meta-label">Type</span><span>Learning audit &middot; Data-driven redesign</span></div>
+    </div>
+
+    <div class="cs-body">
+      <div class="cs-narrative">
+
+        <div class="cs-step reveal-up">
+          <div class="cs-step-label">Problem</div>
+          <div class="cs-step-content">
+            <h3>The Business Problem</h3>
+            <p>An organisation had been running mandatory compliance training annually for 4 years. Completion rates were high at 94%. Incident rates were not improving. They asked me to <em>"make the course more engaging."</em></p>
+            <div class="cs-callout cs-callout--pushback">I asked for the data instead.</div>
+          </div>
+        </div>
+
+        <div class="cs-step reveal-up">
+          <div class="cs-step-label">Diagnosis</div>
+          <div class="cs-step-content">
+            <h3>What the Data Showed</h3>
+            <p>I requested assessment scores by question, time-on-task per module, incident data by department and role, and post-training survey results.</p>
+            <ul class="cs-list">
+              <li>Average assessment score: 87% &mdash; suggesting mastery. It wasn't.</li>
+              <li>Average time on module 3 (highest incident correlation): <strong>2.4 minutes</strong> for a module designed to take 12 minutes</li>
+              <li>Incident rate in departments with highest assessment scores was <strong>no different</strong> from lowest scorers</li>
+              <li>Question 7 (highest-stakes scenario): 82% correct rate, but 71% of those chose the same wrong distractor &mdash; suggesting guessing patterns not comprehension</li>
+            </ul>
+            <div class="cs-insight">Conclusion: Learners were clicking through. The assessment was testing recognition, not application. High scores were measuring nothing real.</div>
+          </div>
+        </div>
+
+        <div class="cs-step reveal-up">
+          <div class="cs-step-label">Design</div>
+          <div class="cs-step-content">
+            <h3>Three Interventions</h3>
+            <div class="cs-intervention">
+              <div class="cs-intervention-num">1</div>
+              <div><strong>Assessment redesign</strong><br/>Replaced multiple choice with scenario-based constructed response. Pass mark: demonstrate correct procedure, not select it.</div>
+            </div>
+            <div class="cs-intervention">
+              <div class="cs-intervention-num">2</div>
+              <div><strong>Module 3 restructure</strong><br/>Removed 6 slides of text. Added one 8-minute branching simulation. Added time gates to prevent click-through.</div>
+            </div>
+            <div class="cs-intervention">
+              <div class="cs-intervention-num">3</div>
+              <div><strong>Manager activation</strong><br/>Built a 15-minute manager debrief guide &mdash; how to discuss the training with their team in the weekly meeting. Training without social reinforcement decays. This extended learning into the workflow.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cs-step reveal-up">
+          <div class="cs-step-label">Results</div>
+          <div class="cs-step-content">
+            <h3>Measurable Outcomes</h3>
+            <div class="cs-outcomes">
+              <div class="cs-outcome"><span class="cs-outcome-num">2.4&rarr;9.8</span><span class="cs-outcome-desc">min average completion time on module 3 &mdash; evidence of actual engagement</span></div>
+              <div class="cs-outcome"><span class="cs-outcome-num">71%</span><span class="cs-outcome-desc">first-attempt pass rate on new assessment (down from 87% &mdash; but now measuring real comprehension)</span></div>
+              <div class="cs-outcome"><span class="cs-outcome-num">-31%</span><span class="cs-outcome-desc">incidents in Q1 post-redesign vs. same period prior year</span></div>
+              <div class="cs-outcome"><span class="cs-outcome-num">68%</span><span class="cs-outcome-desc">manager debrief adoption within 60 days</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="cs-sidebar">
+        <div class="cs-try-box">
+          <div class="cs-try-icon">&#128202;</div>
+          <h4>Before &amp; After</h4>
+          <p>See a side-by-side comparison of the original click-through assessment and the redesigned scenario-based version.</p>
+          <a href="#" class="btn-primary" style="width:100%;text-align:center;margin-top:1rem;">View Comparison &rarr;</a>
+        </div>
+        <div class="cs-sidebar-facts">
+          <div class="cs-fact"><span class="cs-fact-label">Original pass rate</span><span class="cs-fact-val">87%</span></div>
+          <div class="cs-fact"><span class="cs-fact-label">New pass rate</span><span class="cs-fact-val">71%</span></div>
+          <div class="cs-fact"><span class="cs-fact-label">Incident reduction</span><span class="cs-fact-val">31%</span></div>
+          <div class="cs-fact"><span class="cs-fact-label">Engagement time &uarr;</span><span class="cs-fact-val">4&times;</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="page-cta">
+    <div class="page-cta-inner">
+      <h2 class="reveal">Have a performance problem<br/><em>that needs solving?</em></h2>
+      <p class="reveal">Tell me the gap. I'll tell you whether training will close it &mdash; and if it will, exactly how I'd design it.</p>
+      <a href="start-a-project.html" class="btn-primary btn-large reveal">Start a Project &rarr;</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">A<span class="dot">.</span></div>
+      <div class="footer-copy">&copy; 2025 &middot; Learning Experience Architect &middot; Nairobi, Kenya</div>
+      <div class="footer-top"><a href="#top">&uarr; Top</a></div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
