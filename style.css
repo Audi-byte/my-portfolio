@@ -278,8 +278,16 @@ ul { list-style: none; }
   width: 280px;
   height: 380px;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
+  overflow: hidden;
+}
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  display: block;
 }
 .hero-photo-placeholder {
   width: 100%; height: 100%;
@@ -834,9 +842,9 @@ ul { list-style: none; }
   /* 2. Photo blob */
   .hero-center {
     order: 2;
-    height: 160px;
+    height: 170px;
   }
-  .hero-photo { width: 95px; height: 125px; }
+  .hero-photo { width: 110px; height: 145px; }
   .hero-icon  { width: 30px; height: 30px; font-size: 0.9rem; }
 
   /* 3. Buttons — side by side below photo */
@@ -954,8 +962,8 @@ ul { list-style: none; }
   .hero-title    { font-size: clamp(1.6rem, 6vw, 2.2rem); }
   .hero-tag      { font-size: 0.6rem; }
   .hero-sub      { font-size: 0.82rem; }
-  .hero-center   { height: 130px; }
-  .hero-photo    { width: 80px; height: 110px; }
+  .hero-center   { height: 150px; }
+  .hero-photo    { width: 95px; height: 130px; }
   .hero-stat-card{ padding: 0.6rem 0.5rem; }
   .hero-stat-num { font-size: 1.3rem; }
   .hero-stat-plus{ font-size: 0.95rem; }
