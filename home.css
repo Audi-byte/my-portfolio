@@ -273,4 +273,7 @@
 }
 @media (max-width: 480px) {
   .signals-section, .work-section, .services-section, .lab-teaser { padding: 3rem 1rem; }
+  .service-row-name { font-size: 0.88rem; }
+  .service-row-desc { font-size: 0.82rem; }
+  .lab-teaser-title { font-size: 0.88rem; }
 }

@@ -80,6 +80,11 @@ document.addEventListener('mousemove', e => {
   if (orb2) orb2.style.transform = `translate(${-x * 0.4}px, ${-y * 0.4}px)`;
 });
 
+/* ── Auto year in footer ── */
+document.querySelectorAll('.footer-year').forEach(el => {
+  el.textContent = new Date().getFullYear();
+});
+
 /* ── Active nav link on scroll ── */
 const sections  = document.querySelectorAll('section[id]');
 const navLinks  = document.querySelectorAll('.nav-links a[href^="#"]');
