@@ -9,10 +9,10 @@
   --bg-2:        #1E263B;
   --bg-3:        #252F47;
   --bg-card:     #1A2236;
-  --accent:      #FE0467;
-  --accent-soft: #FF3380;
-  --accent-dim:  rgba(254, 4, 103, 0.12);
-  --accent-glow: rgba(254, 4, 103, 0.25);
+  --accent:      #00D4FF;
+--accent-soft: #33DDFF;
+--accent-dim:  rgba(0, 212, 255, 0.12);
+--accent-glow: rgba(0, 212, 255, 0.25);
   --white:       #EEF2FF;
   --white-dim:   rgba(238, 242, 255, 0.55);
   --white-muted: rgba(238, 242, 255, 0.28);
