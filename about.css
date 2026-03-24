@@ -156,7 +156,7 @@
   font-size: 1.8rem;
   margin-bottom: 1rem;
   display: block;
-  filter: drop-shadow(0 0 12px rgba(254,4,103,0.2));
+  filter: drop-shadow(0 0 12px rgba(0,212,255,0.2));
 }
 .arsenal-card h3 {
   font-family: var(--font-title);
@@ -342,7 +342,7 @@
 .about-cta-inner { max-width: 600px; margin: 0 auto; }
 .about-cta h2 {
   font-family: var(--font-title);
-  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-size: clamp(2rem, 4vw, 3.5rem);
   font-weight: 700;
   line-height: 1.15;
   margin-bottom: 1rem;

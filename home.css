@@ -91,7 +91,7 @@
   font-size: 2.5rem;
   position: relative;
   z-index: 1;
-  filter: drop-shadow(0 0 16px rgba(254,4,103,0.3));
+  filter: drop-shadow(0 0 16px rgba(0,212,255,0.3));
 }
 .work-type-badge {
   position: absolute;
