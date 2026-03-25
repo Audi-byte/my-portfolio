@@ -123,18 +123,20 @@ ul { list-style: none; }
 /* ── Logo ── */
 .nav-logo { display: flex; align-items: center; }
 .nav-logo-img {
-  height: 42px;
+  height: 48px;
   width: auto;
   display: block;
+  mix-blend-mode: screen;
   transition: opacity 0.3s;
 }
-.nav-logo-img:hover { opacity: 0.8; }
+.nav-logo-img:hover { opacity: 0.75; }
 .footer-logo-link { display: inline-flex; align-items: center; }
 .footer-logo-img {
-  height: 32px;
+  height: 36px;
   width: auto;
   display: block;
-  opacity: 0.85;
+  mix-blend-mode: screen;
+  opacity: 0.9;
 }
 
 /* ── Nav active ── */
@@ -288,6 +290,8 @@ ul { list-style: none; }
   object-fit: contain;
   object-position: center bottom;
   display: block;
+  mix-blend-mode: screen;
+  filter: contrast(1.05) brightness(1.05);
 }
 .hero-photo-placeholder {
   width: 100%; height: 100%;
@@ -891,8 +895,8 @@ ul { list-style: none; }
   .nav.scrolled{ padding: 0.8rem 1.2rem; }
   .nav-links   { display: none; }
   .hamburger   { display: flex; }
-  .nav-logo-img  { height: 34px; }
-  .footer-logo-img { height: 26px; }
+  .nav-logo-img  { height: 38px; }
+  .footer-logo-img { height: 28px; }
 
   /* Global section padding — tight */
   .about, .portfolio, .services,
@@ -970,7 +974,7 @@ ul { list-style: none; }
   .hero-stat-label{ font-size: 0.5rem; }
   .hero-mobile-cta .btn-primary,
   .hero-mobile-cta .btn-ghost { padding: 0.55rem 0.6rem; font-size: 0.7rem; }
-  .nav-logo-img  { height: 28px; }
+  .nav-logo-img  { height: 32px; }
 
   /* Marquee */
   .marquee-track span { font-size: 0.62rem; }
