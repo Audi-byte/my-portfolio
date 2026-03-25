@@ -225,8 +225,6 @@
   box-shadow:
     0 8px 32px rgba(0,0,0,0.3),
     inset 0 1px 0 rgba(255,255,255,0.08);
-  position: sticky;
-  top: 6rem;
 }
 .glass-card-title {
   font-family: var(--font-title);
@@ -373,11 +371,11 @@
 
 /* Prefer to talk */
 .prefer-talk {
-  margin-top: 1.2rem;
+  margin-top: 1.5rem;
   text-align: center;
   padding: 1.2rem;
-  border: 1px dashed rgba(0,212,255,0.2);
-  border-radius: 8px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  border-radius: 0;
   background: rgba(0,212,255,0.03);
 }
 .prefer-talk p {
@@ -396,7 +394,7 @@
     padding: 8rem 2rem 4rem;
     gap: 3rem;
   }
-  .glass-card { position: static; }
+  .glass-card { position: relative; }
 }
 @media (max-width: 768px) {
   .contact-page { padding: 7rem 1.2rem 4rem; gap: 2.5rem; }
