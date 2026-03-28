@@ -2,6 +2,13 @@
    portfolio.css — Portfolio grid + expandable case study panels
    ============================================================ */
 
+/* ── Gold accent (secondary, minimal) ── */
+:root {
+  --gold:       #F5C842;
+  --gold-dim:   rgba(245,200,66,0.12);
+  --gold-glow:  rgba(245,200,66,0.22);
+}
+
 /* ── Grid section ── */
 .pf-grid-section {
   padding: 4rem 4rem 5rem;
@@ -36,7 +43,7 @@
 }
 .pf-card--soon:hover { transform: none; box-shadow: none; }
 
-/* Card image */
+/* Card image — thumbnail via CSS background, fallback gradient always shows */
 .pf-card-img {
   position: relative;
   height: 180px;
@@ -44,13 +51,19 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  background-size: cover;
+  background-position: center top;
+  transition: background-position 0.4s var(--ease);
 }
-.pf-thumb-1 { background: linear-gradient(135deg, #0a1428 0%, #1a0820 100%); }
-.pf-thumb-2 { background: linear-gradient(135deg, #0a1a1a 0%, #081428 100%); }
-.pf-thumb-3 { background: linear-gradient(135deg, #0a1a10 0%, #0a1428 100%); }
-.pf-thumb-4 { background: linear-gradient(135deg, #1a100a 0%, #0a1428 100%); }
-.pf-thumb-5 { background: linear-gradient(135deg, #0a0a1a 0%, #1a0a14 100%); }
-.pf-thumb-6 { background: linear-gradient(135deg, #141428 0%, #0a1414 100%); }
+.pf-card:hover .pf-card-img {
+  background-position: center 20%;
+}
+.pf-thumb-1 { background-color: #0d1220; background-image: url('cs1-thumb.png'), linear-gradient(135deg, #0a1428 0%, #1a0820 100%); }
+.pf-thumb-2 { background-color: #0d1a1a; background-image: url('cs2-thumb.png'), linear-gradient(135deg, #0a1a1a 0%, #081428 100%); }
+.pf-thumb-3 { background-color: #0d1a10; background-image: url('cs3-thumb.png'), linear-gradient(135deg, #0a1a10 0%, #0a1428 100%); }
+.pf-thumb-4 { background-color: #1a100a; background-image: url('cs4-thumb.png'), linear-gradient(135deg, #1a100a 0%, #0a1428 100%); }
+.pf-thumb-5 { background-color: #0d0d1a; background-image: url('cs5-thumb.png'), linear-gradient(135deg, #0a0a1a 0%, #1a0a14 100%); }
+.pf-thumb-6 { background-color: #141428; background-image: linear-gradient(135deg, #141428 0%, #0a1414 100%); }
 .pf-card-img::before {
   content: '';
   position: absolute; inset: 0;
@@ -64,19 +77,6 @@
   position: relative;
   z-index: 1;
   filter: drop-shadow(0 0 20px rgba(0,212,255,0.25));
-}
-.pf-thumb-img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  z-index: 1;
-  transition: transform 0.4s var(--ease);
-}
-.pf-card:hover .pf-thumb-img {
-  transform: scale(1.04);
 }
 .pf-card-overlay {
   position: absolute;
@@ -110,6 +110,10 @@
   font-weight: 700;
   letter-spacing: 0.12em;
   color: var(--accent);
+  transition: color 0.3s;
+}
+.pf-card:hover .pf-card-num {
+  color: var(--gold);
 }
 .pf-card-title {
   font-family: var(--font-title);
@@ -137,7 +141,7 @@
   gap: 0.4rem;
 }
 .pf-card-result--muted { color: var(--white-muted); }
-.pf-dot { color: var(--accent); font-size: 0.5rem; }
+.pf-dot { color: var(--gold); font-size: 0.5rem; }
 
 /* Card button */
 .pf-card-btn {
@@ -211,11 +215,47 @@
   letter-spacing: 0.06em;
   padding: 0.4rem 0.9rem;
   cursor: pointer;
-  transition: border-color 0.3s, color 0.3s;
+  transition: border-color 0.3s, color 0.3s, background 0.3s;
 }
 .cs-panel-close:hover {
-  border-color: var(--accent);
-  color: var(--accent);
+  border-color: var(--gold);
+  color: var(--gold);
+  background: var(--gold-dim);
+}
+
+/* ── Gold accent touches — panel internals ── */
+
+/* Step label pill */
+.cs-step-label {
+  color: var(--gold);
+  border-color: var(--gold-dim);
+  background: var(--gold-dim);
+}
+
+/* Framework letters */
+.cs-fw-letter {
+  color: var(--gold);
+  border-color: var(--gold-dim);
+}
+
+/* Outcome numbers */
+.cs-outcome-num {
+  color: var(--gold);
+}
+
+/* Card hover — subtle gold left border flash */
+.pf-card {
+  border-left: 2px solid transparent;
+}
+.pf-card:hover {
+  border-left-color: var(--gold);
+}
+
+/* Active card btn — gold tint on active state */
+.pf-card-btn.active {
+  background: var(--gold-dim);
+  border-color: var(--gold);
+  color: var(--gold);
 }
 
 /* ── Responsive ── */
