@@ -66,8 +66,8 @@
   font-family: var(--font-title);
   font-size: 5rem;
   font-weight: 700;
-  color: var(--accent);
-  opacity: 0.2;
+  color: var(--gold);
+  opacity: 0.4;
   line-height: 1;
   flex-shrink: 0;
 }
@@ -305,7 +305,7 @@
   font-family: var(--font-title);
   font-size: 1.8rem;
   font-weight: 700;
-  color: var(--accent-soft);
+  color: var(--gold);
   line-height: 1;
 }
 .cs-outcome-desc {
@@ -487,8 +487,8 @@
   font-family: var(--font-title);
   font-size: 4rem;
   font-weight: 700;
-  color: var(--accent);
-  opacity: 0.2;
+  color: var(--gold);
+  opacity: 0.4;
   line-height: 1;
 }
 .essay-meta { display: flex; flex-direction: column; gap: 0.3rem; }
@@ -539,7 +539,7 @@
   color: var(--white) !important;
   line-height: 1.7 !important;
   padding: 1.4rem 1.6rem;
-  border-left: 3px solid var(--accent);
+  border-left: 3px solid var(--gold);
   background: var(--bg-2);
   border-radius: 0 4px 4px 0;
   margin-bottom: 2rem !important;
@@ -565,7 +565,7 @@
   font-weight: 700;
   font-style: italic;
   color: var(--white);
-  border-left: 4px solid var(--accent);
+  border-left: 4px solid var(--gold);
   padding: 1.2rem 1.6rem;
   margin: 2.5rem 0;
   line-height: 1.4;
@@ -587,8 +587,8 @@
   font-family: var(--font-title);
   font-size: 1.8rem;
   font-weight: 700;
-  color: var(--accent);
-  opacity: 0.4;
+  color: var(--gold);
+  opacity: 0.6;
   line-height: 1;
   padding-top: 0.3rem;
 }

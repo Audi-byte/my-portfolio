@@ -135,7 +135,7 @@
   align-items: center;
   gap: 0.4rem;
 }
-.dot-accent { color: var(--accent); font-size: 0.5rem; }
+.dot-accent { color: var(--gold); font-size: 0.5rem; }
 
 /* ── Services list ── */
 .services-section {
@@ -162,7 +162,7 @@
   font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.1em;
-  color: var(--accent);
+  color: var(--gold);
 }
 .service-row-name {
   font-family: var(--font-title);
@@ -229,7 +229,7 @@
   font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.1em;
-  color: var(--accent);
+  color: var(--gold);
   flex-shrink: 0;
   width: 24px;
 }

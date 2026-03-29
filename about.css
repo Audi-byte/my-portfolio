@@ -108,14 +108,14 @@
   font-family: var(--font-title);
   font-size: 1.8rem;
   font-weight: 700;
-  color: var(--accent-soft);
+  color: var(--gold);
   line-height: 1;
 }
 .qf-plus {
   font-family: var(--font-title);
   font-size: 1.4rem;
   font-weight: 700;
-  color: var(--accent-soft);
+  color: var(--gold);
   line-height: 1;
   margin-left: 1px;
 }
@@ -279,8 +279,8 @@
   font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.04em;
-  background: var(--accent);
-  color: #fff;
+  background: var(--gold);
+  color: #0A0F1A;
   padding: 0.25rem 0.65rem;
   border-radius: 3px;
   white-space: nowrap;
