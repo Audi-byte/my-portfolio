@@ -93,9 +93,9 @@
   font-family: var(--font-btn);
   font-size: 0.65rem;
   font-weight: 700;
-  color: var(--accent);
-  background: rgba(0,212,255,0.1);
-  border: 1px solid rgba(0,212,255,0.2);
+  color: var(--gold);
+  background: rgba(245,200,66,0.08);
+  border: 1px solid rgba(245,200,66,0.25);
   border-radius: 3px;
   padding: 0.2rem 0.5rem;
   flex-shrink: 0;
@@ -129,12 +129,12 @@
   gap: 0.6rem;
   font-family: var(--font-body);
   font-size: 0.95rem;
-  color: var(--accent-soft);
+  color: var(--gold);
   border-bottom: 1px solid transparent;
   transition: border-color 0.3s;
   width: fit-content;
 }
-.contact-direct-email:hover { border-color: var(--accent-soft); }
+.contact-direct-email:hover { border-color: var(--gold); }
 .contact-direct-icon { font-size: 1rem; }
 .contact-social {
   display: flex;
@@ -168,8 +168,8 @@
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  background: rgba(0,212,255,0.04);
-  border: 1px solid rgba(0,212,255,0.12);
+  background: rgba(245,200,66,0.03);
+  border: 1px solid rgba(245,200,66,0.15);
   border-radius: 8px;
   padding: 1.2rem 1.4rem;
   margin: 1.8rem 0;
@@ -199,8 +199,8 @@
 /* Final note */
 .contact-note {
   padding: 1.2rem 1.4rem;
-  border-left: 3px solid var(--accent);
-  background: rgba(255,255,255,0.02);
+  border-left: 3px solid var(--gold);
+  background: rgba(245,200,66,0.03);
   border-radius: 0 6px 6px 0;
   margin-top: 1.5rem;
 }
@@ -212,7 +212,7 @@
   margin-bottom: 0.5rem;
 }
 .contact-note p:last-child { margin-bottom: 0; }
-.contact-note strong { color: var(--accent-soft); }
+.contact-note strong { color: var(--gold); }
 
 /* ── Glass card ── */
 .glass-card {
@@ -220,6 +220,7 @@
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 2px solid rgba(245,200,66,0.3);
   border-radius: 16px;
   padding: 2.5rem;
   box-shadow:
@@ -249,7 +250,8 @@
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--white-dim);
+  color: var(--gold);
+  opacity: 0.85;
 }
 .label-optional {
   font-weight: 400;
@@ -280,8 +282,8 @@
 .input-wrap input::placeholder { color: rgba(238,242,255,0.25); }
 .input-wrap input:focus,
 .input-wrap select:focus {
-  border-color: var(--accent);
-  background: rgba(0,212,255,0.05);
+  border-color: var(--gold);
+  background: rgba(245,200,66,0.04);
 }
 .input-wrap select option { background: #1E263B; color: var(--white); }
 .input-icon {
@@ -309,8 +311,8 @@
 }
 .contact-form textarea::placeholder { color: rgba(238,242,255,0.25); }
 .contact-form textarea:focus {
-  border-color: var(--accent);
-  background: rgba(0,212,255,0.05);
+  border-color: var(--gold);
+  background: rgba(245,200,66,0.04);
 }
 
 .form-submit {
