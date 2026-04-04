@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Message Received — Audi | Learning Experience Architect</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Bitter:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .ty-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6rem 1.5rem;
+      position: relative;
+    }
+    .ty-orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(120px);
+      pointer-events: none;
+    }
+    .ty-orb-1 {
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(0,212,255,0.07) 0%, transparent 70%);
+      top: -100px; right: -100px;
+    }
+    .ty-orb-2 {
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(245,200,66,0.05) 0%, transparent 70%);
+      bottom: -80px; left: -80px;
+    }
+    .ty-card {
+      position: relative;
+      z-index: 1;
+      background: rgba(255,255,255,0.04);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 3.5rem 3rem;
+      max-width: 520px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.3);
+    }
+    .ty-icon {
+      width: 68px; height: 68px;
+      background: var(--accent);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.8rem;
+      color: #0A0F1A;
+      font-weight: 700;
+      margin: 0 auto 1.8rem;
+      box-shadow: 0 0 40px rgba(0,212,255,0.3);
+      animation: popIn 0.5s cubic-bezier(0.16,1,0.3,1) forwards;
+    }
+    @keyframes popIn {
+      from { transform: scale(0); opacity: 0; }
+      to   { transform: scale(1); opacity: 1; }
+    }
+    .ty-title {
+      font-family: var(--font-title);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+    .ty-msg {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      color: var(--white-dim);
+      line-height: 1.75;
+      margin-bottom: 2rem;
+    }
+    .ty-msg strong { color: var(--accent); }
+    .ty-divider {
+      width: 40px; height: 2px;
+      background: var(--gold);
+      margin: 0 auto 1.8rem;
+      border-radius: 2px;
+    }
+    .ty-next-title {
+      font-family: var(--font-btn);
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--white-muted);
+      margin-bottom: 1rem;
+    }
+    .ty-actions {
+      display: flex;
+      gap: 0.8rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo"><img src="logo.png" alt="Charles Lwanda" class="nav-logo-img" /></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="lab.html">The Lab</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="start-a-project.html" class="nav-cta">Start a Project</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="index.html" class="mobile-link">Home</a></li>
+      <li><a href="about.html" class="mobile-link">About</a></li>
+      <li><a href="portfolio.html" class="mobile-link">Portfolio</a></li>
+      <li><a href="lab.html" class="mobile-link">The Lab</a></li>
+      <li><a href="contact.html" class="mobile-link">Contact</a></li>
+      <li><a href="start-a-project.html" class="mobile-link">Start a Project</a></li>
+    </ul>
+  </div>
+
+  <div class="ty-orb ty-orb-1"></div>
+  <div class="ty-orb ty-orb-2"></div>
+
+  <main class="ty-page">
+    <div class="ty-card">
+      <div class="ty-icon">&#10003;</div>
+      <h1 class="ty-title">All set!</h1>
+      <p class="ty-msg">
+        Thanks for reaching out. I'll review your message and get back to you <strong>within 24 hours</strong>.
+      </p>
+      <div class="ty-divider"></div>
+      <p class="ty-next-title">While you wait</p>
+      <div class="ty-actions">
+        <a href="portfolio.html" class="btn-primary">View My Work &rarr;</a>
+        <a href="lab.html" class="btn-ghost">Read The Lab</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <a href="index.html" class="footer-logo-link"><img src="logo.png" alt="Charles Lwanda" class="footer-logo-img" /></a>
+      <div class="footer-copy">&copy; <span class="footer-year">2025</span> &middot; Learning Experience Architect &middot; Nairobi, Kenya</div>
+      <div class="footer-top"><a href="#top">&uarr; Top</a></div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
