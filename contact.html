@@ -80,9 +80,9 @@
       <!-- Reach directly -->
       <div class="contact-direct reveal-up">
         <h3 class="contact-direct-title">Or Reach Me Directly</h3>
-        <a href="mailto:hello@yourname.com" class="contact-direct-email">
+        <a href="/cdn-cgi/l/email-protection#543c3138383b142d3b21263a3539317a373b39" class="contact-direct-email">
           <span class="contact-direct-icon">&#9993;</span>
-          hello@yourname.com
+          <span class="__cf_email__" data-cfemail="0a626f6666654a73657f78646b676f24696567">[email&#160;protected]</span>
         </a>
         <div class="contact-social">
           <a href="#" target="_blank" class="social-link">
@@ -117,12 +117,12 @@
         <h2 class="glass-card-title">Start a Project</h2>
         <p class="glass-card-sub">Tell me a bit about what you need</p>
 
-        <form class="contact-form" id="contact-form">
+        <form class="contact-form" id="contact-form" action="https://formspree.io/f/mlgopypw" method="POST">
 
           <div class="form-group">
             <label for="name">Name</label>
             <div class="input-wrap">
-              <input type="text" id="name" placeholder="Your full name" required />
+              <input type="text" id="name" name="name" placeholder="Your full name" required />
               <span class="input-icon">&#128100;</span>
             </div>
           </div>
@@ -130,7 +130,7 @@
           <div class="form-group">
             <label for="email">Email</label>
             <div class="input-wrap">
-              <input type="email" id="email" placeholder="your@email.com" required />
+              <input type="email" id="email" name="email" placeholder="your@email.com" required />
               <span class="input-icon">&#9993;</span>
             </div>
           </div>
@@ -138,15 +138,15 @@
           <div class="form-group">
             <label for="project-type">Project Type</label>
             <div class="input-wrap select-wrap">
-              <select id="project-type" required>
+              <select id="project-type" name="project_type" required>
                 <option value="" disabled selected>Select a project type</option>
-                <option>End-to-End eLearning Development</option>
-                <option>Scenario-Based / Interactive Course Design</option>
-                <option>LMS Setup & Learning Systems</option>
-                <option>Performance Consulting (Fix a Business Problem)</option>
-                <option>Rapid Content / Microlearning Design</option>
-                <option>Course Audit & Redesign</option>
-                <option>Not sure what you need? That’s exactly where most high-impact projects start.</option>
+                <option>eLearning Course Development</option>
+                <option>LMS Setup &amp; Configuration</option>
+                <option>Articulate Storyline Development</option>
+                <option>Curriculum Design</option>
+                <option>Performance Consulting</option>
+                <option>Instructional Design</option>
+                <option>Other</option>
               </select>
               <span class="input-icon">&#9660;</span>
             </div>
@@ -155,16 +155,18 @@
           <div class="form-group">
             <label for="timeline">Timeline <span class="label-optional">(Optional)</span></label>
             <div class="input-wrap">
-              <input type="text" id="timeline" placeholder="e.g. 4 weeks, ASAP, flexible..." />
+              <input type="text" id="timeline" name="timeline" placeholder="e.g. 4 weeks, ASAP, flexible..." />
               <span class="input-icon">&#128197;</span>
             </div>
           </div>
 
           <div class="form-group">
             <label for="message">Your Message</label>
-            <textarea id="message" rows="4" placeholder="Tell me about the performance gap you're trying to close — what are people doing vs. what should they be doing?" required></textarea>
+            <textarea id="message" name="message" rows="4" placeholder="Tell me about the performance gap you're trying to close — what are people doing vs. what should they be doing?" required></textarea>
           </div>
 
+          <input type="hidden" name="_next" value="https://my-portfolio.pages.dev/contact.html" />
+          <input type="hidden" name="_subject" value="New Project Enquiry — Audi LXD Portfolio" />
           <button type="submit" class="form-submit">Submit Request</button>
 
         </form>
@@ -197,13 +199,6 @@
     </div>
   </footer>
 
-  <script src="main.js"></script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="main.js"></script>
   <script>
-    document.getElementById('contact-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      this.style.display = 'none';
-      document.getElementById('form-success').style.display = 'flex';
-    });
-  </script>
-</body>
-</html>
+    documen
