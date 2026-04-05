@@ -37,7 +37,7 @@
     </ul>
   </div>
 
-  <!-- Background blobs -->
+  <!-- Background -->
   <div class="contact-bg">
     <div class="contact-orb contact-orb-1"></div>
     <div class="contact-orb contact-orb-2"></div>
@@ -47,77 +47,60 @@
   <!-- Page body -->
   <main class="contact-page">
 
-    <!-- Left: context -->
+    <!-- Left -->
     <div class="contact-left">
       <div class="section-tag reveal">Get In Touch</div>
       <h1 class="contact-headline reveal">Let's Build Learning<br/><em>That Actually Works.</em></h1>
       <p class="contact-desc reveal">Most eLearning looks good but fails where it matters — performance. If you're looking to build training that improves real-world outcomes, not just completion rates, you're in the right place.</p>
       <p class="contact-desc reveal">I design scenario-driven, behaviour-focused learning experiences using Articulate Storyline, LMS platforms, and performance-first design frameworks.</p>
 
-      <!-- What happens next -->
       <div class="what-next reveal-up">
         <h3 class="what-next-title">What Happens Next</h3>
         <div class="what-next-steps">
-          <div class="wn-step">
-            <div class="wn-num">01</div>
-            <p>I review your message within 24 hours</p>
-          </div>
-          <div class="wn-step">
-            <div class="wn-num">02</div>
-            <p>If needed, I'll ask a few quick clarifying questions</p>
-          </div>
-          <div class="wn-step">
-            <div class="wn-num">03</div>
-            <p>We schedule a short call to align on your goals</p>
-          </div>
-          <div class="wn-step">
-            <div class="wn-num">04</div>
-            <p>You get a clear direction on the best way forward</p>
-          </div>
+          <div class="wn-step"><div class="wn-num">01</div><p>I review your message within 24 hours</p></div>
+          <div class="wn-step"><div class="wn-num">02</div><p>If needed, I'll ask a few quick clarifying questions</p></div>
+          <div class="wn-step"><div class="wn-num">03</div><p>We schedule a short call to align on your goals</p></div>
+          <div class="wn-step"><div class="wn-num">04</div><p>You get a clear direction on the best way forward</p></div>
         </div>
       </div>
 
-      <!-- Reach directly -->
       <div class="contact-direct reveal-up">
         <h3 class="contact-direct-title">Or Reach Me Directly</h3>
-        <a href="/cdn-cgi/l/email-protection#543c3138383b142d3b21263a3539317a373b39" class="contact-direct-email">
+        <a href="mailto:hello@yourname.com" class="contact-direct-email">
           <span class="contact-direct-icon">&#9993;</span>
-          <span class="__cf_email__" data-cfemail="0a626f6666654a73657f78646b676f24696567">[email&#160;protected]</span>
+          hello@yourname.com
         </a>
         <div class="contact-social">
-          <a href="#" target="_blank" class="social-link">
-            <span class="social-icon">in</span>LinkedIn
-          </a>
-          <a href="portfolio.html" class="social-link">
-            <span class="social-icon">&#9632;</span>Portfolio
-          </a>
+          <a href="#" target="_blank" class="social-link"><span class="social-icon">in</span>LinkedIn</a>
+          <a href="portfolio.html" class="social-link"><span class="social-icon">&#9632;</span>Portfolio</a>
         </div>
       </div>
 
-      <!-- Download -->
       <div class="contact-download reveal-up">
         <div class="contact-download-text">
           <strong>Not ready yet?</strong>
           <p>Download my eLearning Design Checklist and see how high-impact courses are structured.</p>
         </div>
-        <a href="#" class="btn-ghost contact-download-btn">Download Free Guide &rarr;</a>
+        <a href="elearning-design-checklist.pdf" download class="btn-ghost contact-download-btn">Download Free Guide &rarr;</a>
       </div>
 
-      <!-- Final note -->
       <div class="contact-note reveal-up">
         <p>I don't design for "content delivery." I design for <strong>behaviour change</strong>, decision-making, and measurable performance.</p>
         <p>If that's what you're after &mdash; let's talk.</p>
       </div>
-
     </div>
 
-    <!-- Right: glass form card -->
+    <!-- Right: glass form -->
     <div class="contact-right reveal-up">
       <div class="glass-card">
         <h2 class="glass-card-title">Start a Project</h2>
         <p class="glass-card-sub">Tell me a bit about what you need</p>
 
-        <form class="contact-form" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+        <!-- Form -->
+        <form class="contact-form" id="contact-form">
+          <input type="hidden" name="access_key" value="347943e4-2841-4f20-9671-fbec6e3724d5" />
+          <input type="hidden" name="subject" value="New Project Enquiry — Audi LXD Portfolio" />
+          <input type="hidden" name="from_name" value="Audi LXD Portfolio" />
 
           <div class="form-group">
             <label for="name">Name</label>
@@ -165,22 +148,17 @@
             <textarea id="message" name="message" rows="4" placeholder="Tell me about the performance gap you're trying to close — what are people doing vs. what should they be doing?" required></textarea>
           </div>
 
-          <input type="hidden" name="access_key" value="347943e4-2841-4f20-9671-fbec6e3724d5" />
-          <input type="hidden" name="subject" value="New Project Enquiry — Audi LXD Portfolio" />
-          <input type="hidden" name="from_name" value="Audi LXD Portfolio" />
-          <button type="submit" class="form-submit">Submit Request</button>
-
+          <button type="submit" class="form-submit" id="submit-btn">Submit Request</button>
         </form>
 
-        <!-- Success state -->
+        <!-- Success — hidden until form submitted -->
         <div class="form-success" id="form-success">
           <div class="success-icon-wrap">&#10003;</div>
-          <h3>Message received!</h3>
+          <h3>Message received.</h3>
           <p>Thanks for reaching out. I'll review your message and get back to you within 24 hours.</p>
-          <a href="index.html" class="btn-ghost" style="margin-top:1rem;display:inline-block;">Back to Home</a>
         </div>
 
-        <!-- Prefer to talk — inside card -->
+        <!-- Prefer to talk -->
         <div class="prefer-talk">
           <p>Prefer to skip the form?</p>
           <a href="start-a-project.html" class="btn-primary" style="margin-top:0.6rem;display:inline-flex;width:100%;justify-content:center;">Use the Full Project Brief &rarr;</a>
@@ -191,7 +169,6 @@
 
   </main>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="footer-inner">
       <a href="index.html" class="footer-logo-link"><img src="logo.png" alt="Charles Lwanda" class="footer-logo-img" /></a>
@@ -200,6 +177,44 @@
     </div>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="main.js"></script>
+  <script src="main.js"></script>
   <script>
-    documen
+    document.getElementById('contact-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      const btn = document.getElementById('submit-btn');
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+
+      const formData = new FormData(this);
+      const object = Object.fromEntries(formData);
+      const json = JSON.stringify(object);
+
+      try {
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: json
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+          document.getElementById('contact-form').style.display = 'none';
+          document.getElementById('form-success').style.display = 'flex';
+        } else {
+          btn.textContent = 'Something went wrong. Try again.';
+          btn.disabled = false;
+        }
+      } catch (error) {
+        btn.textContent = 'Network error. Try again.';
+        btn.disabled = false;
+      }
+    });
+  </script>
+
+</body>
+</html>
