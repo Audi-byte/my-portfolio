@@ -410,3 +410,128 @@
   .glass-card { padding: 1.4rem 1rem; border-radius: 12px; }
   .glass-card-title { font-size: 1.3rem; }
 }
+
+/* ── Success Overlay ── */
+.success-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: rgba(14,19,31,0.9);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s;
+}
+.success-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+.success-overlay-card {
+  background: rgba(30,38,59,0.98);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-top: 3px solid var(--gold);
+  border-radius: 16px;
+  padding: 3rem 2.5rem;
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.5);
+  animation: cardPop 0.4s cubic-bezier(0.16,1,0.3,1) forwards;
+}
+@keyframes cardPop {
+  from { transform: scale(0.9); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+.success-overlay-icon {
+  width: 68px; height: 68px;
+  background: var(--accent);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2rem;
+  color: #0A0F1A;
+  font-weight: 700;
+  margin: 0 auto 1.5rem;
+  box-shadow: 0 0 40px rgba(0,212,255,0.35);
+}
+.success-overlay-title {
+  font-family: var(--font-title);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.8rem;
+}
+.success-overlay-msg {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--white-dim);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+.success-overlay-divider {
+  width: 48px; height: 2px;
+  background: var(--gold);
+  margin: 0 auto 2rem;
+  border-radius: 2px;
+}
+.success-overlay-actions {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+.success-overlay-home {
+  font-family: var(--font-btn);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--white-muted);
+  transition: color 0.3s;
+  display: block;
+}
+.success-overlay-home:hover { color: var(--white); }
+
+/* ── Email reveal ── */
+.contact-email-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(0,212,255,0.07);
+  border: 1px solid rgba(0,212,255,0.2);
+  border-radius: 6px;
+  padding: 0.6rem 1.1rem;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--accent);
+  cursor: pointer;
+  transition: background 0.3s, border-color 0.3s;
+}
+.contact-email-btn:hover {
+  background: rgba(0,212,255,0.12);
+  border-color: var(--accent);
+}
+.contact-email-note {
+  font-family: var(--font-btn);
+  font-size: 0.62rem;
+  letter-spacing: 0.06em;
+  color: var(--white-muted);
+  margin-top: 0.4rem;
+  display: block;
+}
+
+/* ── Prefer-talk link ── */
+.prefer-talk-link {
+  font-family: var(--font-btn);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s;
+}
+.prefer-talk-link:hover { border-color: var(--accent); }
