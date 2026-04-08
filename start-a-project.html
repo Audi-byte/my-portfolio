@@ -3,38 +3,64 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Start a Project — Audi | Learning Experience Designer</title>
-  <meta name="description" content="Tell me about your performance gap. I'll design the smartest, leanest solution — eLearning, job aids, or something else entirely." />
-  <meta name="author" content="Charles Lwanda" />
-  <meta name="robots" content="index, follow" />
-  <meta property="og:title" content="Start a Project — Audi | Learning Experience Architect" />
-  <meta property="og:description" content="Tell me about your performance gap. I'll design the smartest, leanest solution — eLearning, job aids, or something else entirely." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://portfolio.chaslwanda.workers.dev/start-a-project.html" />
-  <meta property="og:image" content="https://portfolio.chaslwanda.workers.dev/og-image.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Start a Project — Audi | Learning Experience Architect" />
-  <meta name="twitter:description" content="Tell me about your performance gap. I'll design the smartest, leanest solution — eLearning, job aids, or something else entirely." />
+  <title>Start a Project — Audi | Learning Experience Architect</title>
+  <meta name="description" content="Tell me about your performance gap. I'll design the smartest solution — eLearning, job aids, or something else entirely." />
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Bitter:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="project.css" />
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
+  <style>
+    /* Gold step circles override */
+    .step-item.active .step-circle {
+      background: var(--bg-2);
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+    .step-item.done .step-circle {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: #0A0F1A;
+    }
+    .step-line.done { background: var(--gold); }
+    .step-item.active .step-label { color: var(--gold); }
+    /* Nudge toast */
+    .nudge-toast {
+      display: none;
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: var(--bg-2);
+      border: 1.5px solid var(--gold);
+      border-radius: 8px;
+      padding: 0.9rem 1.4rem;
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      color: var(--white);
+      z-index: 500;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+      max-width: 340px;
+      width: 90%;
+      text-align: center;
+      animation: toastIn 0.4s cubic-bezier(0.16,1,0.3,1) forwards;
+    }
+    .nudge-toast.show { display: block; }
+    .nudge-toast span { color: var(--gold); font-weight: 600; }
+    @keyframes toastIn {
+      from { opacity:0; transform: translateX(-50%) translateY(20px); }
+      to   { opacity:1; transform: translateX(-50%) translateY(0); }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Nav -->
+  <!-- Nudge toast -->
+  <div class="nudge-toast" id="nudge-toast"></div>
+
   <nav class="nav" id="nav">
-    <a href="index.html" class="nav-logo"><img src="logo.webp" alt="Charles Lwanda" class="nav-logo-img" /></a>
+    <a href="index.html" class="nav-logo"><img src="logo.png" alt="Charles Lwanda" class="nav-logo-img" /></a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
@@ -43,12 +69,9 @@
       <li><a href="contact.html">Contact</a></li>
       <li><a href="start-a-project.html" class="nav-cta nav-active-cta">Start a Project</a></li>
     </ul>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span>
-    </button>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span></button>
   </nav>
 
-  <!-- Mobile menu -->
   <div class="mobile-menu" id="mobile-menu">
     <ul>
       <li><a href="index.html" class="mobile-link">Home</a></li>
@@ -59,72 +82,66 @@
     </ul>
   </div>
 
-  <!-- Page Header -->
   <div class="sap-header">
     <div class="sap-header-inner">
       <h1 class="sap-title reveal">START A PROJECT</h1>
-      <p class="sap-intro reveal">
-        Ready to build something that actually moves performance — not just "looks nice"? Start with a quick blueprint below. It helps me understand your goals and design the smartest, leanest solution for your team. Let's build something that's clear, impactful, and a little fun along the way.
-      </p>
+      <p class="sap-intro reveal">Ready to build something that actually moves performance — not just "looks nice"? Start with a quick blueprint below. It helps me understand your goals and design the smartest, leanest solution for your team.</p>
     </div>
   </div>
 
-  <!-- Main content: form + sidebar -->
   <div class="sap-body">
 
-    <!-- Multi-step form -->
     <div class="sap-form-wrap reveal-up">
-      
+
       <!-- Step indicator -->
       <div class="steps-track">
         <div class="step-item active" data-step="1">
           <div class="step-circle">1</div>
-          <div class="step-label">STEP 1 —<br/>Problem<br/>Definition</div>
+          <div class="step-label">STEP 1<br/>Problem</div>
         </div>
         <div class="step-line"></div>
         <div class="step-item" data-step="2">
           <div class="step-circle">2</div>
-          <div class="step-label">STEP 2<br/>—<br/>Solution<br/>Vision</div>
+          <div class="step-label">STEP 2<br/>Solution</div>
         </div>
         <div class="step-line"></div>
         <div class="step-item" data-step="3">
           <div class="step-circle">3</div>
-          <div class="step-label">STEP 3<br/>—<br/>Timeline<br/>&amp; Budget</div>
+          <div class="step-label">STEP 3<br/>Budget</div>
         </div>
         <div class="step-line"></div>
         <div class="step-item" data-step="4">
           <div class="step-circle">4</div>
-          <div class="step-label">STEP 4<br/>— Share<br/>Anything<br/>That Will<br/>Help</div>
+          <div class="step-label">STEP 4<br/>Files</div>
         </div>
         <div class="step-line"></div>
         <div class="step-item" data-step="5">
           <div class="step-circle">5</div>
-          <div class="step-label">STEP 5<br/>— What<br/>Happens<br/>Next</div>
+          <div class="step-label">STEP 5<br/>Submit</div>
         </div>
       </div>
 
-      <!-- Step panels -->
       <div class="steps-content">
 
         <!-- STEP 1 -->
         <div class="step-panel active" id="panel-1">
           <div class="field-group">
-            <label class="field-label">What's the core problem or challenge?</label>
-            <input type="text" class="field-input" id="problem" placeholder="What should learners do differently?" />
+            <label class="field-label">What's the core problem or challenge? <span style="color:var(--gold);font-size:0.8em;">*</span></label>
+            <input type="text" class="field-input" id="problem" placeholder="What should learners do differently after training?" />
           </div>
           <div class="field-group">
-            <label class="field-label">Who is this course for?</label>
-            <input type="text" class="field-input" id="audience" placeholder="Who's the audience?" />
+            <label class="field-label">Who is this for? <span style="color:var(--gold);font-size:0.8em;">*</span></label>
+            <input type="text" class="field-input" id="audience" placeholder="Who's the audience — role, industry, level?" />
           </div>
           <div class="step-nav">
-            <button class="btn-next" onclick="goTo(2)">Next</button>
+            <button class="btn-next" onclick="validateStep1()">Next &rarr;</button>
           </div>
         </div>
 
         <!-- STEP 2 -->
         <div class="step-panel" id="panel-2">
           <div class="field-group">
-            <label class="field-label">2. What Kind of Solution Fits Your Vision? <span class="field-hint">(Choose all that apply)</span></label>
+            <label class="field-label">What kind of solution fits your vision? <span style="color:var(--gold);font-size:0.8em;">*</span> <span class="field-hint">(Choose at least one)</span></label>
             <div class="checkbox-list">
               <label class="check-item"><input type="checkbox" name="solution" value="scenario" /><span>Scenario-Based Learning</span></label>
               <label class="check-item"><input type="checkbox" name="solution" value="storyline" /><span>Interactive Storyline Modules</span></label>
@@ -136,44 +153,45 @@
           </div>
           <div class="step-nav">
             <button class="btn-prev" onclick="goTo(1)">Previous</button>
-            <button class="btn-next" onclick="goTo(3)">Next</button>
+            <button class="btn-next" onclick="validateStep2()">Next &rarr;</button>
           </div>
         </div>
 
         <!-- STEP 3 -->
         <div class="step-panel" id="panel-3">
           <div class="field-group">
-            <label class="field-label">Timeline &amp; Budget Range <span class="field-hint">(Just choose a range — no commitment yet. It helps me propose the right-sized solution.)</span></label>
+            <label class="field-label">Budget range <span class="field-hint">(No commitment — helps me right-size the proposal)</span></label>
             <div class="checkbox-list">
               <label class="check-item"><input type="radio" name="budget" value="100-400" /><span>$100 – $400</span></label>
               <label class="check-item"><input type="radio" name="budget" value="500-1000" /><span>$500 – $1,000</span></label>
               <label class="check-item"><input type="radio" name="budget" value="1000-1500" /><span>$1,000 – $1,500</span></label>
               <label class="check-item"><input type="radio" name="budget" value="1500-5000" /><span>$1,500 – $5,000+</span></label>
             </div>
-            <p class="field-flexible">I am flexible — propose what fits the problem.</p>
-            <label class="field-label" style="margin-top:1rem;">Preferred timeline</label>
+            <p class="field-flexible">I'm flexible — propose what fits the problem.</p>
+          </div>
+          <div class="field-group">
+            <label class="field-label">Preferred timeline</label>
             <input type="text" class="field-input" id="timeline" placeholder="e.g. 4 weeks, ASAP, flexible..." />
           </div>
           <div class="step-nav">
             <button class="btn-prev" onclick="goTo(2)">Previous</button>
-            <button class="btn-next" onclick="goTo(4)">Next</button>
+            <button class="btn-next" onclick="goTo(4)">Next &rarr;</button>
           </div>
         </div>
 
         <!-- STEP 4 -->
         <div class="step-panel" id="panel-4">
           <div class="field-group">
-            <label class="field-label">Upload any files, SOPs, scripts, brand guidelines, or rough sketches. If you don't have anything yet, no stress — just skip.</label>
+            <label class="field-label">Share any helpful files <span class="field-hint">(SOPs, scripts, brand guidelines — or skip if none)</span></label>
             <input type="file" class="field-file" id="file-upload" multiple accept=".pdf,.doc,.docx,.ppt,.pptx,.png,.jpg,.jpeg,.zip" />
-            <p class="field-hint" style="margin-top:0.6rem;">Accepted: PDF, Word, PowerPoint, images, ZIP</p>
           </div>
           <div class="field-group">
-            <label class="field-label">Anything else you'd like me to know?</label>
-            <textarea class="field-textarea" id="extras" placeholder="Any context, constraints, or requests..."></textarea>
+            <label class="field-label">Anything else I should know?</label>
+            <textarea class="field-textarea" id="extras" placeholder="Context, constraints, or anything that will help me understand your situation better..."></textarea>
           </div>
           <div class="step-nav">
             <button class="btn-prev" onclick="goTo(3)">Previous</button>
-            <button class="btn-next" onclick="goTo(5)">Next</button>
+            <button class="btn-next" onclick="goTo(5)">Next &rarr;</button>
           </div>
         </div>
 
@@ -182,7 +200,7 @@
           <div class="step5-content">
             <p class="step5-after"><strong>After you submit:</strong></p>
             <ol class="step5-list">
-              <li>I review your project brief (within 24–48 hours).</li>
+              <li>I review your brief within 24–48 hours.</li>
               <li>I map out the performance gap + the best solution.</li>
               <li>You receive a mini-proposal with scope, concept, and timeline.</li>
               <li>If we're aligned, I start building.</li>
@@ -191,24 +209,24 @@
           </div>
           <div class="step-nav">
             <button class="btn-prev" onclick="goTo(4)">Previous</button>
-            <button class="btn-submit" onclick="submitForm()">→ Let's Build This</button>
+            <button class="btn-submit" onclick="submitForm()">&rarr; Let's Build This</button>
           </div>
         </div>
 
         <!-- SUCCESS -->
         <div class="step-panel" id="panel-success">
           <div class="success-wrap">
-            <div class="success-icon">✓</div>
+            <div class="success-icon">&#10003;</div>
             <h3 class="success-title">All set!</h3>
             <p class="success-msg">Thanks for sharing those details — it gives me a great head start. Keep an eye on your inbox; I'll be in touch shortly to discuss next steps.</p>
-            <a href="index.html" class="btn-next" style="display:inline-block; margin-top:1.5rem; text-align:center;">← Back to Home</a>
+            <a href="index.html" class="btn-next" style="display:inline-block;margin-top:1.5rem;text-align:center;">&larr; Back to Home</a>
           </div>
         </div>
 
       </div>
     </div>
 
-    <!-- Sidebar: Why work with me -->
+    <!-- Sidebar -->
     <div class="sap-sidebar reveal-up" style="--delay:0.15s">
       <h3 class="sidebar-title">Why teams work with me:</h3>
       <ul class="sidebar-list">
@@ -228,58 +246,94 @@
       <div class="sidebar-divider"></div>
       <div class="sidebar-contact">
         <p>Prefer email?</p>
-        <a href="/cdn-cgi/l/email-protection#a9c1ccc5c5c6e9d0c6dcdbc7c8c4cc87cac6c4" class="sidebar-email"><span class="__cf_email__" data-cfemail="fc9499909093bc8593898e929d9199d29f9391">[email&#160;protected]</span></a>
+        <button class="contact-email-btn" onclick="revealSapEmail()" id="sap-email-btn" style="background:transparent;border:none;color:var(--gold);font-family:var(--font-body);font-size:0.9rem;cursor:pointer;padding:0;">Click to reveal</button>
+        <span id="sap-email-revealed" style="display:none;"></span>
       </div>
     </div>
 
   </div>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="footer-inner">
-      <a href="index.html" class="footer-logo-link"><img src="logo.webp" alt="Charles Lwanda" class="footer-logo-img" /></a>
-      <div class="footer-copy">&copy; <span class="footer-year">2025</span> &middot; Learning Experience Designer &middot; Nairobi, Kenya</div>
+      <a href="index.html" class="footer-logo-link"><img src="logo.png" alt="Charles Lwanda" class="footer-logo-img" /></a>
+      <div class="footer-copy">&copy; <span class="footer-year">2025</span> &middot; Learning Experience Architect &middot; Nairobi, Kenya</div>
       <div class="footer-top"><a href="#top">&uarr; Top</a></div>
     </div>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="main.js"></script>
+  <script src="main.js"></script>
   <script>
     let currentStep = 1;
 
+    const nudges = {
+      1: ["Psst — just two quick fields! What's the problem and who's the audience? That's it for Step 1. 🙌", "Almost there! Two fields won't bite — fill them in and let's get moving. 😄", "Don't leave me hanging! Tell me the problem — I promise I won't judge. 📝"],
+      2: ["Pick at least one — even 'Not Sure Yet' counts! I won't make you commit. 😊", "One click is all it takes for Step 2. Which solution sounds right to you? 🎯", "No pressure — 'Help Me Decide' is a perfectly valid answer. Just pick one! ✅"]
+    };
+
+    function showNudge(step) {
+      const msgs = nudges[step];
+      const msg = msgs[Math.floor(Math.random() * msgs.length)];
+      const toast = document.getElementById('nudge-toast');
+      toast.innerHTML = msg;
+      toast.classList.add('show');
+      setTimeout(() => { toast.classList.remove('show'); }, 3500);
+    }
+
+    function validateStep1() {
+      const problem = document.getElementById('problem').value.trim();
+      const audience = document.getElementById('audience').value.trim();
+      if (!problem || !audience) {
+        showNudge(1);
+        if (!problem) document.getElementById('problem').focus();
+        else document.getElementById('audience').focus();
+        return;
+      }
+      goTo(2);
+    }
+
+    function validateStep2() {
+      const checked = document.querySelectorAll('input[name="solution"]:checked');
+      if (checked.length === 0) {
+        showNudge(2);
+        return;
+      }
+      goTo(3);
+    }
+
     function goTo(step) {
-      // Hide current panel
       document.getElementById('panel-' + currentStep).classList.remove('active');
-      // Deactivate current step indicator
       document.querySelector('.step-item[data-step="' + currentStep + '"]').classList.remove('active');
-
       currentStep = step;
-
-      // Show new panel
       document.getElementById('panel-' + currentStep).classList.add('active');
-
-      // Update step indicators
       document.querySelectorAll('.step-item').forEach(item => {
         const n = parseInt(item.dataset.step);
         item.classList.remove('active', 'done');
         if (n === currentStep) item.classList.add('active');
         if (n < currentStep) item.classList.add('done');
       });
-
-      // Update step lines
       document.querySelectorAll('.step-line').forEach((line, i) => {
         line.classList.toggle('done', i < currentStep - 1);
       });
-
-      // Scroll form into view smoothly
       document.querySelector('.sap-form-wrap').scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
     function submitForm() {
-      // Hide step 5 panel and indicator
       document.getElementById('panel-5').classList.remove('active');
       document.querySelector('.step-item[data-step="5"]').classList.add('done');
       document.querySelectorAll('.step-line').forEach(l => l.classList.add('done'));
+      document.getElementById('panel-success').classList.add('active');
+      document.querySelector('.steps-track').style.opacity = '0.4';
+      document.querySelector('.sap-form-wrap').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
 
-      // Show success
-      document.getElementById('panel
+    function revealSapEmail() {
+      const parts = ['info', '@', 'charleslwanda', '.com'];
+      const email = parts.join('');
+      document.getElementById('sap-email-btn').style.display = 'none';
+      const el = document.getElementById('sap-email-revealed');
+      el.innerHTML = '<a href="mailto:' + email + '" style="color:var(--gold);">' + email + '</a>';
+      el.style.display = 'inline';
+    }
+  </script>
+</body>
+</html>
