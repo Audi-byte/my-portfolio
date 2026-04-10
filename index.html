@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Charles Lwanda — Learning Experience Architect</title>
+  <title>Audi — Learning Experience Architect</title>
   <meta name="description" content="I design learning that changes behaviour — not just ticks a compliance box. Performance consulting, eLearning development, and instructional design based in Nairobi, Kenya." />
   <meta name="author" content="Charles Lwanda" />
   <meta name="robots" content="index, follow" />
-  <meta property="og:title" content="Charles Lwanda — Learning Experience Architect" />
+  <meta property="og:title" content="Audi — Learning Experience Architect" />
   <meta property="og:description" content="I design learning that changes behaviour — not just ticks a compliance box. Performance consulting, eLearning development, and instructional design based in Nairobi, Kenya." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://charleslwanda.com/" />
-  <meta property="og:image" content="https://charleslwanda.com/og-image.png" />
+  <meta property="og:url" content="https://portfolio.chaslwanda.workers.dev/" />
+  <meta property="og:image" content="https://portfolio.chaslwanda.workers.dev/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Charles Lwanda — Learning Experience Architect" />
+  <meta name="twitter:title" content="Audi — Learning Experience Architect" />
   <meta name="twitter:description" content="I design learning that changes behaviour — not just ticks a compliance box. Performance consulting, eLearning development, and instructional design based in Nairobi, Kenya." />
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -21,6 +21,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Bitter:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="home.css" />
+  <link rel="stylesheet" href="portfolio.css" />
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
@@ -34,7 +35,7 @@
 
   <!-- Nav -->
   <nav class="nav" id="nav">
-    <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Charles Lwanda" class="nav-logo-img" /></a>
+    <a href="index.html" class="nav-logo"><img src="logo.png" alt="Charles Lwanda" class="nav-logo-img" /></a>
     <ul class="nav-links">
       <li><a href="index.html" class="nav-active">Home</a></li>
       <li><a href="about.html">About</a></li>
@@ -65,7 +66,7 @@
     <div class="hero-layout">
 
       <div class="hero-left">
-        <div class="hero-tag reveal">Learning Experience Architect</div>
+        <div class="hero-tag reveal">Learning Experience Architect &middot; Nairobi, Kenya</div>
         <h1 class="hero-title">
           <span class="reveal-line">Stop Building Courses.</span>
           <span class="reveal-line">Start Solving</span>
@@ -83,14 +84,36 @@
       <div class="hero-center reveal-up">
         <div class="hero-blob">
           <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" class="blob-svg">
-            <path d="M420,280Q390,360,310,400Q230,440,160,390Q90,340,70,250Q50,160,120,100Q190,40,280,50Q370,60,420,140Q470,220,420,280Z" fill="#0D5C55" opacity="0.9"/>
-            <path d="M400,260Q375,345,295,385Q215,425,150,375Q85,325,75,240Q65,155,130,100Q195,45,280,55Q365,65,405,145Q445,225,400,260Z" fill="#0A4A44" opacity="0.55"/>
+            <defs>
+              <radialGradient id="blobGrad1" cx="40%" cy="35%" r="65%">
+                <stop offset="0%"   stop-color="#1a0a3a" stop-opacity="1"/>
+                <stop offset="55%"  stop-color="#0d1a4a" stop-opacity="1"/>
+                <stop offset="100%" stop-color="#0a1428" stop-opacity="1"/>
+              </radialGradient>
+              <radialGradient id="blobGrad2" cx="65%" cy="60%" r="50%">
+                <stop offset="0%"   stop-color="#2a1a0a" stop-opacity="0.9"/>
+                <stop offset="100%" stop-color="#1a0a2a" stop-opacity="0"/>
+              </radialGradient>
+              <radialGradient id="blobGlow" cx="50%" cy="45%" r="50%">
+                <stop offset="0%"   stop-color="#00D4FF" stop-opacity="0.12"/>
+                <stop offset="60%"  stop-color="#F5C842" stop-opacity="0.06"/>
+                <stop offset="100%" stop-color="#00D4FF" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <!-- Main asymmetric blob shape — angular, confident -->
+            <path d="M260,30 Q390,20,440,120 Q500,230,460,340 Q420,440,300,460 Q180,475,100,390 Q20,310,40,200 Q55,100,150,55 Q200,30,260,30Z" fill="url(#blobGrad1)" opacity="1"/>
+            <!-- Gold warm inner layer -->
+            <path d="M270,80 Q370,70,410,160 Q455,260,420,350 Q385,430,280,445 Q175,458,110,375 Q50,295,75,195 Q95,115,185,85 Q225,70,270,80Z" fill="url(#blobGrad2)" opacity="0.7"/>
+            <!-- Cyan glow overlay -->
+            <path d="M260,30 Q390,20,440,120 Q500,230,460,340 Q420,440,300,460 Q180,475,100,390 Q20,310,40,200 Q55,100,150,55 Q200,30,260,30Z" fill="url(#blobGlow)" opacity="1"/>
+            <!-- Subtle edge accent line -->
+            <path d="M260,30 Q390,20,440,120 Q500,230,460,340 Q420,440,300,460 Q180,475,100,390 Q20,310,40,200 Q55,100,150,55 Q200,30,260,30Z" fill="none" stroke="#00D4FF" stroke-width="1" opacity="0.15"/>
           </svg>
           <div class="hero-icon hero-icon-1">&#127979;</div>
           <div class="hero-icon hero-icon-2">&#128241;</div>
         </div>
         <div class="hero-photo">
-          <img src="images/photo.png" alt="Charles Lwanda — Learning Experience Architect" />
+          <img src="photo.png" alt="Audi — Learning Experience Architect" />
         </div>
       </div>
 
@@ -179,41 +202,47 @@
 
       <div class="work-grid">
 
-        <a href="portfolio.html#cs1" class="work-card reveal-up">
-          <div class="work-card-top thumb-1">
-            <span class="work-emoji">&#9878;&#65039;</span>
-            <span class="work-type-badge">Scenario Simulation</span>
+        <div class="pf-card reveal-up" onclick="window.location='portfolio.html'" style="cursor:pointer;">
+          <div class="pf-card-img pf-thumb-1">
+            <div class="pf-card-overlay"><span class="pf-card-type">Scenario Simulation</span></div>
+            <div class="pf-placeholder"><div class="pf-placeholder-icon">&#9878;&#65039;</div><span class="pf-placeholder-label">Add cover image</span></div>
           </div>
-          <div class="work-card-body">
-            <h3>When the Algorithm Is Wrong</h3>
-            <p>C-suite leaders were over-trusting AI outputs. A compliance course would have changed nothing. A judgment simulation did.</p>
-            <div class="work-result"><span class="dot-accent">&#9679;</span> 40% drop in undocumented AI override decisions</div>
+          <div class="pf-card-body">
+            <span class="pf-card-num">01</span>
+            <h3 class="pf-card-title">When the Algorithm Is Wrong</h3>
+            <p class="pf-card-desc">C-suite leaders were over-trusting AI outputs. A compliance course would have changed nothing. A judgment simulation did.</p>
+            <div class="pf-card-result"><span class="pf-dot">&#9679;</span>40% drop in undocumented AI override decisions</div>
+            <a href="portfolio.html" class="pf-card-btn" style="margin-top:0.8rem;">View Case Study &darr;</a>
           </div>
-        </a>
+        </div>
 
-        <a href="portfolio.html#cs2" class="work-card reveal-up" style="--delay:0.1s">
-          <div class="work-card-top thumb-2">
-            <span class="work-emoji">&#128203;</span>
-            <span class="work-type-badge">Performance Support</span>
+        <div class="pf-card reveal-up" onclick="window.location='portfolio.html'" style="cursor:pointer;--delay:0.1s">
+          <div class="pf-card-img pf-thumb-2">
+            <div class="pf-card-overlay"><span class="pf-card-type">Performance Support</span></div>
+            <div class="pf-placeholder"><div class="pf-placeholder-icon">&#128203;</div><span class="pf-placeholder-label">Add cover image</span></div>
           </div>
-          <div class="work-card-body">
-            <h3>The 5-Minute Field Guide</h3>
-            <p>Staff knew the 47-page SOP. They still froze at point-of-performance. The answer wasn't more training.</p>
-            <div class="work-result"><span class="dot-accent">&#9679;</span> +23% customer recovery score in 60 days</div>
+          <div class="pf-card-body">
+            <span class="pf-card-num">02</span>
+            <h3 class="pf-card-title">The 5-Minute Field Guide</h3>
+            <p class="pf-card-desc">Staff knew the 47-page SOP. They still froze at point-of-performance. The answer wasn't more training.</p>
+            <div class="pf-card-result"><span class="pf-dot">&#9679;</span>+23% customer recovery score in 60 days</div>
+            <a href="portfolio.html" class="pf-card-btn" style="margin-top:0.8rem;">View Case Study &darr;</a>
           </div>
-        </a>
+        </div>
 
-        <a href="portfolio.html#cs4" class="work-card reveal-up" style="--delay:0.2s">
-          <div class="work-card-top thumb-3">
-            <span class="work-emoji">&#128172;</span>
-            <span class="work-type-badge">Branching Scenario</span>
+        <div class="pf-card reveal-up" onclick="window.location='portfolio.html'" style="cursor:pointer;--delay:0.2s">
+          <div class="pf-card-img pf-thumb-4">
+            <div class="pf-card-overlay"><span class="pf-card-type">Branching Scenario</span></div>
+            <div class="pf-placeholder"><div class="pf-placeholder-icon">&#128172;</div><span class="pf-placeholder-label">Add cover image</span></div>
           </div>
-          <div class="work-card-body">
-            <h3>The Conversation You've Been Avoiding</h3>
-            <p>61% of direct reports said their manager avoided difficult feedback. A video about feedback wasn't going to fix that.</p>
-            <div class="work-result"><span class="dot-accent">&#9679;</span> Manager avoidance rate halved at 6-month re-survey</div>
+          <div class="pf-card-body">
+            <span class="pf-card-num">04</span>
+            <h3 class="pf-card-title">The Conversation You've Been Avoiding</h3>
+            <p class="pf-card-desc">61% of direct reports said their manager avoided difficult feedback. A video about feedback wasn't going to fix that.</p>
+            <div class="pf-card-result"><span class="pf-dot">&#9679;</span>Manager avoidance rate halved at 6-month re-survey</div>
+            <a href="portfolio.html" class="pf-card-btn" style="margin-top:0.8rem;">View Case Study &darr;</a>
           </div>
-        </a>
+        </div>
 
       </div>
     </div>
@@ -259,14 +288,14 @@
     <h2 class="section-title reveal" style="text-align:center">What they say</h2>
     <div class="testimonials-track">
       <div class="testimonial reveal-up">
-        <div class="testimonial-quote">"Charles asks the right questions before touching a slide. The final course actually changed how our team operates."</div>
+        <div class="testimonial-quote">"Audi asks the right questions before touching a slide. The final course actually changed how our team operates."</div>
         <div class="testimonial-author">
           <div class="author-avatar">H</div>
           <div><strong>HR Director</strong><span>NGO, East Africa</span></div>
         </div>
       </div>
       <div class="testimonial reveal-up" style="--delay:0.12s">
-        <div class="testimonial-quote">"Most designers take the brief and run. Charles pushed back on ours &mdash; and the final product was ten times better for it."</div>
+        <div class="testimonial-quote">"Most designers take the brief and run. Audi pushed back on ours &mdash; and the final product was ten times better for it."</div>
         <div class="testimonial-author">
           <div class="author-avatar">C</div>
           <div><strong>Chief People Officer</strong><span>Tech Startup, Nairobi</span></div>
@@ -334,8 +363,8 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-inner">
-      <a href="index.html" class="footer-logo-link"><img src="images/logo.png" alt="Charles Lwanda" class="footer-logo-img" /></a>
-      <div class="footer-copy">&copy; <span class="footer-year">2026</span> &middot; Learning Experience Architect</div>
+      <a href="index.html" class="footer-logo-link"><img src="logo.png" alt="Charles Lwanda" class="footer-logo-img" /></a>
+      <div class="footer-copy">&copy; <span class="footer-year">2025</span> &middot; Learning Experience Architect &middot; Nairobi, Kenya</div>
       <div class="footer-top"><a href="#home">&uarr; Top</a></div>
     </div>
   </footer>
