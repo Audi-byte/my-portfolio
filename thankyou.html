@@ -101,7 +101,28 @@
   </style>
 </head>
 <body>
-  <div id="nav-placeholder"></div><div class="ty-orb ty-orb-1"></div>
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo"><img src="logo.png" alt="Charles Lwanda" class="nav-logo-img" /></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="lab.html">The Lab</a></li>
+      <li><a href="contact.html" class="nav-active">Contact</a></li>
+      <li><a href="start-a-project.html" class="nav-cta">Start a Project</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="index.html" class="mobile-link">Home</a></li>
+      <li><a href="about.html" class="mobile-link">About</a></li>
+      <li><a href="portfolio.html" class="mobile-link">Portfolio</a></li>
+      <li><a href="lab.html" class="mobile-link">The Lab</a></li>
+      <li><a href="contact.html" class="mobile-link">Contact</a></li>
+      <li><a href="start-a-project.html" class="mobile-link">Start a Project</a></li>
+    </ul>
+  </div><div class="ty-orb ty-orb-1"></div>
   <div class="ty-orb ty-orb-2"></div>
 
   <main class="ty-page">
@@ -121,6 +142,12 @@
   </main>
 
   <script src="main.js"></script>
-  <div id="footer-placeholder"></div>
+  <footer class="footer">
+    <div class="footer-inner">
+      <a href="index.html" class="footer-logo-link"><img src="logo.png" alt="Charles Lwanda" class="footer-logo-img" /></a>
+      <div class="footer-copy">&copy; <span class="footer-year">2025</span> &middot; Learning Experience Architect &middot; Nairobi, Kenya</div>
+      <div class="footer-top"><a href="#top">&uarr; Top</a></div>
+    </div>
+  </footer>
 </body>
 </html>

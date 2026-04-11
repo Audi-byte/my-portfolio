@@ -2,91 +2,31 @@
    AUDI — LXD Portfolio  |  main.js
    ============================================================ */
 
-/* ── Load shared nav + footer ── */
-async function loadPartials() {
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-
-  // Load nav
-  try {
-    const navRes = await fetch('nav.html');
-    const navHtml = await navRes.text();
-    const navContainer = document.getElementById('nav-placeholder');
-    if (navContainer) {
-      navContainer.outerHTML = navHtml;
-      // Set active nav link
-      document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(link => {
-        const href = link.getAttribute('href');
-        if (href === currentPage || (currentPage === '' && href === 'index.html')) {
-          link.classList.add('nav-active');
-        }
-      });
-      // Re-init nav behaviours after inject
-      initNav();
-    }
-  } catch(e) {
-    console.warn('Nav partial not loaded:', e);
-  }
-
-  // Load footer
-  try {
-    const footRes = await fetch('footer.html');
-    const footHtml = await footRes.text();
-    const footContainer = document.getElementById('footer-placeholder');
-    if (footContainer) {
-      footContainer.outerHTML = footHtml;
-      // Update year
-      document.querySelectorAll('.footer-year').forEach(el => {
-        el.textContent = new Date().getFullYear();
-      });
-    }
-  } catch(e) {
-    console.warn('Footer partial not loaded:', e);
-  }
-}
-
-/* ── Nav behaviours ── */
-function initNav() {
-  const nav = document.getElementById('nav');
-  const hamburger = document.getElementById('hamburger');
-  const mobileMenu = document.getElementById('mobile-menu');
-
-  if (!nav) return;
-
+/* ── Nav scroll state ── */
+const nav = document.getElementById('nav');
+if (nav) {
   window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 60);
   }, { passive: true });
+}
 
-  if (hamburger && mobileMenu) {
-    const mobileLinks = document.querySelectorAll('.mobile-link');
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('open');
-      mobileMenu.classList.toggle('open');
-      document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+/* ── Mobile menu ── */
+const hamburger  = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+if (hamburger && mobileMenu) {
+  const mobileLinks = document.querySelectorAll('.mobile-link');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+  });
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+      document.body.style.overflow = '';
     });
-    mobileLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        hamburger.classList.remove('open');
-        mobileMenu.classList.remove('open');
-        document.body.style.overflow = '';
-      });
-    });
-  }
-
-  // Active nav link on scroll (homepage sections)
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
-  if (sections.length && navLinks.length) {
-    const sectionObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          navLinks.forEach(link => {
-            link.style.color = link.getAttribute('href') === `#${entry.target.id}` ? 'var(--white)' : '';
-          });
-        }
-      });
-    }, { threshold: 0.4 });
-    sections.forEach(s => sectionObserver.observe(s));
-  }
+  });
 }
 
 /* ── Auto year in footer ── */
@@ -148,5 +88,18 @@ document.addEventListener('mousemove', e => {
   if (orb2) orb2.style.transform = `translate(${-x * 0.4}px, ${-y * 0.4}px)`;
 });
 
-/* ── Init ── */
-loadPartials();
+/* ── Active nav link on scroll (homepage) ── */
+const sections  = document.querySelectorAll('section[id]');
+const navLinks  = document.querySelectorAll('.nav-links a[href^="#"]');
+if (sections.length && navLinks.length) {
+  const sectionObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => {
+          link.style.color = link.getAttribute('href') === `#${entry.target.id}` ? 'var(--white)' : '';
+        });
+      }
+    });
+  }, { threshold: 0.4 });
+  sections.forEach(s => sectionObserver.observe(s));
+}
