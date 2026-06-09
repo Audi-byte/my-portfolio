@@ -245,6 +245,77 @@
 }
 .cs-panel-close:hover { border-color: var(--accent); color: var(--accent); }
 
+
+
+
+
+
+/* ── CS6 Sidebar — Storyboard box ── */
+.cs-try-box {
+  background: rgba(245, 200, 66, 0.05);
+  border: 1.5px solid rgba(245, 200, 66, 0.4);
+  border-radius: 8px;
+  padding: 1.6rem;
+  margin-bottom: 1.2rem;
+  transition: border-color 0.3s;
+}
+.cs-try-box:hover {
+  border-color: rgba(245, 200, 66, 0.75);
+}
+.cs-try-icon {
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+  display: block;
+  filter: drop-shadow(0 0 10px rgba(245, 200, 66, 0.3));
+}
+.cs-try-box h4 {
+  font-family: var(--font-title);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 0.6rem;
+}
+.cs-try-box p {
+  font-family: var(--font-body);
+  font-size: 0.84rem;
+  color: var(--white-dim);
+  line-height: 1.65;
+  margin-bottom: 0;
+}
+
+/* ── Storyboard download button ── */
+.cs-try-box .tl-cert-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.2rem;
+  padding: 0.6rem 1.2rem;
+  background: rgba(245, 200, 66, 0.1);
+  border: 1.5px solid rgba(245, 200, 66, 0.5);
+  border-radius: 5px;
+  font-family: var(--font-btn);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+  transition: background 0.3s, border-color 0.3s, color 0.3s;
+}
+.cs-try-box .tl-cert-link:hover {
+  background: rgba(245, 200, 66, 0.18);
+  border-color: var(--gold);
+  color: #fff;
+}
+
+
+
+
+
+
+
+
+
 /* ── Responsive ── */
 @media (max-width: 1024px) {
   .pf-grid { grid-template-columns: repeat(2, 1fr); }

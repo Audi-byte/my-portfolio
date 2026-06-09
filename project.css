@@ -456,6 +456,8 @@
 }
 .sidebar-email:hover { border-color: var(--accent-soft); }
 
+
+
 /* ── Responsive ── */
 @media (max-width: 900px) {
   .sap-header { padding: 7rem 1.5rem 2rem; }
