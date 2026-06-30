@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MATTERS CBE Training of Trainers — Case Study | Charles Lwanda</title>
+  <meta name="description" content="How I designed a field-based Training of Trainers curriculum for East African practitioners using action mapping and behavior-change methodology." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@600;700;800&family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy-deep:   #141B2B;
+      --navy-mid:    #1E263B;
+      --navy-card:   #232D45;
+      --navy-border: #2E3A52;
+      --cyan:        #00D4FF;
+      --cyan-dim:    rgba(0,212,255,0.12);
+      --cyan-glow:   rgba(0,212,255,0.25);
+      --gold:        #F5C842;
+      --gold-dim:    rgba(245,200,66,0.12);
+      --white:       #FFFFFF;
+      --text-main:   #E2E8F0;
+      --text-muted:  #8899BB;
+      --text-faint:  #556688;
+      --radius:      6px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background: var(--navy-deep);
+      color: var(--text-main);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── NAV ─────────────────────────────── */
+    .nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(20,27,43,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--navy-border);
+      padding: 0 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 60px;
+    }
+    .nav-logo {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800; font-size: 1rem;
+      color: var(--cyan); letter-spacing: 0.05em; text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: var(--text-muted); font-size: 0.85rem; font-weight: 600;
+      text-decoration: none; letter-spacing: 0.04em; text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--cyan); }
+
+    /* ─── HERO ────────────────────────────── */
+    .hero {
+      padding: 5rem 2rem 4rem;
+      max-width: 900px; margin: 0 auto;
+      border-bottom: 1px solid var(--navy-border);
+    }
+    .hero-eyebrow {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--cyan);
+      margin-bottom: 1.2rem;
+    }
+    .hero-eyebrow span {
+      display: inline-block; padding: 0.3rem 0.8rem;
+      border: 1px solid var(--cyan); border-radius: 2px;
+      margin-right: 0.5rem;
+    }
+    .hero h1 {
+      font-family: 'Bitter', serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 700; line-height: 1.2;
+      color: var(--white); margin-bottom: 1.4rem;
+    }
+    .hero h1 em { font-style: italic; color: var(--cyan); }
+    .hero-subtitle {
+      font-size: 1.1rem; color: var(--text-muted); max-width: 680px;
+      margin-bottom: 2.5rem; line-height: 1.8;
+    }
+
+    /* ─── META STRIP ──────────────────────── */
+    .meta-strip {
+      display: flex; flex-wrap: wrap; gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .meta-chip {
+      background: var(--navy-card);
+      border: 1px solid var(--navy-border);
+      border-radius: var(--radius);
+      padding: 0.4rem 0.9rem;
+      font-size: 0.78rem; font-weight: 600;
+      color: var(--text-muted); letter-spacing: 0.04em;
+    }
+    .meta-chip.highlight { border-color: var(--cyan); color: var(--cyan); }
+
+    /* ─── LAYOUT ──────────────────────────── */
+    .page-body {
+      max-width: 900px; margin: 0 auto;
+      padding: 0 2rem 6rem;
+    }
+
+    /* ─── SECTION ─────────────────────────── */
+    .section {
+      padding: 4rem 0 0;
+    }
+    .section-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--cyan); margin-bottom: 0.6rem;
+    }
+    .section h2 {
+      font-family: 'Bitter', serif;
+      font-size: 1.7rem; font-weight: 700;
+      color: var(--white); margin-bottom: 1.5rem;
+      border-bottom: 2px solid var(--cyan);
+      padding-bottom: 0.6rem; display: inline-block;
+    }
+    .section p {
+      color: var(--text-main); margin-bottom: 1.1rem;
+      max-width: 760px;
+    }
+
+    /* ─── CALLOUT BOX ─────────────────────── */
+    .callout {
+      background: var(--navy-card);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 1.4rem 1.6rem;
+      margin: 2rem 0;
+    }
+    .callout-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 0.5rem;
+    }
+    .callout p { color: var(--text-main); margin: 0; }
+
+    .callout-cyan {
+      border-left-color: var(--cyan);
+    }
+    .callout-cyan .callout-label { color: var(--cyan); }
+
+    /* ─── PROBLEM CARDS ───────────────────── */
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem; margin: 2rem 0;
+    }
+    .problem-card {
+      background: var(--navy-card);
+      border: 1px solid var(--navy-border);
+      border-radius: var(--radius);
+      padding: 1.4rem;
+    }
+    .problem-card .icon {
+      font-size: 1.5rem; margin-bottom: 0.7rem;
+    }
+    .problem-card h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.85rem; font-weight: 700;
+      color: var(--white); margin-bottom: 0.5rem;
+      letter-spacing: 0.02em;
+    }
+    .problem-card p {
+      font-size: 0.88rem; color: var(--text-muted); margin: 0;
+    }
+
+    /* ─── PROCESS STEPS ───────────────────── */
+    .process-steps { margin: 2rem 0; }
+    .step {
+      display: flex; gap: 1.5rem;
+      margin-bottom: 2rem;
+      align-items: flex-start;
+    }
+    .step-number {
+      flex-shrink: 0;
+      width: 44px; height: 44px;
+      background: var(--cyan-dim);
+      border: 1px solid var(--cyan);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800; font-size: 0.9rem;
+      color: var(--cyan);
+    }
+    .step-body h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem; font-weight: 700;
+      color: var(--white); margin-bottom: 0.4rem;
+    }
+    .step-body p { font-size: 0.95rem; color: var(--text-main); margin: 0; }
+
+    /* ─── ARCHITECTURE TABLE ──────────────── */
+    .arch-table {
+      width: 100%; border-collapse: collapse;
+      margin: 2rem 0; font-size: 0.9rem;
+    }
+    .arch-table thead th {
+      background: var(--navy-card);
+      border: 1px solid var(--navy-border);
+      padding: 0.7rem 1rem;
+      text-align: left;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--cyan);
+    }
+    .arch-table tbody td {
+      border: 1px solid var(--navy-border);
+      padding: 0.75rem 1rem;
+      color: var(--text-main);
+      vertical-align: top;
+    }
+    .arch-table tbody tr:hover td { background: var(--navy-card); }
+    .arch-table .module-name {
+      font-weight: 600; color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.85rem;
+    }
+    .arch-table .tag {
+      display: inline-block;
+      background: var(--cyan-dim);
+      border: 1px solid rgba(0,212,255,0.3);
+      border-radius: 2px;
+      padding: 0.15rem 0.5rem;
+      font-size: 0.72rem; font-weight: 600;
+      color: var(--cyan); margin: 0.1rem;
+    }
+
+    /* ─── OUTCOMES ────────────────────────── */
+    .outcomes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem; margin: 2rem 0;
+    }
+    .outcome-stat {
+      background: var(--navy-card);
+      border: 1px solid var(--navy-border);
+      border-top: 3px solid var(--gold);
+      border-radius: var(--radius);
+      padding: 1.4rem;
+      text-align: center;
+    }
+    .outcome-stat .number {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2rem; font-weight: 800;
+      color: var(--gold); line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+    .outcome-stat .label {
+      font-size: 0.82rem; color: var(--text-muted);
+      line-height: 1.4;
+    }
+    .outcome-honest {
+      background: var(--navy-card);
+      border: 1px solid var(--navy-border);
+      border-top: 3px solid var(--text-faint);
+      border-radius: var(--radius);
+      padding: 1.4rem 1.6rem;
+      margin-top: 1.5rem;
+    }
+    .outcome-honest h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--text-faint); margin-bottom: 0.6rem;
+    }
+    .outcome-honest p { font-size: 0.9rem; color: var(--text-muted); margin: 0; }
+
+    /* ─── REFLECTION ──────────────────────── */
+    .reflection {
+      background: var(--navy-mid);
+      border: 1px solid var(--navy-border);
+      border-radius: var(--radius);
+      padding: 2rem 2.2rem;
+      margin: 2.5rem 0;
+    }
+    .reflection blockquote {
+      font-family: 'Bitter', serif;
+      font-size: 1.15rem; font-style: italic;
+      color: var(--text-main); line-height: 1.8;
+      border-left: 3px solid var(--cyan);
+      padding-left: 1.2rem; margin: 0;
+    }
+
+    /* ─── FOOTER ──────────────────────────── */
+    .footer {
+      border-top: 1px solid var(--navy-border);
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    .footer-text { color: var(--text-faint); font-size: 0.85rem; margin-bottom: 1rem; }
+    .footer-link {
+      display: inline-block;
+      background: var(--cyan);
+      color: var(--navy-deep);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700; font-size: 0.85rem;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.75rem 1.8rem;
+      border-radius: var(--radius);
+      transition: opacity 0.2s;
+    }
+    .footer-link:hover { opacity: 0.85; }
+
+    /* ─── DIVIDER ─────────────────────────── */
+    .rule {
+      border: none;
+      border-top: 1px solid var(--navy-border);
+      margin: 3rem 0 0;
+    }
+
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .step { flex-direction: column; gap: 0.8rem; }
+      .step-number { width: 36px; height: 36px; font-size: 0.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a class="nav-logo" href="/index.html">CHARLES LWANDA</a>
+    <ul class="nav-links">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/portfolio.html">Portfolio</a></li>
+      <li><a href="/lab.html">The Lab</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ─── HERO ─────────────────────────────── -->
+  <header class="hero">
+    <div class="hero-eyebrow">
+      <span>Case Study</span>
+      <span>Capacity Development</span>
+      <span>East Africa</span>
+    </div>
+    <h1>Building Trainers Who Could <em>Actually Train</em></h1>
+    <p class="hero-subtitle">
+      A multi-module Training of Trainers programme designed for East African field practitioners — where the real design constraint wasn't content completeness, it was making expertise transferable under real-world conditions.
+    </p>
+    <div class="meta-strip">
+      <span class="meta-chip highlight">MATTERS CBE</span>
+      <span class="meta-chip">Training of Trainers (ToT)</span>
+      <span class="meta-chip">East Africa</span>
+      <span class="meta-chip">Blended Delivery</span>
+      <span class="meta-chip">Action Mapping</span>
+      <span class="meta-chip">2022 – 2024</span>
+    </div>
+  </header>
+
+  <main class="page-body">
+
+    <!-- ─── THE PROBLEM ─────────────────────── -->
+    <section class="section" id="problem">
+      <div class="section-label">01 — The Problem</div>
+      <h2>What Was Actually Broken</h2>
+      <p>
+        The MATTERS CBE programme needed to build facilitation capacity across East Africa — but the organisation had tried this before. Previous training had produced trainers who could recite programme content, but couldn't adapt it when the room stopped responding. The training was about the programme. It wasn't about how to train.
+      </p>
+      <p>
+        My job wasn't to write better content. It was to redesign what the training was <em>for</em>.
+      </p>
+
+      <div class="problem-grid">
+        <div class="problem-card">
+          <div class="icon">⚡</div>
+          <h3>The Transfer Gap</h3>
+          <p>Trainers left certification workshops with knowledge they couldn't activate in the field. Content recall ≠ facilitation competence.</p>
+        </div>
+        <div class="problem-card">
+          <div class="icon">🌍</div>
+          <h3>Context Diversity</h3>
+          <p>Trainer cohorts spanned multiple countries, languages, and professional backgrounds. A single delivery model couldn't serve all of them.</p>
+        </div>
+        <div class="problem-card">
+          <div class="icon">📶</div>
+          <h3>Infrastructure Reality</h3>
+          <p>Digital content had to function on intermittent connectivity and low-end mobile devices. "Upload to LMS" was not a delivery strategy.</p>
+        </div>
+        <div class="problem-card">
+          <div class="icon">🧠</div>
+          <h3>Literacy Range</h3>
+          <p>Materials needed to work for a Nairobi programme officer and a rural field facilitator without requiring parallel versions.</p>
+        </div>
+      </div>
+
+      <div class="callout">
+        <div class="callout-label">The Design Question I Started With</div>
+        <p>"What should a trainer be able to do differently after this programme that they cannot do today — and what's stopping them from doing it now?"</p>
+      </div>
+    </section>
+
+    <hr class="rule" />
+
+    <!-- ─── METHODOLOGY ─────────────────────── -->
+    <section class="section" id="methodology">
+      <div class="section-label">02 — Methodology</div>
+      <h2>How I Approached It</h2>
+      <p>
+        I used Cathy Moore's <strong>Action Mapping</strong> framework as the design spine. Every module decision started with a performance gap, not a content gap. If I couldn't identify the moment of failure — the specific situation where a trainer was making the wrong call — the content didn't belong in the programme.
+      </p>
+
+      <div class="process-steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <div class="step-body">
+            <h3>Performance Discovery</h3>
+            <p>Structured interviews with programme coordinators, field supervisors, and previous trainer cohorts. I was looking for the failure moments — not what trainers didn't know, but what they couldn't do when it mattered. This took three weeks and produced a map of 11 distinct performance gaps across facilitation, content adaptation, and group dynamics management.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-body">
+            <h3>Action Map Construction</h3>
+            <p>Each performance gap became a training objective stated as a visible action, not a knowledge state. "Understand group dynamics" became "Redirect a disengaged group within 10 minutes without losing facilitation momentum." The specificity forced the curriculum to be practical rather than informational.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <div class="step-body">
+            <h3>Format Architecture</h3>
+            <p>I designed a multi-format system: core facilitation guides built with low-text-dependency visual layouts, field practice activities mapped to real delivery scenarios, peer observation frameworks for between-session accountability, and digital supplements compressed for mobile-first offline access. No single format carried the whole load.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <div class="step-body">
+            <h3>Scenario-Based Practice Activities</h3>
+            <p>Every module's core skill was practised through a scenario drawn from real field situations — not hypotheticals. Scenarios were reviewed with field supervisors for authenticity before inclusion. This is the same behaviour-change architecture I use in my Articulate Storyline simulations, adapted for facilitated group delivery.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">5</div>
+          <div class="step-body">
+            <h3>Pilot, Observe, Revise</h3>
+            <p>First cohort delivery was treated as a live design test. I observed facilitation sessions, tracked which activities produced the strongest performance transfer, and ran a structured revision cycle before second cohort rollout. The materials that survived were the ones that worked under real conditions.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-cyan">
+        <div class="callout-label">Design Principle Applied Throughout</div>
+        <p>If a content element couldn't be connected to a specific failure moment in the field, it was cut — regardless of how important it felt to the subject matter experts. This was the hardest negotiation in the design process, and the most important one.</p>
+      </div>
+    </section>
+
+    <hr class="rule" />
+
+    <!-- ─── DELIVERY ARCHITECTURE ────────────── -->
+    <section class="section" id="architecture">
+      <div class="section-label">03 — Delivery Architecture</div>
+      <h2>What Was Actually Built</h2>
+      <p>
+        The programme comprised five interdependent modules delivered across a blended residential + field practice + digital support structure. The residential component was designed to be facilitation-intensive, not lecture-intensive — trainers practised by training each other.
+      </p>
+
+      <table class="arch-table">
+        <thead>
+          <tr>
+            <th>Module</th>
+            <th>Core Focus</th>
+            <th>Format</th>
+            <th>Key Deliverable</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="module-name">Foundations of Facilitation</td>
+            <td>What facilitation is vs. what presenting is — and why the distinction matters for adult learners</td>
+            <td><span class="tag">Residential</span><span class="tag">Peer Practice</span></td>
+            <td>Personal facilitation style assessment + live micro-facilitation with structured feedback</td>
+          </tr>
+          <tr>
+            <td class="module-name">Adapting Content for Context</td>
+            <td>How to read an audience and adjust pacing, language, and examples in real time</td>
+            <td><span class="tag">Residential</span><span class="tag">Scenario Activities</span></td>
+            <td>Context adaptation toolkit — field-usable decision framework</td>
+          </tr>
+          <tr>
+            <td class="module-name">Group Dynamics Management</td>
+            <td>Handling disengagement, dominant voices, cultural dynamics, and conflict in the training room</td>
+            <td><span class="tag">Residential</span><span class="tag">Role Play</span></td>
+            <td>Facilitation troubleshooting guide — observable indicators + response options</td>
+          </tr>
+          <tr>
+            <td class="module-name">Low-Resource Delivery</td>
+            <td>Facilitating effectively with minimal infrastructure — no projector, no reliable power, no internet</td>
+            <td><span class="tag">Field Practice</span><span class="tag">Peer Observation</span></td>
+            <td>Low-tech facilitation kit — printed tools designed to function without digital support</td>
+          </tr>
+          <tr>
+            <td class="module-name">Continuous Improvement Cycle</td>
+            <td>How trainers reflect on their own delivery, gather structured learner feedback, and iterate</td>
+            <td><span class="tag">Field Practice</span><span class="tag">Digital Support</span></td>
+            <td>Self-review protocol + peer feedback form + reflection journal template</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="callout">
+        <div class="callout-label">The Low-Bandwidth Decision</div>
+        <p>Digital supplements were published as compressed HTML bundles and PDF toolkits — not as LMS-hosted content requiring login. Trainers could download once on Wi-Fi and use offline indefinitely. This was a deliberate architectural choice, not a technical compromise.</p>
+      </div>
+    </section>
+
+    <hr class="rule" />
+
+    <!-- ─── OUTCOMES ────────────────────────── -->
+    <section class="section" id="outcomes">
+      <div class="section-label">04 — Outcomes</div>
+      <h2>What It Produced</h2>
+      <p>
+        Two cohorts completed the full programme. Here is what I can honestly claim — and what I'm still measuring.
+      </p>
+
+      <div class="outcomes-grid">
+        <div class="outcome-stat">
+          <div class="number">2</div>
+          <div class="label">Full trainer cohorts through the revised programme</div>
+        </div>
+        <div class="outcome-stat">
+          <div class="number">5</div>
+          <div class="label">Modules delivered across blended residential + field architecture</div>
+        </div>
+        <div class="outcome-stat">
+          <div class="number">11</div>
+          <div class="label">Distinct performance gaps addressed by the curriculum design</div>
+        </div>
+        <div class="outcome-stat">
+          <div class="number">3</div>
+          <div class="label">East African country contexts where materials were field-tested</div>
+        </div>
+      </div>
+
+      <div class="outcome-honest">
+        <h3>What I Don't Claim</h3>
+        <p>I don't have 12-month follow-up data on field delivery quality. I know from facilitator feedback that trainers felt more prepared than after previous iterations. I know the materials were used without significant adaptation — which means the format architecture worked. What I can't confirm yet is downstream learner impact from those trainers' subsequent delivery. That's the next measurement priority, and it's why I'm building an M&E framework based on this programme.</p>
+      </div>
+    </section>
+
+    <hr class="rule" />
+
+    <!-- ─── REFLECTION ────────────────────── -->
+    <section class="section" id="reflection">
+      <div class="section-label">05 — Design Reflection</div>
+      <h2>What I'd Do Differently</h2>
+
+      <div class="reflection">
+        <blockquote>
+          "The hardest part wasn't designing the curriculum — it was convincing stakeholders to cut content they'd spent years developing. Action mapping makes that negotiation possible because the framework, not the designer, becomes the decision-maker."
+        </blockquote>
+      </div>
+
+      <p>
+        If I were starting this project today, I'd build the observation protocol into the programme from week one rather than adding it post-pilot. The richest design insights came from watching trainers facilitate — not from asking them how they felt about the training. Behaviour is the evidence.
+      </p>
+      <p>
+        I'd also invest more in the peer feedback infrastructure. The self-review protocol worked, but peer observation without a structured calibration process produced inconsistent feedback quality across cohorts. That's now a design standard in everything I build.
+      </p>
+    </section>
+
+  </main>
+
+  <!-- ─── FOOTER ────────────────────────────── -->
+  <footer class="footer">
+    <p class="footer-text">Want to discuss how this methodology applies to your programme? Let's talk.</p>
+    <a class="footer-link" href="mailto:charleslwanda@gmail.com">Get in Touch</a>
+    <p style="margin-top:2rem;color:var(--text-faint);font-size:0.8rem;">
+      <a href="/portfolio.html" style="color:var(--text-faint);text-decoration:none;">← Back to Portfolio</a>
+      &nbsp;·&nbsp;
+      <a href="/case-studies/me-framework.html" style="color:var(--cyan);text-decoration:none;">Next: M&E Framework →</a>
+    </p>
+  </footer>
+
+</body>
+</html>

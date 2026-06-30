@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Programme Evaluation Framework — Learning Analytics | Charles Lwanda</title>
+  <meta name="description" content="How I design monitoring and evaluation systems for learning programmes — a four-level framework grounded in the MATTERS CBE Training of Trainers experience." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@600;700;800&family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy-deep:   #141B2B;
+      --navy-mid:    #1E263B;
+      --navy-card:   #232D45;
+      --navy-border: #2E3A52;
+      --cyan:        #00D4FF;
+      --cyan-dim:    rgba(0,212,255,0.10);
+      --cyan-glow:   rgba(0,212,255,0.22);
+      --gold:        #F5C842;
+      --gold-dim:    rgba(245,200,66,0.10);
+      --white:       #FFFFFF;
+      --text-main:   #E2E8F0;
+      --text-muted:  #8899BB;
+      --text-faint:  #556688;
+      --radius:      6px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background: var(--navy-deep);
+      color: var(--text-main);
+      font-size: 16px; line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(20,27,43,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--navy-border);
+      padding: 0 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 60px;
+    }
+    .nav-logo {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800; font-size: 1rem;
+      color: var(--cyan); letter-spacing: 0.05em; text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: var(--text-muted); font-size: 0.85rem; font-weight: 600;
+      text-decoration: none; letter-spacing: 0.04em; text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--cyan); }
+
+    /* ─── HERO ─────────────────────────── */
+    .hero {
+      padding: 5rem 2rem 4rem;
+      max-width: 900px; margin: 0 auto;
+      border-bottom: 1px solid var(--navy-border);
+    }
+    .hero-eyebrow {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 1.2rem;
+    }
+    .hero-eyebrow span {
+      display: inline-block; padding: 0.3rem 0.8rem;
+      border: 1px solid var(--gold); border-radius: 2px;
+      margin-right: 0.5rem;
+    }
+    .hero h1 {
+      font-family: 'Bitter', serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700; line-height: 1.2;
+      color: var(--white); margin-bottom: 1.4rem;
+    }
+    .hero h1 em { font-style: italic; color: var(--gold); }
+    .hero-subtitle {
+      font-size: 1.05rem; color: var(--text-muted);
+      max-width: 700px; margin-bottom: 2rem; line-height: 1.85;
+    }
+    .meta-strip { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .meta-chip {
+      background: var(--navy-card);
+      border: 1px solid var(--navy-border);
+      border-radius: var(--radius);
+      padding: 0.4rem 0.9rem;
+      font-size: 0.78rem; font-weight: 600;
+      color: var(--text-muted); letter-spacing: 0.04em;
+    }
+    .meta-chip.gold { border-color: var(--gold); color: var(--gold); }
+    .meta-chip.cyan { border-color: var(--cyan); color: var(--cyan); }
+
+    /* ─── PAGE BODY ─────────────────────── */
+    .page-body { max-width: 900px; margin: 0 auto; padding: 0 2rem 6rem; }
+
+    .section { padding: 4rem 0 0; }
+    .section-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 0.6rem;
+    }
+    .section h2 {
+      font-family: 'Bitter', serif;
+      font-size: 1.7rem; font-weight: 700;
+      color: var(--white); margin-bottom: 1.5rem;
+      border-bottom: 2px solid var(--gold);
+      padding-bottom: 0.6rem; display: inline-block;
+    }
+    .section p { color: var(--text-main); margin-bottom: 1.1rem; max-width: 760px; }
+
+    .rule { border: none; border-top: 1px solid var(--navy-border); margin: 3rem 0 0; }
+
+    /* ─── PRINCIPLE ─────────────────────── */
+    .principle-banner {
+      background: var(--navy-card);
+      border: 1px solid var(--navy-border);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 1.5rem 1.8rem;
+      margin: 2rem 0;
+    }
+    .principle-banner h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 0.5rem;
+    }
+    .principle-banner p { margin: 0; font-size: 1rem; color: var(--text-main); }
+
+    /* ─── FOUR LEVELS ───────────────────── */
+    .level-cards { margin: 2rem 0; display: flex; flex-direction: column; gap: 1.2rem; }
+
+    .level-card {
+      background: var(--navy-card);
+      border: 1px solid var(--navy-border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .level-header {
+      display: flex; align-items: stretch; gap: 0;
+    }
+    .level-num {
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      min-width: 72px; padding: 1.2rem 0.8rem;
+      background: var(--navy-mid);
+      border-right: 1px solid var(--navy-border);
+    }
+    .level-num .num {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.6rem; font-weight: 800;
+      line-height: 1;
+    }
+    .level-num .lbl {
+      font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--text-faint); margin-top: 0.3rem;
+    }
+    .level-card:nth-child(1) .level-num .num { color: var(--cyan); }
+    .level-card:nth-child(2) .level-num .num { color: #7DD3FC; }
+    .level-card:nth-child(3) .level-num .num { color: var(--gold); }
+    .level-card:nth-child(4) .level-num .num { color: #86EFAC; }
+
+    .level-main { padding: 1.2rem 1.5rem; flex: 1; }
+    .level-main h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.95rem; font-weight: 700;
+      color: var(--white); margin-bottom: 0.3rem;
+    }
+    .level-main .question {
+      font-size: 0.85rem; color: var(--text-muted);
+      font-style: italic; margin-bottom: 0.8rem;
+    }
+
+    .metrics-row {
+      display: flex; flex-wrap: wrap; gap: 1.2rem;
+    }
+    .metric-block { flex: 1; min-width: 160px; }
+    .metric-block .metric-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.65rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--text-faint); margin-bottom: 0.3rem;
+    }
+    .metric-block ul {
+      list-style: none; padding: 0;
+    }
+    .metric-block ul li {
+      font-size: 0.85rem; color: var(--text-main);
+      padding: 0.2rem 0;
+      padding-left: 1rem; position: relative;
+    }
+    .metric-block ul li::before {
+      content: "▸";
+      position: absolute; left: 0;
+      color: var(--cyan); font-size: 0.7rem;
+    }
+    .level-card:nth-child(3) .metric-block ul li::before { color: var(--gold); }
+    .level-card:nth-child(4) .metric-block ul li::before { color: #86EFAC; }
+
+    /* ─── TIMING STRIP ──────────────────── */
+    .timing-table {
+      width: 100%; border-collapse: collapse;
+      margin: 2rem 0; font-size: 0.88rem;
+    }
+    .timing-table thead th {
+      background: var(--navy-card);
+      border: 1px solid var(--navy-border);
+      padding: 0.7rem 1rem;
+      text-align: left;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--gold);
+    }
+    .timing-table tbody td {
+      border: 1px solid var(--navy-border);
+      padding: 0.75rem 1rem; color: var(--text-main);
+      vertical-align: top;
+    }
+    .timing-table tbody tr:hover td { background: var(--navy-card); }
+    .timing-table .phase {
+      font-weight: 600; color: var(--white);
+      font-family: 'Montserrat', sans-serif; font-size: 0.83rem;
+    }
+    .tag {
+      display: inline-block;
+      padding: 0.15rem 0.5rem;
+      font-size: 0.7rem; font-weight: 600;
+      border-radius: 2px; margin: 0.1rem;
+    }
+    .tag-cyan { background: var(--cyan-dim); border: 1px solid rgba(0,212,255,0.3); color: var(--cyan); }
+    .tag-gold { background: var(--gold-dim); border: 1px solid rgba(245,200,66,0.3); color: var(--gold); }
+
+    /* ─── INSTRUMENT CARDS ──────────────── */
+    .instruments { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin: 2rem 0; }
+    .instrument-card {
+      background: var(--navy-card);
+      border: 1px solid var(--navy-border);
+      border-top: 3px solid var(--cyan);
+      border-radius: var(--radius);
+      padding: 1.3rem;
+    }
+    .instrument-card.gold-top { border-top-color: var(--gold); }
+    .instrument-card h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.88rem; font-weight: 700;
+      color: var(--white); margin-bottom: 0.3rem;
+    }
+    .instrument-card .when {
+      font-size: 0.72rem; color: var(--text-faint);
+      font-style: italic; margin-bottom: 0.7rem;
+    }
+    .instrument-card p { font-size: 0.85rem; color: var(--text-muted); margin: 0; }
+
+    /* ─── ADAPTATION LOOP ───────────────── */
+    .loop-visual {
+      background: var(--navy-mid);
+      border: 1px solid var(--navy-border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      margin: 2rem 0;
+    }
+    .loop-steps {
+      display: flex; flex-wrap: wrap;
+      align-items: center; justify-content: center;
+      gap: 0.5rem; margin-bottom: 1.5rem;
+    }
+    .loop-step {
+      background: var(--navy-card);
+      border: 1px solid var(--navy-border);
+      border-radius: var(--radius);
+      padding: 0.7rem 1.1rem;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8rem; font-weight: 700;
+      color: var(--text-main);
+      text-align: center;
+      min-width: 120px;
+    }
+    .loop-arrow {
+      font-size: 1.2rem; color: var(--cyan);
+      font-weight: 700;
+    }
+    .loop-note {
+      font-size: 0.85rem; color: var(--text-muted);
+      border-top: 1px solid var(--navy-border);
+      padding-top: 1rem; margin-top: 0.5rem;
+    }
+
+    /* ─── MATTERS CBE APPLICATION ───────── */
+    .application-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+      margin: 2rem 0;
+    }
+    @media (max-width: 600px) { .application-grid { grid-template-columns: 1fr; } }
+    .app-card {
+      background: var(--navy-card);
+      border: 1px solid var(--navy-border);
+      border-radius: var(--radius);
+      padding: 1.2rem;
+    }
+    .app-card h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8rem; font-weight: 700;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--cyan); margin-bottom: 0.5rem;
+    }
+    .app-card p { font-size: 0.88rem; color: var(--text-muted); margin: 0; }
+
+    /* ─── HONEST GAP ────────────────────── */
+    .gap-box {
+      background: var(--navy-card);
+      border: 1px solid var(--navy-border);
+      border-left: 4px solid var(--text-faint);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 1.4rem 1.6rem; margin: 2rem 0;
+    }
+    .gap-box h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--text-faint); margin-bottom: 0.5rem;
+    }
+    .gap-box p { font-size: 0.9rem; color: var(--text-muted); margin: 0; }
+
+    /* ─── FOOTER ────────────────────────── */
+    .footer {
+      border-top: 1px solid var(--navy-border);
+      padding: 3rem 2rem; text-align: center;
+    }
+    .footer-text { color: var(--text-faint); font-size: 0.85rem; margin-bottom: 1rem; }
+    .footer-link {
+      display: inline-block;
+      background: var(--gold); color: var(--navy-deep);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700; font-size: 0.85rem;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.75rem 1.8rem; border-radius: var(--radius);
+      transition: opacity 0.2s;
+    }
+    .footer-link:hover { opacity: 0.85; }
+
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .level-num { min-width: 56px; }
+      .loop-steps { flex-direction: column; align-items: flex-start; }
+      .loop-arrow { transform: rotate(90deg); display: block; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a class="nav-logo" href="/index.html">CHARLES LWANDA</a>
+    <ul class="nav-links">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/portfolio.html">Portfolio</a></li>
+      <li><a href="/lab.html">The Lab</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-eyebrow">
+      <span>Framework</span>
+      <span>M&E / Learning Analytics</span>
+    </div>
+    <h1>Measuring Whether Learning <em>Actually Worked</em></h1>
+    <p class="hero-subtitle">
+      Most programme evaluations measure the wrong things — completion rates, satisfaction scores, attendance. Here's how I design evaluation systems that connect learning design to real-world behaviour change, grounded in the MATTERS CBE Training of Trainers experience.
+    </p>
+    <div class="meta-strip">
+      <span class="meta-chip gold">Programme Evaluation</span>
+      <span class="meta-chip cyan">Learning Analytics</span>
+      <span class="meta-chip">Kirkpatrick Adapted</span>
+      <span class="meta-chip">Applied to MATTERS CBE ToT</span>
+    </div>
+  </header>
+
+  <main class="page-body">
+
+    <!-- ─── THE CORE PROBLEM ─────────────── -->
+    <section class="section" id="problem">
+      <div class="section-label">01 — The Problem With Most Learning Evaluation</div>
+      <h2>We Measure What's Easy, Not What Matters</h2>
+      <p>
+        Completion rates tell you that someone was in the room. Post-training satisfaction scores tell you that they enjoyed the experience. Neither tells you whether they can do anything differently on Monday morning.
+      </p>
+      <p>
+        The fundamental measurement problem in learning design is that the outcome we care about — changed behaviour in real work contexts — is the hardest thing to measure, so we substitute proxies that are easy to collect and call it evaluation.
+      </p>
+
+      <div class="principle-banner">
+        <h3>Design Principle</h3>
+        <p>Evaluation architecture gets designed at the same time as the learning architecture — not added afterwards. The measurement instruments are part of the programme, not a debrief appended to it.</p>
+      </div>
+    </section>
+
+    <hr class="rule" />
+
+    <!-- ─── THE FRAMEWORK ────────────────── -->
+    <section class="section" id="framework">
+      <div class="section-label">02 — The Four-Level Framework</div>
+      <h2>What I Actually Measure — and When</h2>
+      <p>
+        I use an adapted Kirkpatrick model as the structural spine, modified for the realities of East African programme delivery: variable connectivity, sparse management oversight infrastructure, and learner populations who don't have time for lengthy evaluation instruments.
+      </p>
+
+      <div class="level-cards">
+
+        <!-- Level 1 -->
+        <div class="level-card">
+          <div class="level-header">
+            <div class="level-num">
+              <span class="num">1</span>
+              <span class="lbl">Reaction</span>
+            </div>
+            <div class="level-main">
+              <h3>Learner Experience & Engagement</h3>
+              <p class="question">"Did the programme create the conditions for learning? Would learners engage again?"</p>
+              <div class="metrics-row">
+                <div class="metric-block">
+                  <div class="metric-label">What I Measure</div>
+                  <ul>
+                    <li>Session-by-session engagement (not end-of-programme)</li>
+                    <li>Perceived relevance to real work context</li>
+                    <li>Psychological safety in the learning environment</li>
+                    <li>Facilitator quality from learner perspective</li>
+                  </ul>
+                </div>
+                <div class="metric-block">
+                  <div class="metric-label">How I Collect It</div>
+                  <ul>
+                    <li>4-question pulse check after each module (paper or SMS)</li>
+                    <li>One open-ended reflection prompt per session</li>
+                    <li>Facilitator observation notes for disengagement patterns</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Level 2 -->
+        <div class="level-card">
+          <div class="level-header">
+            <div class="level-num">
+              <span class="num">2</span>
+              <span class="lbl">Learning</span>
+            </div>
+            <div class="level-main">
+              <h3>Skill & Knowledge Acquisition</h3>
+              <p class="question">"Can learners demonstrate the target competency under controlled conditions?"</p>
+              <div class="metrics-row">
+                <div class="metric-block">
+                  <div class="metric-label">What I Measure</div>
+                  <ul>
+                    <li>Performance on scenario-based assessments (not recall tests)</li>
+                    <li>Pre/post competency self-assessment against observable indicators</li>
+                    <li>Peer assessment quality during live facilitation practice</li>
+                  </ul>
+                </div>
+                <div class="metric-block">
+                  <div class="metric-label">How I Collect It</div>
+                  <ul>
+                    <li>Embedded scenario activities with structured observation rubrics</li>
+                    <li>Micro-facilitation observation (not role play — real practice)</li>
+                    <li>Pre/post competency indicator checklist completed by learner and peer</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Level 3 -->
+        <div class="level-card">
+          <div class="level-header">
+            <div class="level-num">
+              <span class="num">3</span>
+              <span class="lbl">Behaviour</span>
+            </div>
+            <div class="level-main">
+              <h3>Transfer to Real Work Context</h3>
+              <p class="question">"Are trainers actually facilitating differently 60 and 90 days after the programme?"</p>
+              <div class="metrics-row">
+                <div class="metric-block">
+                  <div class="metric-label">What I Measure</div>
+                  <ul>
+                    <li>Observable facilitation behaviour vs. pre-programme baseline</li>
+                    <li>Use of programme-developed tools in live delivery</li>
+                    <li>Adaptation decisions trainers make in the field</li>
+                    <li>Peer feedback quality given to other trainers</li>
+                  </ul>
+                </div>
+                <div class="metric-block">
+                  <div class="metric-label">How I Collect It</div>
+                  <ul>
+                    <li>60-day structured check-in (phone or WhatsApp voice note protocol)</li>
+                    <li>Field supervisor observation form (4 observable indicators)</li>
+                    <li>Trainer self-review protocol (built into programme, not added later)</li>
+                    <li>Tool usage documentation (trainers photograph their toolkit use)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Level 4 -->
+        <div class="level-card">
+          <div class="level-header">
+            <div class="level-num">
+              <span class="num">4</span>
+              <span class="lbl">Results</span>
+            </div>
+            <div class="level-main">
+              <h3>Organisational & Programme Impact</h3>
+              <p class="question">"Is the organisation getting what it needed from this investment in trainer capacity?"</p>
+              <div class="metrics-row">
+                <div class="metric-block">
+                  <div class="metric-label">What I Measure</div>
+                  <ul>
+                    <li>Programme reach — sessions delivered post-certification</li>
+                    <li>Downstream learner feedback from trained trainers' sessions</li>
+                    <li>Trainer retention and continued programme engagement</li>
+                    <li>Reduction in facilitation quality incidents</li>
+                  </ul>
+                </div>
+                <div class="metric-block">
+                  <div class="metric-label">How I Collect It</div>
+                  <ul>
+                    <li>Programme delivery log (simple, trainer-maintained)</li>
+                    <li>Spot-sample of downstream learner feedback (quarterly)</li>
+                    <li>Annual programme coordinator review against baseline</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <hr class="rule" />
+
+    <!-- ─── COLLECTION TIMING ────────────── -->
+    <section class="section" id="timing">
+      <div class="section-label">03 — When Data Gets Collected</div>
+      <h2>The Measurement Timeline</h2>
+      <p>
+        The most common M&E failure is collecting all evaluation data at the end of the programme. By then, it's too late to adapt delivery, and the data serves reporting rather than improvement. Here's how I distribute collection across the programme cycle.
+      </p>
+
+      <table class="timing-table">
+        <thead>
+          <tr>
+            <th>Phase</th>
+            <th>Timing</th>
+            <th>What Gets Collected</th>
+            <th>Purpose</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="phase">Baseline</td>
+            <td>Before Day 1</td>
+            <td>Competency self-assessment against programme indicators; prior training inventory</td>
+            <td><span class="tag tag-cyan">Benchmark</span> establishes where learners actually start</td>
+          </tr>
+          <tr>
+            <td class="phase">During Delivery</td>
+            <td>After each module</td>
+            <td>4-question pulse check; facilitator observation notes; activity performance data</td>
+            <td><span class="tag tag-cyan">Adaptive</span> allows real-time programme adjustment</td>
+          </tr>
+          <tr>
+            <td class="phase">Programme Close</td>
+            <td>Final day</td>
+            <td>Post-competency self-assessment; peer facilitation observation; programme reflection</td>
+            <td><span class="tag tag-cyan">Learning</span> Level 2 measurement against baseline</td>
+          </tr>
+          <tr>
+            <td class="phase">30-Day Follow-up</td>
+            <td>One month post</td>
+            <td>Brief check-in on first facilitation attempts; tool usage; early challenges</td>
+            <td><span class="tag tag-gold">Transfer</span> early signal on behaviour application</td>
+          </tr>
+          <tr>
+            <td class="phase">60–90 Day Review</td>
+            <td>Two–three months post</td>
+            <td>Field supervisor observation; structured trainer self-review; peer feedback documentation</td>
+            <td><span class="tag tag-gold">Transfer</span> primary Level 3 data collection point</td>
+          </tr>
+          <tr>
+            <td class="phase">Annual Review</td>
+            <td>12 months post</td>
+            <td>Programme delivery log review; downstream learner spot-sample; coordinator debrief</td>
+            <td><span class="tag tag-gold">Results</span> Level 4 — impact on organisational outcomes</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <hr class="rule" />
+
+    <!-- ─── COLLECTION INSTRUMENTS ───────── -->
+    <section class="section" id="instruments">
+      <div class="section-label">04 — Data Collection Instruments</div>
+      <h2>What the Instruments Actually Look Like</h2>
+      <p>
+        In East African field programme contexts, evaluation instruments have to survive the same constraints as learning content: low connectivity, limited time, mixed literacy, and no administrative infrastructure to chase up non-responses. Every instrument I design meets this test: can a field trainer complete this in under 5 minutes with a basic smartphone or paper form?
+      </p>
+
+      <div class="instruments">
+        <div class="instrument-card">
+          <h3>Module Pulse Check</h3>
+          <p class="when">After each module — 3 minutes</p>
+          <p>Four questions on a 1–5 scale: relevance to my real work, clarity of the content, quality of facilitation, one thing I'll do differently. Delivered via paper card or WhatsApp poll for digital cohorts. Aggregate reviewed before next day's session.</p>
+        </div>
+        <div class="instrument-card">
+          <h3>Competency Indicator Checklist</h3>
+          <p class="when">Pre-programme and programme close</p>
+          <p>12 observable indicators mapped directly to programme objectives — stated as visible behaviours, not knowledge claims. Completed by the learner and by a peer. The gap between self-assessment and peer observation is often the most useful data point.</p>
+        </div>
+        <div class="instrument-card">
+          <h3>Facilitation Observation Rubric</h3>
+          <p class="when">During live practice and 60–90 day field review</p>
+          <p>4 observable dimensions: group engagement management, content adaptation, pacing judgment, feedback quality. Scored by observer on a 3-point scale with a required evidence note. Designed to be usable by field supervisors who are not instructional designers.</p>
+        </div>
+        <div class="instrument-card gold-top">
+          <h3>60-Day Structured Check-in</h3>
+          <p class="when">Two months post-programme</p>
+          <p>6-question voice note or text protocol sent to trainers via WhatsApp. Questions focus on: sessions delivered, tools used, hardest facilitation moment, what they'd change about their own delivery. Responses recorded and coded against Level 3 indicators.</p>
+        </div>
+        <div class="instrument-card gold-top">
+          <h3>Trainer Self-Review Protocol</h3>
+          <p class="when">After each facilitation session — ongoing</p>
+          <p>A one-page form built into the facilitation toolkit itself, not a separate evaluation document. Trainers complete it immediately post-session as part of their facilitation workflow. Questions: what worked, what didn't, what I'd adapt next time.</p>
+        </div>
+        <div class="instrument-card gold-top">
+          <h3>Programme Delivery Log</h3>
+          <p class="when">Maintained by trainer — ongoing</p>
+          <p>Simple grid: date, location, topic, number of participants, one challenge noted. Collected quarterly. This is the primary Level 4 data source — it tells you what reach the training investment actually produced over time.</p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="rule" />
+
+    <!-- ─── ADAPTIVE MANAGEMENT ──────────── -->
+    <section class="section" id="adaptive">
+      <div class="section-label">05 — Adaptive Management</div>
+      <h2>Closing the Loop: Data → Decision → Change</h2>
+      <p>
+        Collecting evaluation data only matters if it feeds programme decisions. Here's how I build the review cycle into programme management so data doesn't just accumulate — it changes things.
+      </p>
+
+      <div class="loop-visual">
+        <div class="loop-steps">
+          <div class="loop-step">Collect<br/><small style="color:var(--text-faint)">During & post-delivery</small></div>
+          <div class="loop-arrow">→</div>
+          <div class="loop-step">Analyse<br/><small style="color:var(--text-faint)">Patterns & gaps</small></div>
+          <div class="loop-arrow">→</div>
+          <div class="loop-step">Interpret<br/><small style="color:var(--text-faint)">Design implications</small></div>
+          <div class="loop-arrow">→</div>
+          <div class="loop-step">Decide<br/><small style="color:var(--text-faint)">What changes</small></div>
+          <div class="loop-arrow">→</div>
+          <div class="loop-step">Revise<br/><small style="color:var(--text-faint)">Update programme</small></div>
+          <div class="loop-arrow">→</div>
+          <div class="loop-step">Collect<br/><small style="color:var(--text-faint)">Next cycle</small></div>
+        </div>
+        <p class="loop-note">
+          The MATTERS CBE programme completed one full cycle of this loop between cohort 1 and cohort 2. The primary change: the peer observation protocol was restructured after cohort 1 data showed inconsistent feedback quality between observer pairs. Cohort 2 received a calibration session before peer observation began.
+        </p>
+      </div>
+    </section>
+
+    <hr class="rule" />
+
+    <!-- ─── MATTERS CBE APPLICATION ───────── -->
+    <section class="section" id="application">
+      <div class="section-label">06 — Applied to MATTERS CBE ToT</div>
+      <h2>How This Framework Maps to a Real Programme</h2>
+      <p>
+        Here's how each framework element was applied — or is planned for application — in the MATTERS CBE Training of Trainers programme.
+      </p>
+
+      <div class="application-grid">
+        <div class="app-card">
+          <h3>What Was Implemented</h3>
+          <p>Module pulse checks after each of the five modules. Pre/post competency self-assessment. Live facilitation observation using the rubric during residential sessions. Trainer self-review protocol integrated into the facilitation kit.</p>
+        </div>
+        <div class="app-card">
+          <h3>What Cohort 1 Data Changed</h3>
+          <p>Peer observation calibration session added for cohort 2. Module 3 (Group Dynamics) extended by half a day based on facilitator observation notes showing insufficient practice time for the target skills. Pulse check format simplified after cohort 1 reported it felt too long.</p>
+        </div>
+        <div class="app-card">
+          <h3>What's In Progress</h3>
+          <p>60-day structured check-in protocol being rolled out for cohort 2. Field supervisor observation form distributed to programme coordinators. Programme delivery log designed and in use with 6 certified trainers from cohort 1.</p>
+        </div>
+        <div class="app-card">
+          <h3>What's Not Yet Done</h3>
+          <p>Annual review cycle not yet completed (programme is in year 2). Downstream learner spot-sampling not yet systematised. Level 4 impact data is currently anecdotal. This is the honest status — and the next design priority.</p>
+        </div>
+      </div>
+
+      <div class="gap-box">
+        <h3>Honest Assessment</h3>
+        <p>The measurement infrastructure for Levels 1 and 2 is solid. Level 3 (behaviour transfer) is partially in place and producing early data. Level 4 (organisational results) is the honest gap — we're collecting the right leading indicators, but the longitudinal data set is still being built. I'll update this page as that data matures.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p class="footer-text">Want to discuss how this framework would apply to your programme?</p>
+    <a class="footer-link" href="mailto:charleslwanda@gmail.com">Start the Conversation</a>
+    <p style="margin-top:2rem;color:var(--text-faint);font-size:0.8rem;">
+      <a href="/case-studies/matters-cbe.html" style="color:var(--cyan);text-decoration:none;">← MATTERS CBE Case Study</a>
+      &nbsp;·&nbsp;
+      <a href="/portfolio.html" style="color:var(--text-faint);text-decoration:none;">Back to Portfolio →</a>
+    </p>
+  </footer>
+
+</body>
+</html>
