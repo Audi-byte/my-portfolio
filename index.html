@@ -24,13 +24,7 @@
   <link rel="stylesheet" href="home.css" />
   <link rel="stylesheet" href="portfolio.css" />
   <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
+  <script defer src="analytics.js"></script>
 
   <link rel="canonical" href="https://charleslwanda.com/index.html">
 
@@ -196,7 +190,7 @@
 
       <div class="work-grid">
 
-        <div class="pf-card reveal-up" onclick="window.location='portfolio.html'" style="cursor:pointer;">
+        <div class="pf-card reveal-up" data-href="portfolio.html" role="link" tabindex="0" style="cursor:pointer;">
           <div class="pf-card-img pf-thumb-1">
             <div class="pf-card-overlay"><span class="pf-card-type">Scenario Simulation</span></div>
             <div class="pf-placeholder"><img src="images/cs1-thumb.avif" alt="When the Algorithm Is Wrong"></div>
@@ -210,7 +204,7 @@
           </div>
         </div>
 
-        <div class="pf-card reveal-up" onclick="window.location='portfolio.html'" style="cursor:pointer;--delay:0.1s">
+        <div class="pf-card reveal-up" data-href="portfolio.html" role="link" tabindex="0" style="cursor:pointer;--delay:0.1s">
           <div class="pf-card-img pf-thumb-2">
             <div class="pf-card-overlay"><span class="pf-card-type">Performance Support</span></div>
             <div class="pf-placeholder"><img src="images/cs2-thumb.avif" alt="Trained. Certified. Blank."></div>
@@ -225,7 +219,7 @@
           </div>
         </div>
 
-        <div class="pf-card reveal-up" onclick="window.location='portfolio.html'" style="cursor:pointer;--delay:0.2s">
+        <div class="pf-card reveal-up" data-href="portfolio.html" role="link" tabindex="0" style="cursor:pointer;--delay:0.2s">
           <div class="pf-card-img pf-thumb-4">
             <div class="pf-card-overlay"><span class="pf-card-type">Branching Scenario</span></div>
             <div class="pf-placeholder"><img src="images/cs4-thumb.avif" alt="The Conversation You've Been Avoiding"></div>
@@ -239,7 +233,7 @@
           </div>
         </div>
 
-        <div class="pf-card reveal-up" onclick="window.location='case-studies/matters-cbe.html'" style="cursor:pointer;--delay:0.3s">
+        <div class="pf-card reveal-up" data-href="case-studies/matters-cbe.html" role="link" tabindex="0" style="cursor:pointer;--delay:0.3s">
           <div class="pf-card-img pf-thumb-1">
             <div class="pf-card-overlay"><span class="pf-card-type">Capacity Development</span></div>
             <div class="pf-placeholder"><img src="images/Capacity building result.webp" alt="MATTERS CBE Training of Trainers"></div>
@@ -253,7 +247,7 @@
           </div>
         </div>
 
-        <div class="pf-card reveal-up" onclick="window.location='case-studies/me-framework.html'" style="cursor:pointer;--delay:0.4s">
+        <div class="pf-card reveal-up" data-href="case-studies/me-framework.html" role="link" tabindex="0" style="cursor:pointer;--delay:0.4s">
           <div class="pf-card-img pf-thumb-2">
             <div class="pf-card-overlay"><span class="pf-card-type">Learning Analytics</span></div>
             <div class="pf-placeholder"><img src="images/Framework.webp" alt="M&E Framework"></div>
@@ -387,6 +381,7 @@
   <!-- Footer -->
 
   <script src="main.js"></script>
+  <script src="home.js"></script>
   <footer class="footer">
     <div class="footer-inner">
       <a href="index.html" class="footer-logo-link"><img src="images/logo.avif" alt="Charles Lwanda" class="footer-logo-img" /></a>

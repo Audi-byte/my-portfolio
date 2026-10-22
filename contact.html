@@ -20,13 +20,7 @@
   <link rel="canonical" href="https://charleslwanda.com/contact.html">
 
   <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
+  <script defer src="analytics.js"></script>
 </head>
 <body>
   <nav class="nav" id="nav">
@@ -99,7 +93,7 @@
       <!-- Reach directly — no raw email exposed -->
       <div class="contact-direct reveal-up">
         <h3 class="contact-direct-title">Or Reach Me Directly</h3>
-        <button class="contact-email-btn" id="reveal-email-btn" onclick="revealEmail()">
+        <button class="contact-email-btn" id="reveal-email-btn">
           <span class="contact-direct-icon">&#9993;</span>
           Click to reveal email
         </button>
@@ -200,55 +194,7 @@
   </main>
 
   <script src="main.js"></script>
-  <script>
-    // ── Email reveal — hides from bots ──
-    function revealEmail() {
-      const parts = ['chaslwanda', '@', 'gmail', '.com'];
-      const email = parts.join('');
-      document.getElementById('reveal-email-btn').style.display = 'none';
-      const link = document.getElementById('email-link');
-      link.href = 'mailto:' + email;
-      link.textContent = email;
-      document.getElementById('email-revealed').style.display = 'block';
-    }
-
-    // ── Form submit ──
-    document.getElementById('contact-form').addEventListener('submit', async function(e) {
-      e.preventDefault();
-      const btn = document.getElementById('submit-btn');
-      btn.textContent = 'Sending...';
-      btn.disabled = true;
-
-      const formData = new FormData(this);
-      const object = Object.fromEntries(formData);
-
-      try {
-        const response = await fetch('https://api.web3forms.com/submit', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-          },
-          body: JSON.stringify(object)
-        });
-
-        const result = await response.json();
-
-        if (result.success) {
-          // Show full-screen overlay
-          const overlay = document.getElementById('success-overlay');
-          overlay.classList.add('active');
-          document.body.style.overflow = 'hidden';
-        } else {
-          btn.textContent = 'Something went wrong. Try again.';
-          btn.disabled = false;
-        }
-      } catch (error) {
-        btn.textContent = 'Network error. Try again.';
-        btn.disabled = false;
-      }
-    });
-  </script>
+  <script src="contact.js"></script>
 
   <footer class="footer">
     <div class="footer-inner">
