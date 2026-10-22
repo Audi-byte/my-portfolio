@@ -1,3 +1,30 @@
+// ── Cloudflare Turnstile: explicit render so we keep the widget ID ──
+// Rendered when the visitor reaches the last step, so the token does not expire
+// while they are still filling in earlier steps.
+let turnstileWidgetId = null;
+
+function renderTurnstile() {
+  if (turnstileWidgetId !== null) return;
+  if (!window.turnstile) { setTimeout(renderTurnstile, 100); return; }
+  if (turnstileWidgetId !== null) return;
+  turnstileWidgetId = window.turnstile.render('#turnstile-project', {
+    sitekey: '0x4AAAAAAFhjmg__C_eEDgM1',
+    action: 'project',
+    theme: 'dark'
+  });
+}
+
+function getTurnstileToken() {
+  return (window.turnstile && turnstileWidgetId !== null)
+    ? (window.turnstile.getResponse(turnstileWidgetId) || '')
+    : '';
+}
+
+// Tokens are single-use: always reset the widget after an attempt that stays on the page.
+function resetTurnstile() {
+  if (window.turnstile && turnstileWidgetId !== null) window.turnstile.reset(turnstileWidgetId);
+}
+
     let currentStep = 1;
 
     const nudges = {
@@ -39,6 +66,7 @@
       document.getElementById('panel-' + currentStep).classList.remove('active');
       document.querySelector('.step-item[data-step="' + currentStep + '"]').classList.remove('active');
       currentStep = step;
+      if (step === 5) renderTurnstile();
       document.getElementById('panel-' + currentStep).classList.add('active');
       document.querySelectorAll('.step-item').forEach(item => {
         const n = parseInt(item.dataset.step);
@@ -63,8 +91,7 @@
 
       const name = document.getElementById('sap-name').value.trim();
       const email = document.getElementById('sap-email').value.trim();
-      const tokenField = document.querySelector('#panel-5 [name="cf-turnstile-response"]');
-      const token = tokenField ? tokenField.value : '';
+      const token = getTurnstileToken();
 
       if (!name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
         flash('Please add your name and a valid email');
@@ -109,12 +136,12 @@
         } else {
           btn.textContent = 'Something went wrong. Try again.';
           btn.disabled = false;
-          if (window.turnstile) window.turnstile.reset();
+          resetTurnstile();
         }
       } catch (e) {
         btn.textContent = 'Network error. Try again.';
         btn.disabled = false;
-        if (window.turnstile) window.turnstile.reset();
+        resetTurnstile();
       }
     }
 

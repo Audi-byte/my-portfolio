@@ -1,18 +1,25 @@
 // Cloudflare Pages Function: POST /api/contact
 // Checks Cloudflare Turnstile, validates the fields, then forwards to Web3Forms.
 // Secrets live in Pages > Settings > Variables and Secrets (never in the repo):
-//   TURNSTILE_SECRET  - the Turnstile *secret* key
-//   WEB3FORMS_KEY     - your Web3Forms access key
+//   TURNSTILE_SECRET   - the Turnstile *secret* key (type: Secret)
+//   WEB3FORMS_KEY      - your Web3Forms access key (type: Secret)
+// Plain variable:
+//   TURNSTILE_HOSTNAMES - comma-separated frontend hostnames that may pass the check,
+//                         e.g. charleslwanda.com,www.charleslwanda.com
+//                         (never add localhost here for production)
 
 const MAX_BODY_BYTES = 20000;
+const SITEVERIFY_URL = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
 
 const FORMS = {
   contact: {
+    action: 'contact', // must match the widget's action on contact.html
     subject: 'New Project Enquiry — Audi LXD Portfolio',
     limits: { name: 100, email: 254, project_type: 100, timeline: 100, message: 3000 },
     required: ['name', 'email', 'project_type', 'message'],
   },
   project: {
+    action: 'project', // must match the widget's action on start-a-project.html
     subject: 'New Project Brief — Audi LXD Portfolio',
     limits: { name: 100, email: 254, problem: 1000, audience: 300, timeline: 100, extras: 3000, solutions: 500, budget: 100 },
     required: ['name', 'email', 'problem', 'audience'],
@@ -38,8 +45,11 @@ function clean(value) {
 }
 
 export async function onRequestPost({ request, env }) {
-  if (!env.TURNSTILE_SECRET || !env.WEB3FORMS_KEY) {
-    console.error('Missing TURNSTILE_SECRET or WEB3FORMS_KEY environment variable');
+  const hostnames = new Set(
+    (env.TURNSTILE_HOSTNAMES || '').split(',').map((h) => h.trim()).filter(Boolean)
+  );
+  if (!env.TURNSTILE_SECRET || !env.WEB3FORMS_KEY || hostnames.size === 0) {
+    console.error('Missing TURNSTILE_SECRET, WEB3FORMS_KEY or TURNSTILE_HOSTNAMES');
     return json({ success: false, message: 'Server not configured.' }, 500);
   }
 
@@ -100,7 +110,7 @@ export async function onRequestPost({ request, env }) {
     return json({ success: false, message: 'Please enter a valid email address.' }, 400);
   }
 
-  // Verify the Turnstile token with Cloudflare.
+  // Verify the Turnstile token with Cloudflare: success, expected action, our own hostname.
   const token = typeof data['cf-turnstile-response'] === 'string' ? data['cf-turnstile-response'] : '';
   if (!token || token.length > 2048) {
     return json({ success: false, message: 'Please complete the security check.' }, 400);
@@ -112,21 +122,26 @@ export async function onRequestPost({ request, env }) {
   const ip = request.headers.get('CF-Connecting-IP');
   if (ip) verifyBody.set('remoteip', ip);
 
-  let verified = false;
+  let result;
   try {
-    const verifyRes = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+    const verifyRes = await fetch(SITEVERIFY_URL, {
       method: 'POST',
       body: verifyBody,
+      signal: AbortSignal.timeout(10000),
     });
-    const verifyJson = await verifyRes.json();
-    verified = verifyJson.success === true;
-    if (!verified) console.error('Turnstile rejected token', JSON.stringify(verifyJson['error-codes'] || []));
+    if (!verifyRes.ok) throw new Error('siteverify ' + verifyRes.status);
+    result = await verifyRes.json();
   } catch (err) {
     console.error('Turnstile verification failed', err);
-    return json({ success: false, message: 'Could not verify the security check. Try again.' }, 502);
+    return json({ success: false, message: 'Could not verify the security check. Please try again.' }, 502);
   }
-  if (!verified) {
-    return json({ success: false, message: 'Security check failed. Please refresh and try again.' }, 400);
+  if (result.success !== true || result.action !== cfg.action || !hostnames.has(result.hostname)) {
+    console.error('Turnstile rejected', JSON.stringify({
+      errors: result['error-codes'] || [],
+      action: result.action,
+      hostname: result.hostname,
+    }));
+    return json({ success: false, message: 'Security check failed. Please refresh and try again.' }, 403);
   }
 
   // Forward to Web3Forms. Subject and sender name are set here, not by the browser.

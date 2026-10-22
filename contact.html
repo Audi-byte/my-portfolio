@@ -21,7 +21,7 @@
 
   <!-- Google Analytics -->
   <script defer src="analytics.js"></script>
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>
 </head>
 <body>
   <nav class="nav" id="nav">
@@ -178,7 +178,7 @@
             <textarea id="message" name="message" rows="4" maxlength="3000" placeholder="Tell me about the performance gap you're trying to close — what are people doing vs. what should they be doing?" required></textarea>
           </div>
 
-          <div class="cf-turnstile" data-sitekey="0x4AAAAAAFhjmg__C_eEDgM1" data-theme="dark"></div>
+          <div id="turnstile-contact"></div>
 
           <button type="submit" class="form-submit" id="submit-btn">Submit Request</button>
         </form>

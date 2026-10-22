@@ -1,3 +1,30 @@
+// ── Cloudflare Turnstile: explicit render so we keep the widget ID ──
+let turnstileWidgetId = null;
+
+function renderTurnstile() {
+  if (turnstileWidgetId !== null) return;
+  if (!window.turnstile) { setTimeout(renderTurnstile, 100); return; }
+  if (turnstileWidgetId !== null) return;
+  turnstileWidgetId = window.turnstile.render('#turnstile-contact', {
+    sitekey: '0x4AAAAAAFhjmg__C_eEDgM1',
+    action: 'contact',
+    theme: 'dark'
+  });
+}
+
+function getTurnstileToken() {
+  return (window.turnstile && turnstileWidgetId !== null)
+    ? (window.turnstile.getResponse(turnstileWidgetId) || '')
+    : '';
+}
+
+// Tokens are single-use: always reset the widget after an attempt that stays on the page.
+function resetTurnstile() {
+  if (window.turnstile && turnstileWidgetId !== null) window.turnstile.reset(turnstileWidgetId);
+}
+
+renderTurnstile();
+
     // ── Email reveal — hides from bots ──
     function revealEmail() {
       const parts = ['chaslwanda', '@', 'gmail', '.com'];
@@ -15,8 +42,9 @@ document.getElementById('contact-form').addEventListener('submit', async functio
   const btn = document.getElementById('submit-btn');
   const originalText = btn.textContent;
   const object = Object.fromEntries(new FormData(this));
+  const token = getTurnstileToken();
 
-  if (!object['cf-turnstile-response']) {
+  if (!token) {
     btn.textContent = 'Please complete the security check';
     setTimeout(function () { btn.textContent = originalText; }, 2500);
     return;
@@ -25,6 +53,7 @@ document.getElementById('contact-form').addEventListener('submit', async functio
   btn.textContent = 'Sending...';
   btn.disabled = true;
   object.form = 'contact';
+  object['cf-turnstile-response'] = token;
 
   try {
     const response = await fetch('/api/contact', {
@@ -41,12 +70,12 @@ document.getElementById('contact-form').addEventListener('submit', async functio
     } else {
       btn.textContent = 'Something went wrong. Try again.';
       btn.disabled = false;
-      if (window.turnstile) window.turnstile.reset();
+      resetTurnstile();
     }
   } catch (error) {
     btn.textContent = 'Network error. Try again.';
     btn.disabled = false;
-    if (window.turnstile) window.turnstile.reset();
+    resetTurnstile();
   }
 });
 
