@@ -85,7 +85,9 @@
   </div>
 
   <!-- Nudge toast -->
-  <div class="nudge-toast" id="nudge-toast"></div><div class="sap-header">
+  <div class="nudge-toast" id="nudge-toast"></div>
+  <!-- Honeypot: hidden from humans; bots tend to tick it -->
+  <input type="checkbox" id="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0;" /><div class="sap-header">
     <div class="sap-header-inner">
       <h1 class="sap-title reveal">START A PROJECT</h1>
       <p class="sap-intro reveal">Ready to build something that actually moves performance — not just "looks nice"? Start with a quick blueprint below. It helps me understand your goals and design the smartest, leanest solution for your team.</p>
@@ -130,11 +132,11 @@
         <div class="step-panel active" id="panel-1">
           <div class="field-group">
             <label class="field-label">What's the core problem or challenge? <span style="color:var(--gold);font-size:0.8em;">*</span></label>
-            <input type="text" class="field-input" id="problem" placeholder="What should learners do differently after training?" />
+            <input type="text" class="field-input" id="problem" maxlength="1000" placeholder="What should learners do differently after training?" />
           </div>
           <div class="field-group">
             <label class="field-label">Who is this for? <span style="color:var(--gold);font-size:0.8em;">*</span></label>
-            <input type="text" class="field-input" id="audience" placeholder="Who's the audience — role, industry, level?" />
+            <input type="text" class="field-input" id="audience" maxlength="300" placeholder="Who's the audience — role, industry, level?" />
           </div>
           <div class="step-nav">
             <button class="btn-next" onclick="validateStep1()">Next &rarr;</button>
@@ -174,7 +176,7 @@
           </div>
           <div class="field-group">
             <label class="field-label">Preferred timeline</label>
-            <input type="text" class="field-input" id="timeline" placeholder="e.g. 4 weeks, ASAP, flexible..." />
+            <input type="text" class="field-input" id="timeline" maxlength="100" placeholder="e.g. 4 weeks, ASAP, flexible..." />
           </div>
           <div class="step-nav">
             <button class="btn-prev" onclick="goTo(2)">Previous</button>
@@ -190,7 +192,7 @@
           </div>
           <div class="field-group">
             <label class="field-label">Anything else I should know?</label>
-            <textarea class="field-textarea" id="extras" placeholder="Context, constraints, or anything that will help me understand your situation better..."></textarea>
+            <textarea class="field-textarea" id="extras" maxlength="3000" placeholder="Context, constraints, or anything that will help me understand your situation better..."></textarea>
           </div>
           <div class="step-nav">
             <button class="btn-prev" onclick="goTo(3)">Previous</button>
@@ -269,7 +271,7 @@
       const msgs = nudges[step];
       const msg = msgs[Math.floor(Math.random() * msgs.length)];
       const toast = document.getElementById('nudge-toast');
-      toast.innerHTML = msg;
+      toast.textContent = msg;
       toast.classList.add('show');
       setTimeout(() => { toast.classList.remove('show'); }, 3500);
     }
@@ -321,6 +323,7 @@
       const data = {
         access_key: '347943e4-2841-4f20-9671-fbec6e3724d5',
         subject: 'New Project Brief — Audi LXD Portfolio',
+        botcheck: document.getElementById('botcheck').checked,
         from_name: 'Audi LXD Portfolio',
         problem: document.getElementById('problem').value,
         audience: document.getElementById('audience').value,
@@ -359,7 +362,11 @@
       const email = parts.join('');
       document.getElementById('sap-email-btn').style.display = 'none';
       const el = document.getElementById('sap-email-revealed');
-      el.innerHTML = '<a href="mailto:' + email + '" style="color:var(--gold);">' + email + '</a>';
+      const a = document.createElement('a');
+      a.href = 'mailto:' + email;
+      a.textContent = email;
+      a.style.color = 'var(--gold)';
+      el.replaceChildren(a);
       el.style.display = 'inline';
     }
   </script>
