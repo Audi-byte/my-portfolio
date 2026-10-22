@@ -54,15 +54,36 @@
 
     async function submitForm() {
       const btn = document.querySelector('.btn-submit');
+      const originalText = btn.textContent;
+
+      function flash(msg) {
+        btn.textContent = msg;
+        setTimeout(function () { btn.textContent = originalText; }, 2500);
+      }
+
+      const name = document.getElementById('sap-name').value.trim();
+      const email = document.getElementById('sap-email').value.trim();
+      const tokenField = document.querySelector('#panel-5 [name="cf-turnstile-response"]');
+      const token = tokenField ? tokenField.value : '';
+
+      if (!name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        flash('Please add your name and a valid email');
+        return;
+      }
+      if (!token) {
+        flash('Please complete the security check');
+        return;
+      }
+
       btn.textContent = 'Sending...';
       btn.disabled = true;
 
-      // Collect all form data
       const data = {
-        access_key: '347943e4-2841-4f20-9671-fbec6e3724d5',
-        subject: 'New Project Brief — Audi LXD Portfolio',
+        form: 'project',
         botcheck: document.getElementById('botcheck').checked,
-        from_name: 'Audi LXD Portfolio',
+        'cf-turnstile-response': token,
+        name: name,
+        email: email,
         problem: document.getElementById('problem').value,
         audience: document.getElementById('audience').value,
         timeline: document.getElementById('timeline').value,
@@ -72,7 +93,7 @@
       };
 
       try {
-        const response = await fetch('https://api.web3forms.com/submit', {
+        const response = await fetch('/api/contact', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
           body: JSON.stringify(data)
@@ -88,10 +109,12 @@
         } else {
           btn.textContent = 'Something went wrong. Try again.';
           btn.disabled = false;
+          if (window.turnstile) window.turnstile.reset();
         }
-      } catch(e) {
+      } catch (e) {
         btn.textContent = 'Network error. Try again.';
         btn.disabled = false;
+        if (window.turnstile) window.turnstile.reset();
       }
     }
 
