@@ -1,28 +1,7 @@
-// ── Cloudflare Turnstile: explicit render so we keep the widget ID ──
-// Rendered when the visitor reaches the last step, so the token does not expire
-// while they are still filling in earlier steps.
-let turnstileWidgetId = null;
-
-function renderTurnstile() {
-  if (turnstileWidgetId !== null) return;
-  if (!window.turnstile) { setTimeout(renderTurnstile, 100); return; }
-  if (turnstileWidgetId !== null) return;
-  turnstileWidgetId = window.turnstile.render('#turnstile-project', {
-    sitekey: '0x4AAAAAAFhjmg__C_eEDgM1',
-    action: 'project',
-    theme: 'dark'
-  });
-}
-
-function getTurnstileToken() {
-  return (window.turnstile && turnstileWidgetId !== null)
-    ? (window.turnstile.getResponse(turnstileWidgetId) || '')
-    : '';
-}
-
-// Tokens are single-use: always reset the widget after an attempt that stays on the page.
-function resetTurnstile() {
-  if (window.turnstile && turnstileWidgetId !== null) window.turnstile.reset(turnstileWidgetId);
+// hCaptcha is loaded by the Web3Forms client script. Tokens are single-use,
+// so reset the widget after any failed attempt that stays on the page.
+function resetCaptcha() {
+  try { if (window.hcaptcha) window.hcaptcha.reset(); } catch (e) { /* ignore */ }
 }
 
     let currentStep = 1;
@@ -66,7 +45,6 @@ function resetTurnstile() {
       document.getElementById('panel-' + currentStep).classList.remove('active');
       document.querySelector('.step-item[data-step="' + currentStep + '"]').classList.remove('active');
       currentStep = step;
-      if (step === 5) renderTurnstile();
       document.getElementById('panel-' + currentStep).classList.add('active');
       document.querySelectorAll('.step-item').forEach(item => {
         const n = parseInt(item.dataset.step);
@@ -91,7 +69,8 @@ function resetTurnstile() {
 
       const name = document.getElementById('sap-name').value.trim();
       const email = document.getElementById('sap-email').value.trim();
-      const token = getTurnstileToken();
+      const captchaField = document.querySelector('#panel-5 textarea[name="h-captcha-response"]');
+      const token = captchaField ? captchaField.value : '';
 
       if (!name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
         flash('Please add your name and a valid email');
@@ -106,9 +85,10 @@ function resetTurnstile() {
       btn.disabled = true;
 
       const data = {
-        form: 'project',
-        botcheck: document.getElementById('botcheck').checked,
-        'cf-turnstile-response': token,
+        access_key: '347943e4-2841-4f20-9671-fbec6e3724d5',
+        subject: 'New Project Brief — Audi LXD Portfolio',
+        from_name: 'Audi LXD Portfolio',
+        'h-captcha-response': token,
         name: name,
         email: email,
         problem: document.getElementById('problem').value,
@@ -119,8 +99,10 @@ function resetTurnstile() {
         budget: (document.querySelector('input[name="budget"]:checked') || {value: 'Not specified'}).value
       };
 
+      if (document.getElementById('botcheck').checked) data.botcheck = 'on';
+
       try {
-        const response = await fetch('/api/contact', {
+        const response = await fetch('https://api.web3forms.com/submit', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
           body: JSON.stringify(data)
@@ -136,12 +118,12 @@ function resetTurnstile() {
         } else {
           btn.textContent = 'Something went wrong. Try again.';
           btn.disabled = false;
-          resetTurnstile();
+          resetCaptcha();
         }
       } catch (e) {
         btn.textContent = 'Network error. Try again.';
         btn.disabled = false;
-        resetTurnstile();
+        resetCaptcha();
       }
     }
 

@@ -1,29 +1,8 @@
-// ── Cloudflare Turnstile: explicit render so we keep the widget ID ──
-let turnstileWidgetId = null;
-
-function renderTurnstile() {
-  if (turnstileWidgetId !== null) return;
-  if (!window.turnstile) { setTimeout(renderTurnstile, 100); return; }
-  if (turnstileWidgetId !== null) return;
-  turnstileWidgetId = window.turnstile.render('#turnstile-contact', {
-    sitekey: '0x4AAAAAAFhjmg__C_eEDgM1',
-    action: 'contact',
-    theme: 'dark'
-  });
+// hCaptcha is loaded by the Web3Forms client script. Tokens are single-use,
+// so reset the widget after any failed attempt that stays on the page.
+function resetCaptcha() {
+  try { if (window.hcaptcha) window.hcaptcha.reset(); } catch (e) { /* ignore */ }
 }
-
-function getTurnstileToken() {
-  return (window.turnstile && turnstileWidgetId !== null)
-    ? (window.turnstile.getResponse(turnstileWidgetId) || '')
-    : '';
-}
-
-// Tokens are single-use: always reset the widget after an attempt that stays on the page.
-function resetTurnstile() {
-  if (window.turnstile && turnstileWidgetId !== null) window.turnstile.reset(turnstileWidgetId);
-}
-
-renderTurnstile();
 
     // ── Email reveal — hides from bots ──
     function revealEmail() {
@@ -36,15 +15,15 @@ renderTurnstile();
       document.getElementById('email-revealed').style.display = 'block';
     }
 
-    // ── Form submit: goes to our own /api/contact function (checks Turnstile, then sends) ──
+    // ── Form submit: sent to Web3Forms together with the hCaptcha token ──
 document.getElementById('contact-form').addEventListener('submit', async function (e) {
   e.preventDefault();
   const btn = document.getElementById('submit-btn');
   const originalText = btn.textContent;
   const object = Object.fromEntries(new FormData(this));
-  const token = getTurnstileToken();
+  delete object['g-recaptcha-response']; // hCaptcha adds an unused duplicate field
 
-  if (!token) {
+  if (!object['h-captcha-response']) {
     btn.textContent = 'Please complete the security check';
     setTimeout(function () { btn.textContent = originalText; }, 2500);
     return;
@@ -52,11 +31,9 @@ document.getElementById('contact-form').addEventListener('submit', async functio
 
   btn.textContent = 'Sending...';
   btn.disabled = true;
-  object.form = 'contact';
-  object['cf-turnstile-response'] = token;
 
   try {
-    const response = await fetch('/api/contact', {
+    const response = await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify(object)
@@ -70,12 +47,12 @@ document.getElementById('contact-form').addEventListener('submit', async functio
     } else {
       btn.textContent = 'Something went wrong. Try again.';
       btn.disabled = false;
-      resetTurnstile();
+      resetCaptcha();
     }
   } catch (error) {
     btn.textContent = 'Network error. Try again.';
     btn.disabled = false;
-    resetTurnstile();
+    resetCaptcha();
   }
 });
 
