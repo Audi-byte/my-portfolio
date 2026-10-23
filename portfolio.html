@@ -26,13 +26,7 @@
    <link rel="canonical" href="https://charleslwanda.com/portfolio.html">
 
   <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
+  <script defer src="analytics.js"></script>
 </head>
 <body>
   <nav class="nav" id="nav">
@@ -83,7 +77,7 @@
           <h3 class="pf-card-title">When the Algorithm Is Wrong</h3>
           <p class="pf-card-desc">C-suite leaders were over-trusting AI outputs. A compliance course would have changed nothing. A judgment simulation did.</p>
           <div class="pf-card-result"><span class="pf-dot">&#9679;</span>Leaders practiced judgment calls before facing them live</div>
-          <button class="pf-card-btn" onclick="openCase('cs1', this)">View Case Study <span class="pf-btn-arrow">&darr;</span></button>
+          <button class="pf-card-btn" data-open-case="cs1">View Case Study <span class="pf-btn-arrow">&darr;</span></button>
         </div>
       </div>
 
@@ -99,7 +93,7 @@
           <h3 class="pf-card-title">The 5-Minute Field Guide</h3>
           <p class="pf-card-desc">Staff knew the 47-page SOP manual. They still froze at point-of-performance. The answer wasn't more training.</p>
           <div class="pf-card-result"><span class="pf-dot">&#9679;</span>Staff could find and apply the right response without leaving the floor</div>
-          <button class="pf-card-btn" onclick="openCase('cs2', this)">View Case Study <span class="pf-btn-arrow">&darr;</span></button>
+          <button class="pf-card-btn" data-open-case="cs2">View Case Study <span class="pf-btn-arrow">&darr;</span></button>
         </div>
       </div>
 
@@ -115,7 +109,7 @@
           <h3 class="pf-card-title">3 Minutes a Day</h3>
           <p class="pf-card-desc">A 2-week onboarding bootcamp was overwhelming new hires. The fix wasn't less content — it was a smarter delivery architecture.</p>
           <div class="pf-card-result"><span class="pf-dot">&#9679;</span>90-day bootcamp replaced with daily 3-minute modules that actually stuck</div>
-          <button class="pf-card-btn" onclick="openCase('cs3', this)">View Case Study <span class="pf-btn-arrow">&darr;</span></button>
+          <button class="pf-card-btn" data-open-case="cs3">View Case Study <span class="pf-btn-arrow">&darr;</span></button>
         </div>
       </div>
 
@@ -131,7 +125,7 @@
           <h3 class="pf-card-title">The Conversation You've Been Avoiding</h3>
           <p class="pf-card-desc">61% of direct reports said their manager avoided difficult feedback. A video about feedback was not going to fix that.</p>
           <div class="pf-card-result"><span class="pf-dot">&#9679;</span>Managers practiced difficult conversations before having them with real staff</div>
-          <button class="pf-card-btn" onclick="openCase('cs4', this)">View Case Study <span class="pf-btn-arrow">&darr;</span></button>
+          <button class="pf-card-btn" data-open-case="cs4">View Case Study <span class="pf-btn-arrow">&darr;</span></button>
         </div>
       </div>
 
@@ -147,7 +141,7 @@
           <h3 class="pf-card-title">The Training That Wasn't Working</h3>
           <p class="pf-card-desc">94% completion rate. Incidents not improving. They asked me to make it more engaging. I asked for the data instead.</p>
           <div class="pf-card-result"><span class="pf-dot">&#9679;</span>-31% incidents after redesign</div>
-          <button class="pf-card-btn" onclick="openCase('cs5', this)">View Case Study <span class="pf-btn-arrow">&darr;</span></button>
+          <button class="pf-card-btn" data-open-case="cs5">View Case Study <span class="pf-btn-arrow">&darr;</span></button>
         </div>
       </div>
 
@@ -162,7 +156,7 @@
     <h3 class="pf-card-title">Who Runs This When You're Gone?</h3>
     <p class="pf-card-desc">Senior school tutors knew the new curriculum on paper. They couldn't teach it in a classroom. A compliance briefing was not going to fix that.</p>
     <div class="pf-card-result"><span class="pf-dot">&#9679;</span>Government ToT program — CBC Reform, Kenya</div>
-    <button class="pf-card-btn" onclick="openCase('cs6', this)">View Case Study <span class="pf-btn-arrow">&darr;</span></button>
+    <button class="pf-card-btn" data-open-case="cs6">View Case Study <span class="pf-btn-arrow">&darr;</span></button>
   </div>
 </div>
     </div>
@@ -175,7 +169,7 @@
   <!-- CS1 Panel -->
   <div class="cs-panel" id="cs1">
     <div class="cs-panel-inner">
-      <button class="cs-panel-close" onclick="closeCase('cs1')">&#10005; Close</button>
+      <button class="cs-panel-close" data-close-case="cs1">&#10005; Close</button>
 
       <div class="cs-header">
         <div class="cs-number">01</div>
@@ -277,7 +271,7 @@
   <!-- CS2 Panel -->
   <div class="cs-panel" id="cs2">
     <div class="cs-panel-inner">
-      <button class="cs-panel-close" onclick="closeCase('cs2')">&#10005; Close</button>
+      <button class="cs-panel-close" data-close-case="cs2">&#10005; Close</button>
 
       <div class="cs-header">
         <div class="cs-number">02</div>
@@ -375,7 +369,7 @@
   <!-- CS3 Panel -->
   <div class="cs-panel" id="cs3">
     <div class="cs-panel-inner">
-      <button class="cs-panel-close" onclick="closeCase('cs3')">&#10005; Close</button>
+      <button class="cs-panel-close" data-close-case="cs3">&#10005; Close</button>
 
       <div class="cs-header">
         <div class="cs-number">03</div>
@@ -458,7 +452,7 @@
   <!-- CS4 Panel -->
   <div class="cs-panel" id="cs4">
     <div class="cs-panel-inner">
-      <button class="cs-panel-close" onclick="closeCase('cs4')">&#10005; Close</button>
+      <button class="cs-panel-close" data-close-case="cs4">&#10005; Close</button>
 
       <div class="cs-header">
         <div class="cs-number">04</div>
@@ -545,7 +539,7 @@
   <!-- CS5 Panel -->
   <div class="cs-panel" id="cs5">
     <div class="cs-panel-inner">
-      <button class="cs-panel-close" onclick="closeCase('cs5')">&#10005; Close</button>
+      <button class="cs-panel-close" data-close-case="cs5">&#10005; Close</button>
 
       <div class="cs-header">
         <div class="cs-number">05</div>
@@ -635,7 +629,7 @@
 <!-- CS6 Panel -->
 <div class="cs-panel" id="cs6">
   <div class="cs-panel-inner">
-    <button class="cs-panel-close" onclick="closeCase('cs6')">&#10005; Close</button>
+    <button class="cs-panel-close" data-close-case="cs6">&#10005; Close</button>
 
     <div class="cs-header">
       <div class="cs-number">06</div>
@@ -742,49 +736,7 @@
   </section>
 
   <script src="main.js"></script>
-  <script>
-    function openCase(id, btn) {
-      // Close any open panels
-      document.querySelectorAll('.cs-panel.open').forEach(p => {
-        p.classList.remove('open');
-      });
-      // Reset all buttons
-      document.querySelectorAll('.pf-card-btn.active').forEach(b => {
-        b.innerHTML = 'View Case Study <span class="pf-btn-arrow">&darr;</span>';
-        b.classList.remove('active');
-      });
-
-      const panel = document.getElementById(id);
-      panel.classList.add('open');
-
-      // Update button state
-      btn.innerHTML = 'Close Case Study <span class="pf-btn-arrow">&uarr;</span>';
-      btn.classList.add('active');
-
-      // Scroll to panel smoothly
-      setTimeout(() => {
-        panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 50);
-    }
-
-    function closeCase(id) {
-      const panel = document.getElementById(id);
-      panel.classList.remove('open');
-
-      // Reset corresponding card button
-      const cardId = panel.id;
-      document.querySelectorAll('.pf-card').forEach(card => {
-        if (card.dataset.target === cardId) {
-          const btn = card.querySelector('.pf-card-btn');
-          btn.innerHTML = 'View Case Study <span class="pf-btn-arrow">&darr;</span>';
-          btn.classList.remove('active');
-        }
-      });
-
-      // Scroll back up to the grid
-      document.querySelector('.pf-grid-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  </script>
+  <script src="portfolio.js"></script>
   <footer class="footer">
     <div class="footer-inner">
       <a href="index.html" class="footer-logo-link"><img src="images/logo.avif" alt="Charles Lwanda" class="footer-logo-img" /></a>
