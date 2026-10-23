@@ -1,8 +1,7 @@
-// hCaptcha is loaded by the Web3Forms client script. Tokens are single-use,
-// so reset the widget after any failed attempt that stays on the page.
-function resetCaptcha() {
-  try { if (window.hcaptcha) window.hcaptcha.reset(); } catch (e) { /* ignore */ }
-}
+// Invisible spam check: real visitors need a few seconds to fill in the form, bots do not.
+// Combined with the hidden honeypot field and Web3Forms' own server-side spam filter.
+const pageLoadedAt = Date.now();
+const MIN_FILL_MS = 4000;
 
     // ── Email reveal — hides from bots ──
     function revealEmail() {
@@ -15,16 +14,16 @@ function resetCaptcha() {
       document.getElementById('email-revealed').style.display = 'block';
     }
 
-    // ── Form submit: sent to Web3Forms together with the hCaptcha token ──
+    // ── Form submit: sent to Web3Forms ──
 document.getElementById('contact-form').addEventListener('submit', async function (e) {
   e.preventDefault();
   const btn = document.getElementById('submit-btn');
   const originalText = btn.textContent;
   const object = Object.fromEntries(new FormData(this));
-  delete object['g-recaptcha-response']; // hCaptcha adds an unused duplicate field
 
-  if (!object['h-captcha-response']) {
-    btn.textContent = 'Please complete the security check';
+  if (Date.now() - pageLoadedAt < MIN_FILL_MS) {
+    // Too fast to be a person (or autofill + instant click). Ask them to try again; nothing is lost.
+    btn.textContent = 'Please check your message and press send again';
     setTimeout(function () { btn.textContent = originalText; }, 2500);
     return;
   }
@@ -47,12 +46,10 @@ document.getElementById('contact-form').addEventListener('submit', async functio
     } else {
       btn.textContent = 'Something went wrong. Try again.';
       btn.disabled = false;
-      resetCaptcha();
     }
   } catch (error) {
     btn.textContent = 'Network error. Try again.';
     btn.disabled = false;
-    resetCaptcha();
   }
 });
 

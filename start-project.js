@@ -1,8 +1,7 @@
-// hCaptcha is loaded by the Web3Forms client script. Tokens are single-use,
-// so reset the widget after any failed attempt that stays on the page.
-function resetCaptcha() {
-  try { if (window.hcaptcha) window.hcaptcha.reset(); } catch (e) { /* ignore */ }
-}
+// Invisible spam check: a real visitor needs time to go through five steps, bots do not.
+// Combined with the hidden honeypot field and Web3Forms' own server-side spam filter.
+const pageLoadedAt = Date.now();
+const MIN_FILL_MS = 10000;
 
     let currentStep = 1;
 
@@ -69,15 +68,13 @@ function resetCaptcha() {
 
       const name = document.getElementById('sap-name').value.trim();
       const email = document.getElementById('sap-email').value.trim();
-      const captchaField = document.querySelector('#panel-5 textarea[name="h-captcha-response"]');
-      const token = captchaField ? captchaField.value : '';
 
       if (!name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
         flash('Please add your name and a valid email');
         return;
       }
-      if (!token) {
-        flash('Please complete the security check');
+      if (Date.now() - pageLoadedAt < MIN_FILL_MS) {
+        flash('Please review your answers and press send again');
         return;
       }
 
@@ -88,7 +85,6 @@ function resetCaptcha() {
         access_key: '347943e4-2841-4f20-9671-fbec6e3724d5',
         subject: 'New Project Brief — Audi LXD Portfolio',
         from_name: 'Audi LXD Portfolio',
-        'h-captcha-response': token,
         name: name,
         email: email,
         problem: document.getElementById('problem').value,
@@ -118,12 +114,10 @@ function resetCaptcha() {
         } else {
           btn.textContent = 'Something went wrong. Try again.';
           btn.disabled = false;
-          resetCaptcha();
         }
       } catch (e) {
         btn.textContent = 'Network error. Try again.';
         btn.disabled = false;
-        resetCaptcha();
       }
     }
 
